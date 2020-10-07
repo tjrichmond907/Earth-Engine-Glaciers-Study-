@@ -15913,3 +15913,18 @@ var image = ee.Image("users/tjrichmond907/AP_UVIC_1969"),
 
 Map.addLayer(image);
 Map.centerObject(image);
+//print to the total area for each class for 1969 in km2
+
+print('trees_1969:', trees_1969.area().divide(1000 * 1000));
+
+print('fields_1969:', fields_1969.area().divide(1000 * 1000));
+
+print('imp_surf_1969:', imp_surf_1969.area().divide(1000 * 1000));
+
+//print total area for each class current in km2
+
+print('trees_current:', trees_current.area().divide(1000 * 1000));
+
+print('fields_current:', fields_current.area().divide(1000 * 1000));
+
+print('imp_surf_current:', imp_surf_current.area().divide(1000 * 1000));
