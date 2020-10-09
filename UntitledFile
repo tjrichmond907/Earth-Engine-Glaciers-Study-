@@ -1,0 +1,4 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var image = ee.Image("users/tjrichmond907/AISA_CowBay"),
+    image2 = ee.Image("users/tjrichmond907/AISA_CowBay");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
