@@ -52,4 +52,4 @@ max: 2000
 
 // Add the image to the map, using the visualization parameters.
 Map.centerObject(roi, 18);
-Map.addLayer(S2, falseColor, 'CowBay S2')
+Map.addLayer(S2_sr, falseColor, 'CowBay S2');
