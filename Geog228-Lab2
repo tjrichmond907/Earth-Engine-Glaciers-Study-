@@ -10,12 +10,25 @@ var L8_sr = ee.Image(L8
 .sort('CLOUD_COVER')
 .first());
 print('Landsat 8 SR full image:', L8_sr);
+
 // Define visualization parameters in a JavaScript dictionary.
 var trueColor = {
 bands: ['B4', 'B3', 'B2'],
 min: 0,
 max: 2000
 };
+
 // Add the image to the map, using the visualization parameters.
 Map.centerObject(roi, 18);
 Map.addLayer(L8_sr, trueColor, 'CowBay Landsat ')
+
+// Define visualization parameters in a JavaScript dictionary.
+var trueColorAISA = {
+bands: ['b1', 'b2', 'b3'],
+min: 0,
+max: 4200
+};
+
+// Add the image to the map, using the visualization parameters.
+Map.centerObject(roi, 18);
+Map.addLayer(aisa, trueColorAISA, 'CowBay AISA ')
