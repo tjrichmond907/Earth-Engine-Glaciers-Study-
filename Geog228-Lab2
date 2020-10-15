@@ -44,12 +44,12 @@ var S2_sr = ee.Image(S2
 print('Sentinel 2 SR full image:', S2_sr);
 // Define visualization parameters in a JavaScript dictionary.
 
-var trueColor = {
-bands: ['B8', 'B3', 'B4'],
+var falseColor = {
+bands: ['B8', 'B4', 'B3'],
 min: 0,
 max: 2000
 };
 
 // Add the image to the map, using the visualization parameters.
 Map.centerObject(roi, 18);
-Map.addLayer(S2, trueColor, 'CowBay S2')
+Map.addLayer(S2, falseColor, 'CowBay S2')
