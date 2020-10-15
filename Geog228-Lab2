@@ -1,7 +1,8 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var aisa = ee.Image("users/tjrichmond907/AISA_CowBay"),
     L8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
-    roi = /* color: #d63000 */ee.Geometry.Point([-123.63708546118698, 48.75245622725947]);
+    roi = /* color: #d63000 */ee.Geometry.Point([-123.63708546118698, 48.75245622725947]),
+    S2 = ee.ImageCollection("COPERNICUS/S2_SR");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Get a single Landsat 8 image over the area of interest.
 var L8_sr = ee.Image(L8
