@@ -33,3 +33,23 @@ max: 4200
 // Add the image to the map, using the visualization parameters.
 Map.centerObject(roi, 18);
 Map.addLayer(aisa, trueColorAISA, 'CowBay AISA ')
+
+// Get a single Sentinel 2 image over the area of interest.
+
+var S2_sr = ee.Image(S2
+.filterBounds(roi)
+.filterDate('2019-08-01','2019-09-22')
+.sort('CLOUD_COVER')
+.first());
+print('Sentinel 2 SR full image:', S2_sr);
+// Define visualization parameters in a JavaScript dictionary.
+
+var trueColor = {
+bands: ['B2', 'B3', 'B4'],
+min: 0,
+max: 2000
+};
+
+// Add the image to the map, using the visualization parameters.
+Map.centerObject(roi, 18);
+Map.addLayer(L8_sr, trueColor, 'CowBay Landsat ')
