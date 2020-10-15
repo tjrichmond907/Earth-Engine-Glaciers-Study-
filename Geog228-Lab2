@@ -45,7 +45,7 @@ print('Sentinel 2 SR full image:', S2_sr);
 // Define visualization parameters in a JavaScript dictionary.
 
 var trueColor = {
-bands: ['B2', 'B3', 'B4'],
+bands: ['B4', 'B3', 'B2'],
 min: 0,
 max: 2000
 };
