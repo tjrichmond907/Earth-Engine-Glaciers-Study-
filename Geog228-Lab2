@@ -3,3 +3,19 @@ var image = ee.Image("users/tjrichmond907/AISA_CowBay"),
     L8 = ee.ImageCollection("LANDSAT/LC08/C01/T1_SR"),
     roi = /* color: #d63000 */ee.Geometry.Point([-123.63708546118698, 48.75245622725947]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Get a single Landsat 8 image over the area of interest.
+var L8_sr = ee.Image(L8
+.filterBounds(roi)
+.filterDate('2020-08-01','2020-09-22')
+.sort('CLOUD_COVER')
+.first());
+print('Landsat 8 SR full image:', L8_sr);
+// Define visualization parameters in a JavaScript dictionary.
+var trueColor = {
+bands: ['B4', 'B3', 'B2'],
+min: 0,
+max: 2000
+};
+// Add the image to the map, using the visualization parameters.
+Map.centerObject(roi, 18);
+Map.addLayer(L8_sr, trueColor, 'CowBay Landsat ')
