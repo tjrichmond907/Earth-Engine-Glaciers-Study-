@@ -52,4 +52,4 @@ max: 2000
 
 // Add the image to the map, using the visualization parameters.
 Map.centerObject(roi, 18);
-Map.addLayer(L8_sr, trueColor, 'CowBay Landsat ')
+Map.addLayer(S2, trueColor, 'CowBay Landsat ')
