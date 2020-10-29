@@ -12,3 +12,10 @@ var trueColor = {bands: ['B4', 'B3', 'B2'], min: 0, max: 65535};
 print('Raw Landsat', sub_L8raw);
 Map.centerObject(sub_L8raw);
 Map.addLayer(sub_L8raw, trueColor, 'Raw Landsat');
+
+// Apply the 16-bit to 32-bit transformation.
+var radiance = ee.Algorithms.Landsat.calibratedRadiance(sub_L8raw);
+
+// Display the result.
+var radParams = {bands: ['B4', 'B3', 'B2'], min: 0, max: 100};
+Map.addLayer(radiance, radParams, 'radiance');
