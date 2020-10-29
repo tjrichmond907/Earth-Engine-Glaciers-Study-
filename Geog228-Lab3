@@ -1,0 +1,14 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var L8_1 = ee.ImageCollection("LANDSAT/LC08/C01/T1");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Load a Landsat raw image image and select the bands we want to analyze
+var bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7'];
+var image = ee.Image('LANDSAT/LC08/C01/T1/LC08_047026_20200814')
+  .select(bands);
+//SUBSET image via coordinates and name sub_L8raw
+var roiCoord=ee.Geometry.Polygon([[-123.34,48.44],[-123.25,48.44],[-123.25,48.49],[-123.34,48.49]]);
+var sub_L8raw=(image.clip(roiCoord));
+var trueColor = {bands: ['B4', 'B3', 'B2'], min: 0, max: 65535};
+print('Raw Landsat', sub_L8raw);
+Map.centerObject(sub_L8raw);
+Map.addLayer(sub_L8raw, trueColor, 'Raw Landsat');
