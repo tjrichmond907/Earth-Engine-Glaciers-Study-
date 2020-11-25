@@ -1,0 +1,11 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = ee.FeatureCollection("users/tjrichmond907/roi-polygon"),
+    image = ee.Image("users/tjrichmond907/LSAT8-8-bit_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//SUBSET image via coordinates and name sub_roi
+var sub_roi=(image.clip(roi));
+var trueColor = {bands: ['b3', 'b2', 'b1'], min: 0, max: 255};
+Map.setCenter(-123.3, 48.5, 10); // Victoria area
+Map.addLayer(sub_roi, trueColor, 'Landsat 8 Subset');
+
+
