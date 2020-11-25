@@ -1,0 +1,4 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var table2 = ee.FeatureCollection("users/tjrichmond907/roi-polygon"),
+    image = ee.Image("users/tjrichmond907/LSAT8-8-bit_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
