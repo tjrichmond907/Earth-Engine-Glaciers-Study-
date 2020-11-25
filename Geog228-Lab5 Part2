@@ -30,3 +30,21 @@ var ndvi = sub_roi.expression(
   var vegPalette = ['white', 'green'];
   Map.addLayer(ndvi,{min: 0, max: 1, palette: vegPalette}, 'NDVI');
 
+////////////////////IMAGE FILTERS
+//Averaging filter - simple smoothing - even weights - the '2'represents radius from center, so this is a 5x5 kernel
+var L8_NIR =  sub_roi.select('b4');
+var uniformKernel = ee.Kernel.square({
+  radius: 2,
+  units: 'pixels',
+});
+// Filter the image by convolving with the smoothing filter.
+var smoothed = L8_NIR.convolve(uniformKernel);
+Map.addLayer(smoothed, {min: 0, max: 60},'smoothed image');
+
+// LAPLACIAN EDGE DETECTION
+var laplacianKernel = ee.Kernel.laplacian8(2);
+// Print the kernel to see its weights.
+print(laplacianKernel);
+// Filter the image by convolving with the Laplacian filter.
+var laplacian = L8_NIR.convolve(laplacianKernel)
+Map.addLayer(laplacian, {min: 0, max: 80}, 'laplacian edge detection image');
