@@ -8,4 +8,25 @@ var trueColor = {bands: ['b3', 'b2', 'b1'], min: 0, max: 255};
 Map.setCenter(-123.3, 48.5, 10); // Victoria area
 Map.addLayer(sub_roi, trueColor, 'Landsat 8 Subset');
 
+///////////////////////////////////////RATIOS-INDICES
+//Define variable SVR from equation
+var SVR = sub_roi.expression(
+        "(NIR/RED)",
+        {
+          RED: sub_roi.select("b3"),    //  RED
+          NIR: sub_roi.select("b4"),    // NIR
+        });
+print(SVR);
+var vegPalette = ['white', 'green'];
+Map.addLayer(SVR,{min: 0, max: 15, palette: vegPalette}, 'SVR');
+
+//for this method, run the NDVI on your image: variable is named 'ndvi' and is an expression you write:
+var ndvi = sub_roi.expression(
+  '((NIR-RED)/(NIR+RED))',{
+    'NIR':sub_roi.select('b4'),
+    'RED':sub_roi.select('b3')
+  });
+  print(ndvi);
+  var vegPalette = ['white', 'green'];
+  Map.addLayer(ndvi,{min: 0, max: 1, palette: vegPalette}, 'NDVI');
 
