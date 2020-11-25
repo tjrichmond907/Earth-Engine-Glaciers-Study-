@@ -1,0 +1,42 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = ee.FeatureCollection("users/tjrichmond907/roi-polygon"),
+    image = ee.Image("users/tjrichmond907/LSAT8-8-bit_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+//SUBSET image via coordinates and name sub_roi
+var sub_roi=(image.clip(roi));
+var trueColor = {bands: ['b3', 'b2', 'b1'], min: 0, max: 255};
+Map.setCenter(-123.3, 48.5, 10); // Victoria area
+Map.addLayer(sub_roi, trueColor, 'Landsat 8 Subset');
+
+//separate the bands into individual variables
+var b1 =  sub_roi.select('b1');
+var b2 =  image.select('b2');
+var b3 =  image.select('b3');
+var b4 =  image.select('b4');
+// HISTOGRAM: Pre-define some customization options.
+var options = {
+  title: 'Landsat histograms, VNIR',
+  fontSize: 20,
+  hAxis: {title: 'Landsat histograms, VNIR'},
+  vAxis: {title: 'pixel count'},
+  series: {
+    0: {color: 'black'}}};
+// Make the histogram, set the options.
+var histogram1 = ui.Chart.image.histogram(b1, roi, 30)
+    .setSeriesNames(['blue'])
+    .setOptions(options);
+var histogram2 = ui.Chart.image.histogram(b2, roi, 30)
+    .setSeriesNames(['green'])
+    .setOptions(options);    
+var histogram3 = ui.Chart.image.histogram(b3, roi, 30)
+    .setSeriesNames(['red'])
+    .setOptions(options);    
+var histogram4 = ui.Chart.image.histogram(b4, roi, 30)
+    .setSeriesNames(['NIR'])
+    .setOptions(options);        
+// Display the histogram.
+print(histogram1);
+print(histogram2);
+print(histogram3);
+print(histogram4);
+
