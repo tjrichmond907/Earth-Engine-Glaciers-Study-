@@ -417,3 +417,25 @@ Map.addLayer(image, trueColour, "true-colour image");
 
 var newfc = water.merge(artificial).merge(herbaceous).merge(woody).merge(desiccated).merge(baresoil)
 print(newfc)
+
+//Define the bands to be used to train your data
+var bands = ['B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A'];
+// Overlay the polygons on the imagery to get training.
+var training = image.select(bands).sampleRegions({
+  collection: newfc,
+  properties: ['landcover'],
+  scale: 20
+});
+//Train the classifier
+var classifier = ee.Classifier.cart().train({
+features: training,
+classProperty: 'landcover',
+inputProperties: bands});
+//Run the Classification
+
+var classified = image.select(bands).classify(classifier);
+//Display the Classification
+Map.addLayer(classified,
+{min: 0, max: 5, palette: ['#1b21d6', '#df20d9', '#41f015', '#2c772f',
+'#ffc522', '#755342']},
+'classification');
