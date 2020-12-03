@@ -1,8 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var uvic = 
-    /* color: #98ff00 */
-    /* shown: false */
-    ee.Geometry.Point([-123.31238346994817, 48.4641269931745]),
+var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.4641269931745]),
     sent2 = ee.ImageCollection("COPERNICUS/S2_SR"),
     water = /* color: #0916f7 */ee.FeatureCollection(
         [ee.Feature(
@@ -51,10 +48,10 @@ var uvic =
             }),
         ee.Feature(
             ee.Geometry.Polygon(
-                [[[-123.12213280289576, 48.32387942829918],
-                  [-123.11938622086451, 48.25877760014581],
-                  [-122.94051506607936, 48.25900617271958],
-                  [-122.99956657975123, 48.32776007232502]]]),
+                [[[-123.35134537795741, 48.254378436270976],
+                  [-123.34860276108931, 48.18927660374119],
+                  [-123.1699743204712, 48.1895052347082],
+                  [-123.22894585591047, 48.258259040238784]]]),
             {
               "landcover": 0,
               "label": "water",
