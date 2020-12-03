@@ -414,3 +414,6 @@ max: 2000
 };
 // Add the image to the map, using the visualization parameters.
 Map.addLayer(image, trueColour, "true-colour image");
+
+var newfc = water.merge(artificial).merge(herbaceous).merge(woody).merge(desiccated).merge(baresoil)
+print(newfc)
