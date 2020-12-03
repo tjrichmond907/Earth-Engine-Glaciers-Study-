@@ -436,6 +436,6 @@ inputProperties: bands});
 var classified = image.select(bands).classify(classifier);
 //Display the Classification
 Map.addLayer(classified,
-{min: 0, max: 5, palette: ['#1b21d6', '#df20d9', '#41f015', '#2c772f',
-'#ffc522', '#755342']},
+{min: 0, max: 5, palette: ['#0916f7', '#97999b', '#2cff0c', '#025006',
+'#ffe600', '#a7914b']},
 'classification');
