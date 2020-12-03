@@ -1,5 +1,8 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.4641269931745]),
+var uvic = 
+    /* color: #98ff00 */
+    /* shown: false */
+    ee.Geometry.Point([-123.31238346994817, 48.4641269931745]),
     sent2 = ee.ImageCollection("COPERNICUS/S2_SR"),
     water = /* color: #0916f7 */ee.FeatureCollection(
         [ee.Feature(
