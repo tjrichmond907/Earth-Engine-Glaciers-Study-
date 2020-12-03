@@ -1,0 +1,27 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var uvic = /* color: #d63000 */ee.Geometry.Point([-123.31242793278753, 48.463996005400084]),
+    sent2 = ee.ImageCollection("COPERNICUS/S2_SR");
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+
+// This is our first line of code. It defines the image collection to work with using the sent2 variable from the previous step
+var image = ee.Image(sent2
+// We will then include a filter to get only images in the date range we are interested in
+.filterDate("2019-05-01", "2019-09-01")
+// Next we include a geographic filter to narrow the search to images at the location of our study area - uvic
+.filterBounds(uvic)
+// Next we will also sort the collection by a metadata property, in this case cloud cover.
+//Recall from the Image Properties table that the nomenclature for Cloud Cover for Sentinel-2 is CLOUD_COVERAGE_ASSESSMENT
+
+.sort("CLOUD_COVERAGE_ASSESSMENT")
+// Now select the first image out of this collection - i.e. the most cloud free image in the date range
+.first());
+// And print the image to the console.
+print("Sentinel-2 image of Victoria, 2019", image);
+// Define visualization parameters in a JavaScript dictionary for true colour rendering. Bands 4,3 and 2 needed for RGB. min/max values based on Level 2A DN value range looking at water (low radiance).
+var trueColour = {
+bands: ["B4", "B3", "B2"],
+min: 0,
+max: 2000
+};
+// Add the image to the map, using the visualization parameters.
+Map.addLayer(image, trueColour, "true-colour image");
