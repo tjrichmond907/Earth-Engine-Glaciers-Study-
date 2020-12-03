@@ -57,7 +57,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
               "label": "water",
               "system:index": "4"
             })]),
-    aritficial = /* color: #97999b */ee.FeatureCollection(
+    artificial = /* color: #97999b */ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-123.36962474394784, 48.43368255090056],
