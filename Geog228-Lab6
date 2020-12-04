@@ -381,7 +381,7 @@ var image = ee.Image(sent2
 // We will then include a filter to get only images in the date range we are interested in
 .filterDate("2019-05-01", "2019-09-01")
 // Next we include a geographic filter to narrow the search to images at the location of our study area - uvic
-.filterBounds(water)
+.filterBounds(uvic)
 // Next we will also sort the collection by a metadata property, in this case cloud cover.
 //Recall from the Image Properties table that the nomenclature for Cloud Cover for Sentinel-2 is CLOUD_COVERAGE_ASSESSMENT
 
