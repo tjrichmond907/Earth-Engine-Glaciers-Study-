@@ -258,7 +258,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.48963294624714, 48.40776901251682],
                   [-123.4915534079018, 48.40564659210053]]]),
             {
-              "landcover": 4,
+              "landcover": 5,
               "label": "baresoil",
               "system:index": "0"
             }),
@@ -269,7 +269,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.56817267073302, 48.1207161137894],
                   [-123.5681512130609, 48.12162212134563]]]),
             {
-              "landcover": 4,
+              "landcover": 5,
               "label": "baresoil",
               "system:index": "1"
             }),
@@ -285,7 +285,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.54730082098402, 48.44836418106988],
                   [-123.54881358686842, 48.44926795336683]]]),
             {
-              "landcover": 4,
+              "landcover": 5,
               "label": "baresoil",
               "system:index": "2"
             }),
@@ -300,7 +300,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.43504618723145, 48.46851412510787],
                   [-123.43508910257569, 48.46977320899153]]]),
             {
-              "landcover": 4,
+              "landcover": 5,
               "label": "baresoil",
               "system:index": "3"
             }),
@@ -311,7 +311,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.0241380535408, 48.527173247093145],
                   [-123.02422388422927, 48.52845219037337]]]),
             {
-              "landcover": 4,
+              "landcover": 5,
               "label": "baresoil",
               "system:index": "4"
             })]),
@@ -325,7 +325,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.4357581192105, 48.65238924894729],
                   [-123.4355220848172, 48.65491242302332]]]),
             {
-              "landcover": 5,
+              "landcover": 4,
               "label": "desiccated",
               "system:index": "0"
             }),
@@ -337,7 +337,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.56529626947601, 48.326900423067265],
                   [-123.56625113588531, 48.326978890249215]]]),
             {
-              "landcover": 5,
+              "landcover": 4,
               "label": "desiccated",
               "system:index": "1"
             }),
@@ -348,7 +348,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.51219217984143, 48.12064541406101],
                   [-123.51161282269422, 48.12183432352496]]]),
             {
-              "landcover": 5,
+              "landcover": 4,
               "label": "desiccated",
               "system:index": "2"
             }),
@@ -359,7 +359,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.00371034968337, 48.52489949039822],
                   [-123.00701483118972, 48.52489949039822]]]),
             {
-              "landcover": 5,
+              "landcover": 4,
               "label": "desiccated",
               "system:index": "3"
             }),
@@ -370,7 +370,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
                   [-123.00285204279861, 48.52580900532615],
                   [-123.00310953486404, 48.526775347040655]]]),
             {
-              "landcover": 5,
+              "landcover": 4,
               "label": "desiccated",
               "system:index": "4"
             })]);
@@ -421,5 +421,5 @@ var classified = image.select(bands).classify(classifier);
 //Display the Classification
 Map.addLayer(classified,
 {min: 0, max: 5, palette: ['#0916f7', '#97999b', '#2cff0c', '#025006',
-'#ffe600', '#a7914b']},
+'#a7914b', '#ffe600']},
 'classification');
