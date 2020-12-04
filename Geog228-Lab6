@@ -639,3 +639,20 @@ Map.addLayer(classified,
 {min: 0, max: 5, palette: ['#0916f7', '#e900ff', '#2cff0c', '#025006',
 '#a7914b', '#ffe600']},
 'classification');
+
+//Merge into one FeatureCollection
+var valNames = v_water.merge(v_artificial).merge(v_herbaceous).merge(v_woody).merge(v_desiccated).merge(v_baresoil);
+
+var validation = classified.sampleRegions({
+  collection: valNames,
+  properties: ['landcover'],
+  scale: 20,
+});
+print(validation);
+
+//Compare the landcover of your validation data against the classification result
+var testAccuracy = validation.errorMatrix('landcover', 'classification');
+//Print the error matrix to the console
+print('Validation error matrix: ', testAccuracy);
+//Print the overall accuracy to the console
+print('Validation overall accuracy: ', testAccuracy.accuracy());
