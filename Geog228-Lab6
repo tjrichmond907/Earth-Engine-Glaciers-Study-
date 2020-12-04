@@ -373,6 +373,222 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
               "landcover": 4,
               "label": "desiccated",
               "system:index": "4"
+            })]),
+    v_water = /* color: #0029d6 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-123.66073670957174, 48.37679437130407]),
+            {
+              "landcover": 0,
+              "label": "water",
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.6676117008439, 48.21766097132712]),
+            {
+              "landcover": 0,
+              "label": "water",
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.44823632054086, 48.422185643775215]),
+            {
+              "landcover": 0,
+              "label": "water",
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.2772132383888, 48.53801184685391]),
+            {
+              "landcover": 0,
+              "label": "water",
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.50630486275301, 48.652452458402735]),
+            {
+              "landcover": 0,
+              "label": "water",
+              "system:index": "4"
+            })]),
+    v_artificial = /* color: #f502ff */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-123.4235884830571, 48.430839212561864]),
+            {
+              "landcover": 1,
+              "label": "artificial",
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.36074043627318, 48.43163439450965]),
+            {
+              "landcover": 1,
+              "label": "artificial",
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.43080788371394, 48.63937090867168]),
+            {
+              "landcover": 1,
+              "label": "artificial",
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.40956433007064, 48.687639881853315]),
+            {
+              "landcover": 1,
+              "label": "artificial",
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.44538684307713, 48.12338457458746]),
+            {
+              "landcover": 1,
+              "label": "artificial",
+              "system:index": "4"
+            })]),
+    v_herbaceous = /* color: #00ff31 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-123.24625614112556, 48.10235554561956]),
+            {
+              "landcover": 2,
+              "label": "herbaceous",
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.70677939311575, 48.39386305742316]),
+            {
+              "landcover": 2,
+              "label": "herbaceous",
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.39191744626902, 48.56893244369504]),
+            {
+              "landcover": 2,
+              "label": "herbaceous",
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.44935101367255, 48.66863242921447]),
+            {
+              "landcover": 2,
+              "label": "herbaceous",
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.09002241422711, 48.490246527012225]),
+            {
+              "landcover": 2,
+              "label": "herbaceous",
+              "system:index": "4"
+            })]),
+    v_woody = /* color: #198f00 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-123.60213578388104, 48.515316608105024]),
+            {
+              "landcover": 3,
+              "label": "woody",
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.12524529210657, 48.56751502481326]),
+            {
+              "landcover": 3,
+              "label": "woody",
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.66199627161026, 48.06134772743817]),
+            {
+              "landcover": 3,
+              "label": "woody",
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.40570856010109, 48.037273573796924]),
+            {
+              "landcover": 3,
+              "label": "woody",
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.57073289392228, 48.342012953618855]),
+            {
+              "landcover": 3,
+              "label": "woody",
+              "system:index": "4"
+            })]),
+    v_desiccated = /* color: #957800 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-123.56199445151297, 48.31909823991066]),
+            {
+              "landcover": "desiccated",
+              "label": 4,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.43153081875485, 48.440981774523436]),
+            {
+              "landcover": "desiccated",
+              "label": 4,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.12552035694169, 48.12451358976348]),
+            {
+              "landcover": "desiccated",
+              "label": 4,
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.20510788307796, 48.12620847834436]),
+            {
+              "landcover": "desiccated",
+              "label": 4,
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.50139799096154, 48.11541389701129]),
+            {
+              "landcover": "desiccated",
+              "label": 4,
+              "system:index": "4"
+            })]),
+    v_baresoil = /* color: #f3db00 */ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Point([-123.28397236657148, 48.09667988619384]),
+            {
+              "landcover": 5,
+              "label": "baresoil",
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.49630960536463, 48.40397502015801]),
+            {
+              "landcover": 5,
+              "label": "baresoil",
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.6924963324819, 48.39096090652792]),
+            {
+              "landcover": 5,
+              "label": "baresoil",
+              "system:index": "2"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.78389203270295, 48.388616721687164]),
+            {
+              "landcover": 5,
+              "label": "baresoil",
+              "system:index": "3"
+            }),
+        ee.Feature(
+            ee.Geometry.Point([-123.13557284635552, 48.54884408924694]),
+            {
+              "landcover": 5,
+              "label": "baresoil",
+              "system:index": "4"
             })]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
