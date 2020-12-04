@@ -57,7 +57,7 @@ var uvic = /* color: #98ff00 */ee.Geometry.Point([-123.31238346994817, 48.464126
               "label": "water",
               "system:index": "4"
             })]),
-    artificial = /* color: #97999b */ee.FeatureCollection(
+    artificial = /* color: #e900ff */ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-123.36962474394784, 48.43368255090056],
@@ -420,6 +420,6 @@ inputProperties: bands});
 var classified = image.select(bands).classify(classifier);
 //Display the Classification
 Map.addLayer(classified,
-{min: 0, max: 5, palette: ['#0916f7', '#97999b', '#2cff0c', '#025006',
+{min: 0, max: 5, palette: ['#0916f7', '#e900ff', '#2cff0c', '#025006',
 '#a7914b', '#ffe600']},
 'classification');
