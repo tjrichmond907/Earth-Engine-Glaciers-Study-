@@ -103,3 +103,32 @@ var PR_2021=(S2_2021.clip(sub))
 print('Sentinel Subset of Port Renfrew area 2021', PR_2021);
 Map.addLayer(PR_2021, trueColor, 'Sentinel Subset');
 Map.setCenter(-124.35, 48.62, 10); // centers map on the study area
+
+
+//the first step is to define the endmember samples as variables
+var series = {
+    0: {color: '#d1341c'}, // bare
+    1: {color: '#1dd61a'}, // veg
+    2: {color: '#1734ff'}, // water
+};
+var plotOptions1 = {
+  series: series,
+};
+// Define customization options.
+var plotOptions1 = {
+  title: 'Image band values for 3 regions',
+  hAxis: {title: 'Wavelength (nanometers)'},
+  vAxis: {title: 'Reflectance'},
+  lineWidth: 2,
+  pointSize: 4,
+  series: series,
+};
+//Create spectral plots - Choose bands to include and define feature collection to use
+var subset = PR_2021.select('B1','B2','B3','B4','B8','B11','B12');
+var samples = ee.FeatureCollection([bare,veg,water]);
+// Define a list of Sentinel wavelengths for X-axis labels.
+var wavelengths = [444, 497,560,665,835,1614,2202];
+// Create the chart and set options. 
+var Chart1 = ui.Chart.image.regions( subset, samples, ee.Reducer.mean(), 10, 'label', wavelengths) .setChartType('ScatterChart') .setOptions(plotOptions1); 
+// Display the chart. 
+print(Chart1);
