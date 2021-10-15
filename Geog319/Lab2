@@ -1,0 +1,4 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var imageCollection = ee.ImageCollection("COPERNICUS/S2_SR"),
+    roi = /* color: #d63000 */ee.Geometry.Point([-124.39770234329244, 48.57209508885032]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
