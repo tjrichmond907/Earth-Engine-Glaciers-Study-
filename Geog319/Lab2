@@ -132,3 +132,13 @@ var wavelengths = [444, 497,560,665,835,1614,2202];
 var Chart1 = ui.Chart.image.regions( subset, samples, ee.Reducer.mean(), 10, 'label', wavelengths) .setChartType('ScatterChart') .setOptions(plotOptions1); 
 // Display the chart. 
 print(Chart1);
+
+
+// Replace the numbers below with the values YOU recorded in the endmember table above BEFORE you copy/paste and run this code.
+var bare = [667, 742, 871, 1103, 1906, 3097, 2038];
+var veg = [199, 275, 756, 308, 5257, 2004,820];
+var water = [234,222,177,76,49,22,23];
+// Determine the fractional contribution of the endmembers.
+var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
+Map.addLayer(fractions, {min: 0, max: 1},
+  'fractions (red=bare, green=veg, blue=water)');
