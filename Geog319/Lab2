@@ -120,10 +120,10 @@ print(Chart1);
 
 
 // Replace the numbers below with the values YOU recorded in the endmember table above BEFORE you copy/paste and run this code.
-//var bare = [667, 742, 871, 1103, 1906, 3097, 2038];
-//var veg = [199, 275, 756, 308, 5257, 2004,820];
-//var water = [234,222,177,76,49,22,23];
+var bare = [667,789,922,1183,1958,3152,2078];
+var veg = [197,263,708,285,4812,1174,717];
+var water = [238,225,177,77,45,19,21];
 // Determine the fractional contribution of the endmembers.
-//var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
-//Map.addLayer(fractions, {min: 0, max: 1},
-//  'fractions (red=bare, green=veg, blue=water)');
+var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
+Map.addLayer(fractions, {min: 0, max: 1},
+  'fractions (red=bare, green=veg, blue=water)');
