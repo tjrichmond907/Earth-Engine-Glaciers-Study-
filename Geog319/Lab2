@@ -1,4 +1,28 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var imageCollection = ee.ImageCollection("COPERNICUS/S2_SR"),
+var S2 = ee.ImageCollection("COPERNICUS/S2_SR"),
     roi = /* color: #d63000 */ee.Geometry.Point([-124.39770234329244, 48.57209508885032]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Get a single Sentinel-2 image over the area of interest.
+var S2_2021 = ee.Image(S2
+.filterBounds(roi)
+.filterDate('2021-06-15','2021-06-30')
+.sort('CLOUD_COVERAGE_ASSESSMENT')
+.first());
+// Print the image to the console.
+print('Sentinel 2 2021:', S2_2021);
+// Define visualization parameters in a JavaScript dictionary.
+var trueColor = {
+bands: ['B4', 'B3', 'B2'],
+min: 0,
+max: 2000
+};
+//select the Sentinel-2 bands we want to work with
+var bands = ['B1', 'B2', 'B3', 'B4', 'B8', 'B11', 'B12'];
+//SUBSET image via geometry 'sub' and name PR_2021
+var sub=ee.Geometry.Polygon([[-124.47,48.46],[-124.20,48.46],[-124.20,48.67],[-124.47,48.67]]);
+var PR_2021=(S2_2021.clip(sub))
+.select(bands);
+// Print the image to the console.
+print('Sentinel Subset of Port Renfrew area 2021', PR_2021);
+Map.addLayer(PR_2021, trueColor, 'Sentinel Subset');
+Map.setCenter(-124.35, 48.62, 10); // centers map on the study area
