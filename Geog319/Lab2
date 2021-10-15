@@ -27,17 +27,11 @@ var S2 = ee.ImageCollection("COPERNICUS/S2_SR"),
           "system:index": "0"
         }),
     water = /* color: #1485f9 */ee.Feature(
-        ee.Geometry.MultiPolygon(
-            [[[[-124.35717906995308, 48.48058751095116],
-               [-124.35842361493599, 48.47963451222913],
-               [-124.35696449323189, 48.478880634885215],
-               [-124.35353126569282, 48.479862095640755],
-               [-124.35488309903633, 48.48148359789459]]],
-             [[[-124.41013281405891, 48.48793637321051],
-               [-124.41048150123085, 48.48720039659579],
-               [-124.40861468375648, 48.486859070482446],
-               [-124.40815334380592, 48.487854598558535],
-               [-124.41001479686226, 48.488139031562255]]]]),
+        ee.Geometry.Polygon(
+            [[[-124.4142794848743, 48.48961940453687],
+              [-124.41479446900516, 48.48654753334706],
+              [-124.40518143189578, 48.48700263711669],
+              [-124.40518143189578, 48.49018824915208]]]),
         {
           "label": "water",
           "system:index": "0"
@@ -126,10 +120,10 @@ print(Chart1);
 
 
 // Replace the numbers below with the values YOU recorded in the endmember table above BEFORE you copy/paste and run this code.
-var bare = [667, 742, 871, 1103, 1906, 3097, 2038];
-var veg = [199, 275, 756, 308, 5257, 2004,820];
-var water = [234,222,177,76,49,22,23];
+//var bare = [667, 742, 871, 1103, 1906, 3097, 2038];
+//var veg = [199, 275, 756, 308, 5257, 2004,820];
+//var water = [234,222,177,76,49,22,23];
 // Determine the fractional contribution of the endmembers.
-var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
-Map.addLayer(fractions, {min: 0, max: 1},
-  'fractions (red=bare, green=veg, blue=water)');
+//var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
+//Map.addLayer(fractions, {min: 0, max: 1},
+//  'fractions (red=bare, green=veg, blue=water)');
