@@ -267,3 +267,14 @@ var ndvi = PR_2021.expression(
   var vegPalette = ['white', 'green'];
   Map.addLayer(ndvi,{min: 0, max: 1, palette: vegPalette}, 'NDVI');
 
+
+/////////////NDWI
+var ndwi = PR_2021.expression(
+  '((NIR-SWIR1)/(NIR+SWIR1))',{
+    'NIR':PR_2021.select('B8'),
+    'SWIR1':PR_2021.select('B11')
+  });
+  print(ndwi);
+  var wetPalette = ['blue', 'white'];
+  Map.addLayer(ndwi,{min: 0, max: 1, palette: wetPalette}, 'NDWI');
+
