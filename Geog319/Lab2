@@ -256,3 +256,14 @@ var water = [228,221,174,69,41,12,13];
 var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
 Map.addLayer(fractions, {min: 0, max: 1},
   'fractions (red=bare, green=veg, blue=water)');
+  
+//for this method, run the NDVI on your Sentinel image: variable is named 'ndvi' and is an expression you write:
+var ndvi = PR_2021.expression(
+  '((NIR-RED)/(NIR+RED))',{
+    'NIR':PR_2021.select('B8'),
+    'RED':PR_2021.select('B4')
+  });
+  print(ndvi);
+  var vegPalette = ['white', 'green'];
+  Map.addLayer(ndvi,{min: 0, max: 1, palette: vegPalette}, 'NDVI');
+
