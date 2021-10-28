@@ -249,9 +249,9 @@ print(Chart1);
 
 
 // Replace the numbers below with the values YOU recorded in the endmember table above BEFORE you copy/paste and run this code.
-var bare = [667,789,922,1183,1958,3152,2078];
-var veg = [197,263,708,285,4812,1174,717];
-var water = [238,225,177,77,45,19,21];
+var bare = [676,789,922,1183,1958,3152,2078];
+var veg = [195,257,675,281,4416,1674,684];
+var water = [228,221,174,69,41,12,13];
 // Determine the fractional contribution of the endmembers.
 var fractions = PR_2021.unmix({endmembers:[bare, veg, water], sumToOne:true});
 Map.addLayer(fractions, {min: 0, max: 1},
