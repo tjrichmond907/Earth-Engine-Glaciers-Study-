@@ -278,3 +278,13 @@ var ndwi = PR_2021.expression(
   var wetPalette = ['blue', 'white'];
   Map.addLayer(ndwi,{min: 0, max: 1, palette: wetPalette}, 'NDWI');
 
+
+  //for this method, run the NGRI on your Sentinel image: variable is named 'ngri' and is an expression you write:
+var ngri = PR_2021.expression(
+  '((GREEN-RED)/(GREEN+RED))',{
+    'GREEN':PR_2021.select('B3'),
+    'RED':PR_2021.select('B4')
+  });
+  print(ngri);
+  var rgPalette = ['white', 'red'];
+  Map.addLayer(ngri,{min: 0, max: 1, palette: rgPalette}, 'NGRI');
