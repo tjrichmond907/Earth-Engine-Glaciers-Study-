@@ -1,7 +1,10 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var S2 = ee.ImageCollection("COPERNICUS/S2_SR"),
     roi = /* color: #d63000 */ee.Geometry.Point([-124.39770234329244, 48.57209508885032]),
-    bare = /* color: #d11616 */ee.Feature(
+    bare = 
+    /* color: #d11616 */
+    /* shown: false */
+    ee.Feature(
         ee.Geometry.MultiPolygon(
             [[[[-124.33623362800178, 48.55838084911221],
                [-124.3372099520832, 48.557400908440975],
@@ -26,7 +29,10 @@ var S2 = ee.ImageCollection("COPERNICUS/S2_SR"),
           "label": "bare",
           "system:index": "0"
         }),
-    water = /* color: #1485f9 */ee.Feature(
+    water = 
+    /* color: #1485f9 */
+    /* shown: false */
+    ee.Feature(
         ee.Geometry.MultiPolygon(
             [[[[-124.40407770711583, 48.48762537567998],
                [-124.40404552060765, 48.48677917423633],
@@ -40,7 +46,10 @@ var S2 = ee.ImageCollection("COPERNICUS/S2_SR"),
           "label": "water",
           "system:index": "0"
         }),
-    veg = /* color: #2cff0c */ee.Feature(
+    veg = 
+    /* color: #2cff0c */
+    /* shown: false */
+    ee.Feature(
         ee.Geometry({
           "type": "GeometryCollection",
           "geometries": [
@@ -191,7 +200,27 @@ var S2 = ee.ImageCollection("COPERNICUS/S2_SR"),
         {
           "label": "veg",
           "system:index": "0"
-        });
+        }),
+    logged_bare = /* color: #d605b7 */ee.Geometry.MultiPoint(
+        [[-124.3398412645283, 48.557328792743135],
+         [-124.34920061942528, 48.56297062480531],
+         [-124.40051090297473, 48.5300022667724]]),
+    pioneer = /* color: #6cfffc */ee.Geometry.MultiPoint(
+        [[-124.39173203357592, 48.54481983494733],
+         [-124.33848054096903, 48.5328851427512],
+         [-124.35961038112555, 48.52792873737167]]),
+    secondary = /* color: #0B4A8B */ee.Geometry.MultiPoint(
+        [[-124.368004972646, 48.55621080926762],
+         [-124.35643928737379, 48.55586994787042],
+         [-124.29587796226426, 48.55523067073443]]),
+    oldgrowth = /* color: #ffc82d */ee.Geometry.MultiPoint(
+        [[-124.32079433778688, 48.546753345420605],
+         [-124.3136489329712, 48.550134061809935],
+         [-124.35069245614928, 48.53981340126087]]),
+    protected_OG = /* color: #bc45ff */ee.Geometry.MultiPoint(
+        [[-124.34589878351679, 48.63755036492286],
+         [-124.35001865656366, 48.62983603935671],
+         [-124.35422436029901, 48.62421972229093]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Get a single Sentinel-2 image over the area of interest.
 var S2_2021 = ee.Image(S2
@@ -289,10 +318,10 @@ var ngri = PR_2021.expression(
   var rgPalette = ['white', 'red'];
   Map.addLayer(ngri,{min: 0, max: 1, palette: rgPalette}, 'NGRI');
   
-var logged_bare = ee.Geometry.MultiPoint([[-124.3398412645283, 48.557328792743135], [-124.34920061942528, 48.56297062480531],[- 124.40051090297473, 48.5300022667724]]);
-var pioneer = ee.Geometry.MultiPoint([[-124.39173203357592, 48.54481983494733], [-124.33848054096903, 48.5328851427512],[- 124.35961038112555, 48.52792873737167]]);
-var secondary = ee.Geometry.MultiPoint([[-124.368004972646, 48.55621080926762], [-124.35643928737379, 48.55586994787042],[- 124.29587796226426, 48.55523067073443]]);
-var oldgrowth = ee.Geometry.MultiPoint([[-124.32079433778688, 48.546753345420605], [-124.3136489329712, 48.550134061809935],[- 124.35069245614928, 48.53981340126087]]);
-var protected_OG = ee.Geometry.MultiPoint([[-124.34589878351679, 48.63755036492286], [-124.35001865656366, 48.62983603935671],[- 124.35422436029901, 48.62421972229093]]);
+
+
+
+
+
 
 
