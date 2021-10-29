@@ -46,9 +46,9 @@ Map.addLayer(S2_SoG, trueColor, 'Sentinel-2 Strait of Georgia');
 
 //Collect 5 water samples and define variables for chart
 var series = {
-    0: {color: '#c20a0a’}, // sample_1
+    0: {color: '#c20a0a'}, // sample_1
     1: {color: '#b3ff66'}, // sample_2
-    2: {color: '#0b28ce '}, // sample_3
+    2: {color: '#0b28ce'}, // sample_3
     3: {color: '#ffdc49'}, // sample_4
     4: {color: '#0effee'}, //sample_5
     };
