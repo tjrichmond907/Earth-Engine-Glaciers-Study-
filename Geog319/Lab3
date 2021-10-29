@@ -44,6 +44,37 @@ Map.addLayer(S2_SoG, trueColor, 'Sentinel-2 Strait of Georgia');
 
 // import geometry points
 
+//Collect 5 water samples and define variables for chart
+var series = {
+    0: {color: '#c20a0a’}, // sample_1
+    1: {color: '#b3ff66'}, // sample_2
+    2: {color: '#0b28ce '}, // sample_3
+    3: {color: '#ffdc49'}, // sample_4
+    4: {color: '#0effee'}, //sample_5
+    };
+    //////////S2 plot
+var plotOptions1 = {
+  series: series,
+};
+// Define customization options.
+var plotOptions1 = {
+  title: 'Sentinel-2  Surface reflectance spectra of Water Types in the Fraser River - Strait of Georgia',
+  hAxis: {title: 'Wavelength (nanometers)'},
+  vAxis: {title: 'Reflectance'},
+  lineWidth: 2,
+  pointSize: 4,
+  series: series,
+};
+//Create spectral plots - Choose bands to include and define feature collection to use
+var subset = S2_SoG.select('B[2-8]');
+var samples = ee.FeatureCollection([sample_1,sample_2,sample_3,sample_4,sample_5]);
+
+// Define a list of Sentinel-2 wavelengths for X-axis labels.
+var wavelengths = [492, 559, 665, 704, 739, 780, 833];
+// Create the chart and set options. 
+var Chart1 = ui.Chart.image.regions( subset, samples, ee.Reducer.mean(), 10, 'label', wavelengths) .setChartType('ScatterChart') .setOptions(plotOptions1); 
+// Display the chart. 
+print(Chart1);
 
 
 
