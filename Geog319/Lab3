@@ -1,0 +1,10 @@
+// Load a Senintel-2 surface reflectance image and select the bands we want to analyze
+var bands = ['B1', 'B2', 'B3', 'B4', 'B5', 'B6', 'B7', 'B8', 'B8A'];
+var S2_SoG = ee.Image('COPERNICUS/S2_SR/20210704T190921_20210704T191755_T10UDV')
+  .select(bands);
+//define display parameters 
+var trueColor = {bands: ['B4', 'B3', 'B2'], min: 0, max: 3000};
+print('Strait of Georgia Sentinel-2', S2_SoG);
+Map.centerObject(S2_SoG);
+//add image to the map display
+Map.addLayer(S2_SoG, trueColor, 'Sentinel-2 Strait of Georgia');
