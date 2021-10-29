@@ -8,3 +8,11 @@ print('Strait of Georgia Sentinel-2', S2_SoG);
 Map.centerObject(S2_SoG);
 //add image to the map display
 Map.addLayer(S2_SoG, trueColor, 'Sentinel-2 Strait of Georgia');
+
+
+// import geometry points
+var site_1 = ee.Geometry.Point([-123.42499539823618, 48.78410842147973]);
+var site_2 = ee.Geometry.Point([-123.43092134429075, 49.04749958773962]);
+var site_3 = ee.Geometry.Point([-123.21091296179561, 49.08258052791111]);
+var site_4 = ee.Geometry.Point ([-123.24225304917437, 49.59447709401906]);
+var site_5 = ee.Geometry.Point ([-123.14072783704752, 49.29547873961155]);
