@@ -95,7 +95,7 @@ var falseColor = {
       max:3000
 };
 
-Map.addLayer(image3, trueColor, 'Pancromatic-July');
-Map.addLayer(image3, falseColor, 'False Color-July');
+Map.addLayer(image3, trueColor, 'Pancromatic-June');
+Map.addLayer(image3, falseColor, 'False Color-June');
 Map.addLayer(image4, trueColor, 'Pancromatic-December');
 Map.addLayer(image4, falseColor, 'False Color-December');
