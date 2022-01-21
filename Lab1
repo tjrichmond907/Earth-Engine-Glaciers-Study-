@@ -4,7 +4,6 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
     sent2 = ee.ImageCollection("COPERNICUS/S2"),
     Montenegro = 
     /* color: #98ff00 */
-    /* shown: false */
     /* displayProperties: [
       {
         "type": "rectangle"
@@ -14,7 +13,8 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
         [[[19.140434893274602, 42.46138208345641],
           [19.140434893274602, 42.26351178955889],
           [19.379387529993352, 42.26351178955889],
-          [19.379387529993352, 42.46138208345641]]], null, false);
+          [19.379387529993352, 42.46138208345641]]], null, false),
+    Cairo = /* color: #0b4a8b */ee.Geometry.Point([31.235731760337355, 30.05451753787784]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
@@ -38,6 +38,7 @@ var image = ee.Image(sent2
 
 // And let's print the image to the console.
 print("A Sentinel-2 scene:", image);
+
 var image2 = ee.Image(sent2
 // We will then include a filter to get only images in the date range we are interested in
 .filterDate("2021-08-01", "2021-08-03")
@@ -65,4 +66,18 @@ Map.addLayer(image2, {bands: ['B12', 'B11', 'B4'], min:0, max:3000}, 'False Colo
 
 
 //LAB3
+Map.setCenter(Cairo, 9);
 
+var image3 = ee.image(sent2 
+        .filterDate("2019-06-01", "2019-06-10")
+        .filterBounds(Cairo)
+        .sort("CLOUD_COVERAGE_ASSESSMENT")
+        .first()
+  );
+  
+var image4 = ee.image(sent2 
+        .filterDate("2019-12-01", "2019-12-10")
+        .filterBounds(Cairo)
+        .sort("CLOUD_COVERAGE_ASSESSMENT")
+        .first()
+  );
