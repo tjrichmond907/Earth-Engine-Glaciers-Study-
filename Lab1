@@ -144,13 +144,13 @@ var image7 = ee.Image(Lsat
   );
   
 var trueColorL8 = {
-        bands: ["B4", "B3", "B2"],
+        bands: ["SR_B4", "SR_B3", "SR_B2"],
         min: 0,
         max: 3000
         };
         
 var falseColorL8 = {
-      bands: ['B5', 'B4', 'B3'],
+      bands: ['SR_B5', 'SR_B4', 'SR_B3'],
       min:0,
       max:3000
 };
