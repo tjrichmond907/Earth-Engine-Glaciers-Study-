@@ -40,7 +40,7 @@ var image = ee.Image(sent2
 print("A Sentinel-2 scene:", image);
 var image2 = ee.Image(sent2
 // We will then include a filter to get only images in the date range we are interested in
-.filterDate("2021-08-01", "2021-08-02")
+.filterDate("2021-08-01", "2021-08-03")
 // Next we include a geographic filter to narrow the search to images at the location of our point
 .filterBounds(Montenegro)
 // Next we will also sort the collection by a metadata property, in our case cloud cover is a very useful one
@@ -56,3 +56,9 @@ Map.addLayer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color I
 //AUGUST
 Map.addLayer(image2, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic August');
 Map.addLayer(image2, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR August');
+//AGRICULTURE
+Map.addLayer(image2, {bands: ['B11', 'B11', 'B4'], min:0, max:3000}, 'Agriculture August');
+//LAND/WATER
+Map.addLayer(image2, {bands: ['B8', 'B11', 'B4'], min:0, max:3000}, 'Land/Water August');
+//FALSE COLOR URBAN
+Map.addLayer(image2, {bands: ['B12', 'B11', 'B4'], min:0, max:3000}, 'False Color Urban August');
