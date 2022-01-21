@@ -186,3 +186,15 @@ var NDVI = image6.expression(
   );
  
 Map.addLayer(NDVI, {min:0, max:1}, 'NDVI July'); 
+
+var NDVI = image7.expression(
+  '(NIR - RED) / (NIR + RED)',
+  {
+    RED: image7.select('SR_B4'),
+    NIR: image7.select('SR_B5'),
+    BLUE: image7.select('SR_B2')
+  }
+  );
+
+Map.addLayer(NDVI, {min:0, max:1}, 'NDVI September'); 
+
