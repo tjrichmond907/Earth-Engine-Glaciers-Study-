@@ -9,5 +9,22 @@ var elev = ee.Image("USGS/SRTMGL1_003");
 //Map.addLayer(hillshade, {min: 150, max:255}, 'Hillshade');
 
 //LAB2
-Map.setCenter(19.2552, 42.4343, 8)
-var sent2 = ee.Image("COPERNICUS/S2/20180422T012719_20180422T012714_T52LHM")
+var center: Point (19.2552, 42.4343);
+Map.setCenter(19.2552, 42.4343, 8);
+//var sent2 = ee.Image("COPERNICUS/S2/20180422T012719_20180422T012714_T52LHM");
+
+var image = ee.Image(sent2
+// We will then include a filter to get only images in the date range we are interested in
+.filterDate("2021-04-01", "2021-04-31")
+// Next we include a geographic filter to narrow the search to images at the location of our point
+.filterBounds(center)
+// Next we will also sort the collection by a metadata property, in our case cloud cover is a very useful one
+.sort("CLOUD_COVERAGE_ASSESSMENT")
+// Now lets select the first image out of this collection - i.e. the most cloud free image in the date range
+.first());
+
+// And let's print the image to the console.
+print("A Sentinel-2 scene:", image);
+
+print(sent2);
+Map.addLayer(sent2, {bands: ['B4', 'B3', 'B2']});
