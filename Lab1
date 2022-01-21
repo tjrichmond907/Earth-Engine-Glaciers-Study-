@@ -51,8 +51,8 @@ var image2 = ee.Image(sent2
 // And let's print the image to the console.
 print("A Sentinel-2 scene:", image);
 //APRIL
-Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic');
-Map.addLayer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR');
+Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic April');
+Map.addLayer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR April');
 //AUGUST
-Map.addLayer(image2, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic');
-Map.addLayer(image2, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR');
+Map.addLayer(image2, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic August');
+Map.addLayer(image2, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR August');
