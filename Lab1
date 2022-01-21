@@ -82,3 +82,20 @@ var image4 = ee.Image(sent2
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         .first()
   );
+
+var trueColor = {
+        bands: ["B4", "B3", "B2"],
+        min: 0,
+        max: 3000
+        };
+        
+var falseColor = {
+      bands: ['B8', 'B4', 'B3'],
+      min:0,
+      max:3000
+};
+
+Map.addLayer(image3, trueColor, 'Pancromatic-July');
+Map.addLayer(image4, falseColor, 'False Color-December');
+Map.addLayer(image3, trueColor, 'Pancromatic-July');
+Map.addLayer(image4, falseColor, 'False Color-December');
