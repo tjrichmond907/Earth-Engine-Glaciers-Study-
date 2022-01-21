@@ -152,7 +152,8 @@ var trueColorL8 = {
 var falseColorL8 = {
       bands: ['SR_B5', 'SR_B4', 'SR_B3'],
       min:0,
-      max:3000
+      max:65000
 };
 
 Map.addLayer(image5, trueColorL8, 'Landsat May Pan');
+Map.addLayer(image5, falseColorL8, 'Landsat May FIR')
