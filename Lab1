@@ -122,7 +122,7 @@ var NDVI2 = image4.expression(
 Map.addLayer(NDVI, {min:0, max:1}, 'NDVI - JUNE');
 Map.addLayer(NDVI2, {min:0, max:1}, 'NDVI - DECEMBER');
 
-var image5 = ee.Image(
+var image5 = ee.Image(Lsat
   .filterDate('2018-05-01', '2018-05-20')
   .filterBounds(Cairo)
   .sort('CLOUD_COVER_ASSESSMENT')
