@@ -69,7 +69,7 @@ Map.addLayer(image2, {bands: ['B12', 'B11', 'B4'], min:0, max:3000}, 'False Colo
 
 //LAB3
 Map.setCenter(31.24, 30.05, 9);
-
+/*
 var image3 = ee.Image(sent2 
         .filterDate("2019-06-01", "2019-06-10")
         .filterBounds(Cairo)
@@ -121,6 +121,7 @@ var NDVI2 = image4.expression(
   
 Map.addLayer(NDVI, {min:0, max:1}, 'NDVI - JUNE');
 Map.addLayer(NDVI2, {min:0, max:1}, 'NDVI - DECEMBER');
+*/
 
 var image5 = ee.Image(Lsat
   .filterDate('2018-05-01', '2018-05-20')
