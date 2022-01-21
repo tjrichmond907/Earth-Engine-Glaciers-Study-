@@ -38,7 +38,21 @@ var image = ee.Image(sent2
 
 // And let's print the image to the console.
 print("A Sentinel-2 scene:", image);
+var image2 = ee.Image(sent2
+// We will then include a filter to get only images in the date range we are interested in
+.filterDate("2021-08-01", "2021-08-02")
+// Next we include a geographic filter to narrow the search to images at the location of our point
+.filterBounds(Montenegro)
+// Next we will also sort the collection by a metadata property, in our case cloud cover is a very useful one
+.sort("CLOUD_COVERAGE_ASSESSMENT")
+// Now lets select the first image out of this collection - i.e. the most cloud free image in the date range
+.first());
 
-//print(sent2);
+// And let's print the image to the console.
+print("A Sentinel-2 scene:", image);
+//APRIL
 Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic');
 Map.addLayer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR');
+//AUGUST
+Map.addLayer(image2, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic');
+Map.addLayer(image2, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR');
