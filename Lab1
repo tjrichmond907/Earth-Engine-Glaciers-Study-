@@ -174,4 +174,4 @@ var NDVI = image5.expression(
   }
   );
   
-Map.addLayer(NDVI, {min:0, max:1}, 'NDVI May')
+Map.addLayer(NDVI, {min:0, max:1}, 'NDVI May');
