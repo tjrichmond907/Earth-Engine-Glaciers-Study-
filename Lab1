@@ -156,4 +156,4 @@ var falseColorL8 = {
 };
 
 Map.addLayer(image5, trueColorL8, 'Landsat May Pan');
-Map.addLayer(image5, falseColorL8, 'Landsat May FIR')
+Map.addLayer(image5, falseColorL8, 'Landsat May FIR');
