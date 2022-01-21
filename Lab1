@@ -24,6 +24,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
 //Map.addLayer(hillshade, {min: 150, max:255}, 'Hillshade');
 
 //LAB2
+/*
 Map.setCenter(19.2552, 42.4343, 8);
 
 var image = ee.Image(sent2
@@ -63,7 +64,7 @@ Map.addLayer(image2, {bands: ['B11', 'B11', 'B4'], min:0, max:3000}, 'Agricultur
 Map.addLayer(image2, {bands: ['B8', 'B11', 'B4'], min:0, max:3000}, 'Land/Water August');
 //FALSE COLOR URBAN
 Map.addLayer(image2, {bands: ['B12', 'B11', 'B4'], min:0, max:3000}, 'False Color Urban August');
-
+*/
 
 //LAB3
 Map.setCenter(Cairo, 9);
