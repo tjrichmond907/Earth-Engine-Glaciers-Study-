@@ -62,3 +62,7 @@ Map.addLayer(image2, {bands: ['B11', 'B11', 'B4'], min:0, max:3000}, 'Agricultur
 Map.addLayer(image2, {bands: ['B8', 'B11', 'B4'], min:0, max:3000}, 'Land/Water August');
 //FALSE COLOR URBAN
 Map.addLayer(image2, {bands: ['B12', 'B11', 'B4'], min:0, max:3000}, 'False Color Urban August');
+
+
+//LAB3
+
