@@ -41,4 +41,4 @@ print("A Sentinel-2 scene:", image);
 
 //print(sent2);
 Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min:0, max:3000}, 'Panchromatic');
-Map.addLAyer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR');
+Map.addLayer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000}, 'False-Color IR');
