@@ -1,5 +1,7 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var elev = ee.Image("USGS/SRTMGL1_003");
+var elev = ee.Image("USGS/SRTMGL1_003"),
+    Pod = /* color: #d63000 */ee.Geometry.Point([19.252014880661886, 42.43196051109114]),
+    sent2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
@@ -9,7 +11,7 @@ var elev = ee.Image("USGS/SRTMGL1_003");
 //Map.addLayer(hillshade, {min: 150, max:255}, 'Hillshade');
 
 //LAB2
-var center: Point (19.2552, 42.4343);
+
 Map.setCenter(19.2552, 42.4343, 8);
 //var sent2 = ee.Image("COPERNICUS/S2/20180422T012719_20180422T012714_T52LHM");
 
@@ -17,7 +19,7 @@ var image = ee.Image(sent2
 // We will then include a filter to get only images in the date range we are interested in
 .filterDate("2021-04-01", "2021-04-31")
 // Next we include a geographic filter to narrow the search to images at the location of our point
-.filterBounds(center)
+.filterBounds(Pod)
 // Next we will also sort the collection by a metadata property, in our case cloud cover is a very useful one
 .sort("CLOUD_COVERAGE_ASSESSMENT")
 // Now lets select the first image out of this collection - i.e. the most cloud free image in the date range
