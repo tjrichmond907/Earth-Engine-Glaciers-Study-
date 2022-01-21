@@ -4,6 +4,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
     sent2 = ee.ImageCollection("COPERNICUS/S2"),
     Montenegro = 
     /* color: #98ff00 */
+    /* shown: false */
     /* displayProperties: [
       {
         "type": "rectangle"
@@ -23,9 +24,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
 //Map.addLayer(hillshade, {min: 150, max:255}, 'Hillshade');
 
 //LAB2
-
 Map.setCenter(19.2552, 42.4343, 8);
-//var sent2 = ee.Image("COPERNICUS/S2/20180422T012719_20180422T012714_T52LHM");
 
 var image = ee.Image(sent2
 // We will then include a filter to get only images in the date range we are interested in
@@ -41,4 +40,5 @@ var image = ee.Image(sent2
 print("A Sentinel-2 scene:", image);
 
 //print(sent2);
-Map.addLayer(image, {bands: ['B4', 'B3', 'B2']});
+Map.addLayer(image, {bands: ['B4', 'B3', 'B2'], min:0, max:3000, 'Panchromatic'});
+Map.addLAyer(image, {bands: ['B8', 'B4', 'B3'], min:0, max:3000, 'False-Color IR'})
