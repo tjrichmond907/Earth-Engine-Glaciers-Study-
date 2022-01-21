@@ -15,7 +15,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
           [19.379387529993352, 42.26351178955889],
           [19.379387529993352, 42.46138208345641]]], null, false),
     Cairo = /* color: #0b4a8b */ee.Geometry.Point([31.235731760337355, 30.05451753787784]),
-    Lsat = ee.ImageCollection("LANDSAT/LC08/C01/T2_SR");
+    Lsat = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
@@ -129,4 +129,28 @@ var image5 = ee.Image(Lsat
   .first()
   );
 
-print(image5);
+var image6 = ee.Image(Lsat
+  .filterDate('2018-07-01', '2018-07-20')
+  .filterBounds(Cairo)
+  .sort('CLOUD_COVER_ASSESSMENT')
+  .first()
+  );
+  
+var image7 = ee.Image(Lsat
+  .filterDate('2018-09-01', '2018-09-20')
+  .filterBounds(Cairo)
+  .sort('CLOUD_COVER_ASSESSMENT')
+  .first()
+  );
+  
+var trueColorL8 = {
+        bands: ["B4", "B3", "B2"],
+        min: 0,
+        max: 3000
+        };
+        
+var falseColorL8 = {
+      bands: ['B5', 'B4', 'B3'],
+      min:0,
+      max:3000
+};
