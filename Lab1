@@ -158,3 +158,9 @@ var falseColorL8 = {
 
 Map.addLayer(image5, trueColorL8, 'Landsat May Pan');
 Map.addLayer(image5, falseColorL8, 'Landsat May FIR');
+
+Map.addLayer(image6, trueColorL8, 'Landsat Jul Pan');
+Map.addLayer(image6, falseColorL8, 'Landsat Jul FIR');
+
+Map.addLayer(image7, trueColorL8, 'Landsat Sep Pan');
+Map.addLayer(image7, falseColorL8, 'Landsat Sep FIR');
