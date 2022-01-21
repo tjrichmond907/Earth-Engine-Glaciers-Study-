@@ -40,5 +40,5 @@ var image = ee.Image(sent2
 // And let's print the image to the console.
 print("A Sentinel-2 scene:", image);
 
-print(sent2);
+//print(sent2);
 Map.addLayer(sent2, {bands: ['B4', 'B3', 'B2']});
