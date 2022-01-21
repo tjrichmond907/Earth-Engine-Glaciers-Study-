@@ -164,3 +164,14 @@ Map.addLayer(image6, falseColorL8, 'Landsat Jul FIR');
 
 Map.addLayer(image7, trueColorL8, 'Landsat Sep Pan');
 Map.addLayer(image7, falseColorL8, 'Landsat Sep FIR');
+
+var NDVI = image5.expression(
+  '(NIR - RED) / (NIR + RED)',
+  {
+    RED: image3.select('SR_B4'),
+    NIR: image3.select('SR_B5'),
+    BLUE: image3.select('SR_B2')
+  }
+  );
+  
+Map.addLayer(NDVI, {min:0, max:1}, 'NDVI May')
