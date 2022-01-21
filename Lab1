@@ -99,3 +99,25 @@ Map.addLayer(image3, trueColor, 'Pancromatic-June');
 Map.addLayer(image3, falseColor, 'False Color-June');
 Map.addLayer(image4, trueColor, 'Pancromatic-December');
 Map.addLayer(image4, falseColor, 'False Color-December');
+
+var NDVI = image3.expression(
+  '(NIR - RED) / (NIR + RED)',
+  {
+    RED: image3.select('B4'),
+    NIR: image3.select('B8'),
+    BLUE: image3.select('B2')
+  }
+  );
+  
+var NDVI2 = image4.expression(
+  '(NIR - RED) / (NIR + RED)',
+  {
+    RED: image4.select('B4'),
+    NIR: image4.select('B8'),
+    BLUE: image4.select('B2')
+  }
+  );
+  
+Map.addLayer(NDVI, {min:0, max:1}, 'NDVI - JUNE');
+Map.addLayer(NDVI2, {min:0, max:1}, 'NDVI - DECEMBER');
+  
