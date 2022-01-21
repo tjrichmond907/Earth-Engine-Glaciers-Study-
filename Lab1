@@ -128,4 +128,5 @@ var image5 = ee.Image(Lsat
   .sort('CLOUD_COVER_ASSESSMENT')
   .first()
   );
-  
+
+print(image5);
