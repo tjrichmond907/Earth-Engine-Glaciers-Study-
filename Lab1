@@ -185,7 +185,7 @@ var NDVI = image6.expression(
   }
   );
  
-Map.addLayer(NDVI, {min:0, max:1}, 'NDVI July'); 
+//Map.addLayer(NDVI, {min:0, max:1}, 'NDVI July'); 
 
 var NDVI = image7.expression(
   '(NIR - RED) / (NIR + RED)',
