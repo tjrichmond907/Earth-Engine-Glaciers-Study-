@@ -154,3 +154,5 @@ var falseColorL8 = {
       min:0,
       max:3000
 };
+
+Map.addLayer(image5, trueColorL8, 'Landsat May Pan');
