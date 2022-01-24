@@ -208,7 +208,7 @@ Map.addLayer(NDVI, {min:0, max:1}, 'NDVI September');
 Map.setCenter(-156.47, 20.89, 9);
 
 var image8 = ee.Image(Lsat  
-  .filterDate('2018-09-01', '2018-09-20')
+  .filterDate('2018-04-01', '2018-09-20')
   .filterBounds(Maui)
   .sort('CLOUD_COVER_ASSESSMENT')
   .first()
@@ -217,7 +217,7 @@ var image8 = ee.Image(Lsat
 var trueColorL8 = {
         bands: ["SR_B4", "SR_B3", "SR_B2"],
         min: 0,
-        max: 65000
+        max: 30000
         };
 
 Map.addLayer(image8, trueColorL8, 'Maui TC');
