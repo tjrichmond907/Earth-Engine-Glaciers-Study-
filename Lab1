@@ -861,3 +861,6 @@ Map.addLayer(classified,
 {min: 0, max: 3, palette: ['pink', 'blue', 'green','yellow']},
 'classification');
 */
+
+
+//Lab5 
