@@ -16,8 +16,14 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
           [19.379387529993352, 42.46138208345641]]], null, false),
     Cairo = /* color: #0b4a8b */ee.Geometry.Point([31.235731760337355, 30.05451753787784]),
     Lsat = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2"),
-    Maui = /* color: #ffc82d */ee.Geometry.Point([-156.47296054188593, 20.889280673078435]),
-    MauiUrban = /* color: #ff00fd */ee.FeatureCollection(
+    Maui = 
+    /* color: #ffc82d */
+    /* shown: false */
+    ee.Geometry.Point([-156.47296054188593, 20.889280673078435]),
+    MauiUrban = 
+    /* color: #ff00fd */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Point([-156.47527902411514, 20.887612279957104]),
             {
@@ -168,7 +174,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "Landcover": 0,
               "system:index": "24"
             })]),
-    MauiWater = /* color: #0040c2 */ee.FeatureCollection(
+    MauiWater = 
+    /* color: #0040c2 */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Point([-156.4545302203175, 20.90179434402017]),
             {
@@ -319,7 +328,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "Landcover": 1,
               "system:index": "24"
             })]),
-    VegMaui = /* color: #08ff2c */ee.FeatureCollection(
+    VegMaui = 
+    /* color: #08ff2c */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Point([-156.51899436240342, 20.8377797421047]),
             {
@@ -470,7 +482,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "Landcover": 2,
               "system:index": "24"
             })]),
-    DescMaui = /* color: #fffd08 */ee.FeatureCollection(
+    DescMaui = 
+    /* color: #fffd08 */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Point([-156.50901378386442, 20.830206214620805]),
             {
@@ -809,6 +824,7 @@ Map.addLayer(NDVI, {min:0, max:1}, 'NDVI September');
 
 
 //Lab4
+/*
 Map.setCenter(-156.47, 20.89, 9);
 
 var image8 = ee.Image(Lsat  
@@ -844,3 +860,4 @@ Map.centerObject(classNames, 11);
 Map.addLayer(classified,
 {min: 0, max: 3, palette: ['pink', 'blue', 'green','yellow']},
 'classification');
+*/
