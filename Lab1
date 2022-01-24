@@ -834,7 +834,7 @@ var training = image8.select(bands).sampleRegions({
   scale: 30
 });
 
-var classifier = ee.Classifier.cart().train({
+var classifier = ee.Classifier.smileCart().train({
   features: training,
   classProperty: 'landcover',
   inputProperties: bands
