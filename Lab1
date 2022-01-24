@@ -205,11 +205,11 @@ Map.addLayer(NDVI, {min:0, max:1}, 'NDVI September');
 
 
 //Lab4
-Map.setCenter(31.24, 30.05, 9);
+Map.setCenter(-156.47, 20.89, 9);
 
 var image8 = ee.Image(Lsat  
   .filterDate('2018-09-01', '2018-09-20')
-  .filterBounds(Cairo)
+  .filterBounds(Maui)
   .sort('CLOUD_COVER_ASSESSMENT')
   .first()
   );
