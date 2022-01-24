@@ -15,7 +15,8 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
           [19.379387529993352, 42.26351178955889],
           [19.379387529993352, 42.46138208345641]]], null, false),
     Cairo = /* color: #0b4a8b */ee.Geometry.Point([31.235731760337355, 30.05451753787784]),
-    Lsat = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2");
+    Lsat = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2"),
+    Maui = /* color: #ffc82d */ee.Geometry.Point([-156.47296054188593, 20.889280673078435]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
