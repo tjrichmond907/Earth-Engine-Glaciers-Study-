@@ -830,13 +830,13 @@ var classNames = MauiUrban.merge(MauiWater).merge(VegMaui).merge(DescMaui);
 var bands = ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'];
 var training = image8.select(bands).sampleRegions({
   collection: classNames,
-  properties: ['landcover'],
+  properties: ['Landcover'],
   scale: 30
 });
 
 var classifier = ee.Classifier.smileCart().train({
   features: training,
-  classProperty: 'landcover',
+  classProperty: 'Landcover',
   inputProperties: bands
 });
 var classified = image8.select(bands).classify(classifier);
