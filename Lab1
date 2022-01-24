@@ -839,7 +839,7 @@ var classifier = ee.Classifier.cart().train({
   classProperty: 'landcover',
   inputProperties: bands
 });
-var classified = image.select(bands).classify(classifier);
+var classified = image8.select(bands).classify(classifier);
 Map.centerObject(classNames, 11);
 Map.addLayer(classified,
 {min: 0, max: 3, palette: ['pink', 'blue', 'green','yellow']},
