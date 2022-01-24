@@ -208,7 +208,7 @@ Map.addLayer(NDVI, {min:0, max:1}, 'NDVI September');
 Map.setCenter(-156.47, 20.89, 9);
 
 var image8 = ee.Image(Lsat  
-  .filterDate('2021-06-01', '2021-10-20')
+  .filterDate('2021-06-01', '2021-07-20')
   .filterBounds(Maui)
   .sort('CLOUD_COVER')
   .first()
