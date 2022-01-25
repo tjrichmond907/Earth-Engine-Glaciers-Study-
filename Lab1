@@ -1001,17 +1001,16 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
         "type": "rectangle"
       }
     ] */
-    ee.FeatureCollection(
-        [ee.Feature(
-            ee.Geometry.Polygon(
-                [[[14.453721473962053, 40.82957384136732],
-                  [14.453721473962053, 40.825092522897684],
-                  [14.461703727990374, 40.825092522897684],
-                  [14.461703727990374, 40.82957384136732]]], null, false),
-            {
-              "label": "Vegetation",
-              "system:index": "0"
-            })]),
+    ee.Feature(
+        ee.Geometry.Polygon(
+            [[[14.453721473962053, 40.82957384136732],
+              [14.453721473962053, 40.825092522897684],
+              [14.461703727990374, 40.825092522897684],
+              [14.461703727990374, 40.82957384136732]]], null, false),
+        {
+          "label": "Vegetation",
+          "system:index": "0"
+        }),
     VesuviusBare = 
     /* color: #6c624c */
     /* displayProperties: [
@@ -1019,17 +1018,16 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
         "type": "rectangle"
       }
     ] */
-    ee.FeatureCollection(
-        [ee.Feature(
-            ee.Geometry.Polygon(
-                [[[14.42395788872794, 40.819772705237234],
-                  [14.42395788872794, 40.81645996604224],
-                  [14.42545992577628, 40.81645996604224],
-                  [14.42545992577628, 40.819772705237234]]], null, false),
-            {
-              "label": "BareEarth",
-              "system:index": "0"
-            })]),
+    ee.Feature(
+        ee.Geometry.Polygon(
+            [[[14.42395788872794, 40.819772705237234],
+              [14.42395788872794, 40.81645996604224],
+              [14.42545992577628, 40.81645996604224],
+              [14.42545992577628, 40.819772705237234]]], null, false),
+        {
+          "label": "BareEarth",
+          "system:index": "0"
+        }),
     VesuviusUrban = 
     /* color: #ff0606 */
     /* displayProperties: [
@@ -1037,17 +1035,16 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
         "type": "rectangle"
       }
     ] */
-    ee.FeatureCollection(
-        [ee.Feature(
-            ee.Geometry.Polygon(
-                [[[14.309617272569115, 40.86042390177279],
-                  [14.309617272569115, 40.85367247830755],
-                  [14.317127457810814, 40.85367247830755],
-                  [14.317127457810814, 40.86042390177279]]], null, false),
-            {
-              "label": "Urban",
-              "system:index": "0"
-            })]);
+    ee.Feature(
+        ee.Geometry.Polygon(
+            [[[14.309617272569115, 40.86042390177279],
+              [14.309617272569115, 40.85367247830755],
+              [14.317127457810814, 40.85367247830755],
+              [14.317127457810814, 40.86042390177279]]], null, false),
+        {
+          "label": "Urban",
+          "system:index": "0"
+        });
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
@@ -1332,7 +1329,7 @@ var image10 = ee.Image(Lsat
         max: 30000
         };
 
-Map.addLayer(image10, trueColorL8, 'Maui TC');
+Map.addLayer(image10, trueColorL8, 'Vesuvius TC');
 
 var subset = image10.select('SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7');
 var samples = ee.FeatureCollection([VesuviusWater,VesuviusVeg,VesuviusUrban,VesuviusBare]);
