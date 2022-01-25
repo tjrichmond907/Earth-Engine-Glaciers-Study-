@@ -1186,7 +1186,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "system:index": "2"
             })]),
     SalmonArmSnow = 
-    /* color: #ffffff */
+    /* color: #08fff9 */
     /* displayProperties: [
       {
         "type": "rectangle"
@@ -1271,6 +1271,226 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
                   [-119.25650043265381, 50.68358808872836]]], null, false),
             {
               "landcover": 4,
+              "system:index": "2"
+            })]),
+    SalmonArmWaterVal = 
+    /* color: #000eff */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.27728693141533, 50.70402215279123],
+                  [-119.27728693141533, 50.70303009321824],
+                  [-119.27614967479302, 50.70303009321824],
+                  [-119.27614967479302, 50.70402215279123]]], null, false),
+            {
+              "Landcover": 0,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.28396448265121, 50.71531606546645],
+                  [-119.28396448265121, 50.712870442487066],
+                  [-119.28018793235825, 50.712870442487066],
+                  [-119.28018793235825, 50.71531606546645]]], null, false),
+            {
+              "Landcover": 0,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.28579429767791, 50.73588281043271],
+                  [-119.28579429767791, 50.7306132888417],
+                  [-119.28279022358123, 50.7306132888417],
+                  [-119.28279022358123, 50.73588281043271]]], null, false),
+            {
+              "Landcover": 0,
+              "system:index": "2"
+            })]),
+    SalmonArmVegVal = 
+    /* color: #02ff33 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.32955121680061, 50.71959798490436],
+                  [-119.32955121680061, 50.716174389802106],
+                  [-119.3248305289344, 50.716174389802106],
+                  [-119.3248305289344, 50.71959798490436]]], null, false),
+            {
+              "Landcover": 1,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.25023988003689, 50.71792873670672],
+                  [-119.25023988003689, 50.71629842644828],
+                  [-119.24502566571194, 50.71629842644828],
+                  [-119.24502566571194, 50.71792873670672]]], null, false),
+            {
+              "Landcover": 1,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.27602313986321, 50.680822232170286],
+                  [-119.27602313986321, 50.67698788052328],
+                  [-119.26954292288323, 50.67698788052328],
+                  [-119.26954292288323, 50.680822232170286]]], null, false),
+            {
+              "Landcover": 1,
+              "system:index": "2"
+            })]),
+    SalmonArmUrbanVal = 
+    /* color: #ff0606 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.29000904242453, 50.69572677403065],
+                  [-119.29000904242453, 50.6940141359624],
+                  [-119.28676893393454, 50.6940141359624],
+                  [-119.28676893393454, 50.69572677403065]]], null, false),
+            {
+              "Landcover": 2,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.31935729879544, 50.69516627969571],
+                  [-119.31935729879544, 50.69405169950159],
+                  [-119.31798400777981, 50.69405169950159],
+                  [-119.31798400777981, 50.69516627969571]]], null, false),
+            {
+              "Landcover": 2,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.28805439829351, 50.69950495810731],
+                  [-119.28805439829351, 50.69869628529296],
+                  [-119.28624122499944, 50.69869628529296],
+                  [-119.28624122499944, 50.69950495810731]]], null, false),
+            {
+              "Landcover": 2,
+              "system:index": "2"
+            })]),
+    SalmonArmSnowVal = 
+    /* color: #00ffff */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.40490082745079, 50.74007403960425],
+                  [-119.40490082745079, 50.738281542719776],
+                  [-119.40185383800987, 50.738281542719776],
+                  [-119.40185383800987, 50.74007403960425]]], null, false),
+            {
+              "Landcover": 3,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.3989785099459, 50.744120484833026],
+                  [-119.3989785099459, 50.74170352268939],
+                  [-119.39584568981651, 50.74170352268939],
+                  [-119.39584568981651, 50.744120484833026]]], null, false),
+            {
+              "Landcover": 3,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.41528634075645, 50.74075299778056],
+                  [-119.41528634075645, 50.73925927679848],
+                  [-119.41125229839805, 50.73925927679848],
+                  [-119.41125229839805, 50.74075299778056]]], null, false),
+            {
+              "Landcover": 3,
+              "system:index": "2"
+            })]),
+    SalmonArmDescVal = 
+    /* color: #ffe606 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.FeatureCollection(
+        [ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.33812137182396, 50.67467183273601],
+                  [-119.33812137182396, 50.67080977992846],
+                  [-119.3350314670388, 50.67080977992846],
+                  [-119.3350314670388, 50.67467183273601]]], null, false),
+            {
+              "Landcover": 4,
+              "system:index": "0"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.24957079381609, 50.68506399831642],
+                  [-119.24957079381609, 50.6832558009172],
+                  [-119.24500030965471, 50.6832558009172],
+                  [-119.24500030965471, 50.68506399831642]]], null, false),
+            {
+              "Landcover": 4,
+              "system:index": "1"
+            }),
+        ee.Feature(
+            ee.Geometry.Polygon(
+                [[[-119.23376236166894, 50.70148184348448],
+                  [-119.23376236166894, 50.700109187981774],
+                  [-119.2297926923269, 50.700109187981774],
+                  [-119.2297926923269, 50.70148184348448]]], null, false),
+            {
+              "Landcover": 4,
               "system:index": "2"
             })]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
