@@ -976,7 +976,11 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "landcover": 4,
               "system:index": "4"
             })]),
-    Vesuvius = /* color: #8b00ff */ee.Geometry.Point([14.426047795379645, 40.821205724100736]);
+    Vesuvius = /* color: #8b00ff */ee.Geometry.Point([14.426047795379645, 40.821205724100736]),
+    VesuviusWater = /* color: #0820ff */ee.FeatureCollection([]),
+    VesuviusVeg = /* color: #04ff1d */ee.FeatureCollection([]),
+    VesuviusBare = /* color: #6c624c */ee.FeatureCollection([]),
+    VesuviusUrban = /* color: #ff0606 */ee.FeatureCollection([]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
@@ -1246,7 +1250,7 @@ Map.addLayer(classified,
 
 //Lab6
 
-Map.setCenter(14.43, 40.82, 9);
+Map.setCenter(14.43, 40.82, 12);
 
 var image10 = ee.Image(Lsat  
   .filterDate('2021-01-01', '2021-12-31')
@@ -1258,7 +1262,7 @@ var image10 = ee.Image(Lsat
   var trueColorL8 = {
         bands: ["SR_B4", "SR_B3", "SR_B2"],
         min: 0,
-        max: 30000
+        max: 15000
         };
 
 Map.addLayer(image10, trueColorL8, 'Maui TC');
