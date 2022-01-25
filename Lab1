@@ -1376,7 +1376,7 @@ var image11 = ee.Image(Lsat
   var trueColorL8 = {
         bands: ["SR_B4", "SR_B3", "SR_B2"],
         min: 0,
-        max: 30000
+        max: 3000
         };
 
 Map.addLayer(image11, trueColorL8, 'Lake Louise TC')
