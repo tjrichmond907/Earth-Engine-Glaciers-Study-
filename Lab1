@@ -1,9 +1,13 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var elev = ee.Image("USGS/SRTMGL1_003"),
-    Pod = /* color: #d63000 */ee.Geometry.Point([19.252014880661886, 42.43196051109114]),
+    Pod = 
+    /* color: #d63000 */
+    /* shown: false */
+    ee.Geometry.Point([19.252014880661886, 42.43196051109114]),
     sent2 = ee.ImageCollection("COPERNICUS/S2"),
     Montenegro = 
     /* color: #98ff00 */
+    /* shown: false */
     /* displayProperties: [
       {
         "type": "rectangle"
@@ -14,7 +18,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
           [19.140434893274602, 42.26351178955889],
           [19.379387529993352, 42.26351178955889],
           [19.379387529993352, 42.46138208345641]]], null, false),
-    Cairo = /* color: #0b4a8b */ee.Geometry.Point([31.235731760337355, 30.05451753787784]),
+    Cairo = 
+    /* color: #0b4a8b */
+    /* shown: false */
+    ee.Geometry.Point([31.235731760337355, 30.05451753787784]),
     Lsat = ee.ImageCollection("LANDSAT/LC08/C02/T1_L2"),
     Maui = 
     /* color: #ffc82d */
@@ -636,7 +643,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "Landcover": 3,
               "system:index": "24"
             })]),
-    WaterMauiPoly = /* color: #0000ff */ee.FeatureCollection(
+    WaterMauiPoly = 
+    /* color: #0000ff */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-156.47406815119587, 20.898986784733165],
@@ -698,7 +708,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "landcover": 0,
               "system:index": "4"
             })]),
-    UrbanMauiPoly = /* color: #ff04c3 */ee.FeatureCollection(
+    UrbanMauiPoly = 
+    /* color: #ff04c3 */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-156.4769247939106, 20.88741683527012],
@@ -763,7 +776,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "landcover": 1,
               "system:index": "4"
             })]),
-    VegMauiPoly = /* color: #04ff29 */ee.FeatureCollection(
+    VegMauiPoly = 
+    /* color: #04ff29 */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-156.50863157049926, 20.882196602756707],
@@ -813,7 +829,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "landcover": 2,
               "system:index": "3"
             })]),
-    DescMauiPoly = /* color: #fff20a */ee.FeatureCollection(
+    DescMauiPoly = 
+    /* color: #fff20a */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-156.4742691244323, 20.85758897601098],
@@ -866,7 +885,10 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
               "landcover": 3,
               "system:index": "4"
             })]),
-    BareGroundMauiPoly = /* color: #c0b07f */ee.FeatureCollection(
+    BareGroundMauiPoly = 
+    /* color: #c0b07f */
+    /* shown: false */
+    ee.FeatureCollection(
         [ee.Feature(
             ee.Geometry.Polygon(
                 [[[-156.49455451348925, 20.874720945464798],
