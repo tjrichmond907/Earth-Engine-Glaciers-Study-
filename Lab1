@@ -1320,7 +1320,7 @@ Map.addLayer(classified,
 
 
 //Lab6
-
+/*
 Map.setCenter(14.43, 40.82, 12);
 
 var image10 = ee.Image(Lsat  
@@ -1360,7 +1360,7 @@ var plotOptions = {
 }};
 
 print(Chart1.setOptions(plotOptions));
-
+*/
 
 
 //Lab7
