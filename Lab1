@@ -1216,5 +1216,5 @@ var classifier = ee.Classifier.smileCart().train({
 var classified = image9.select(bands).classify(classifier);
 Map.centerObject(classNames, 11);
 Map.addLayer(classified,
-{min: 0, max: 3, palette: ['blue', 'pink', 'green','yellow', 'brown']},
+{min: 0, max: 4, palette: ['blue', 'pink', 'green','yellow', 'brown']},
 'classification');
