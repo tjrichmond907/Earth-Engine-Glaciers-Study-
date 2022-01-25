@@ -1051,7 +1051,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
           "label": "Urban",
           "system:index": "0"
         }),
-    LakeLouise = /* color: #ff0000 */ee.Geometry.Point([-116.2252712102831, 51.4138556203124]);
+    SalmonArm = /* color: #ff0000 */ee.Geometry.Point([-119.2821733310548, 50.701293215216424]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 //LAB1 
@@ -1365,10 +1365,10 @@ print(Chart1.setOptions(plotOptions));
 
 //Lab7
 
-Map.setCenter(-116.23,51.41,9);
+Map.setCenter(-119.28,50.70,9);
 var image11 = ee.Image(Lsat  
   .filterDate('2021-01-01', '2021-12-31')
-  .filterBounds(LakeLouise)
+  .filterBounds(SalmonArm)
   .sort('CLOUD_COVER')
   .first()
   );
