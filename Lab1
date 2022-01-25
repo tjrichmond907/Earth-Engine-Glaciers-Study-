@@ -1359,7 +1359,7 @@ var plotOptions = {
     3: {color: 'green'}
 }};
 
-print(Chart1);
+print(Chart1, plotOptions);
 
 
 
