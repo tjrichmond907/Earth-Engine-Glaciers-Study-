@@ -715,7 +715,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
                   [-156.47455372114143, 20.88780776167302],
                   [-156.47585191030464, 20.887827809153425]]]),
             {
-              "landcover": "",
+              "landcover": 1,
               "system:index": "0"
             }),
         ee.Feature(
@@ -725,7 +725,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
                   [-156.44166779937603, 20.889493194149154],
                   [-156.43948984565594, 20.89227973696565]]]),
             {
-              "landcover": "",
+              "landcover": 1,
               "system:index": "1"
             }),
         ee.Feature(
@@ -740,7 +740,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
                   [-156.43795565559475, 20.892079238609004],
                   [-156.43915728523342, 20.89037524147423]]]),
             {
-              "landcover": "",
+              "landcover": 1,
               "system:index": "2"
             }),
         ee.Feature(
@@ -750,7 +750,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
                   [-156.4299426656087, 20.90087451733931],
                   [-156.43035036137897, 20.901195248779914]]]),
             {
-              "landcover": "",
+              "landcover": 1,
               "system:index": "3"
             }),
         ee.Feature(
@@ -760,7 +760,7 @@ var elev = ee.Image("USGS/SRTMGL1_003"),
                   [-156.48700067099756, 20.892211035925307],
                   [-156.48702212866968, 20.8937746854916]]]),
             {
-              "landcover": "",
+              "landcover": 1,
               "system:index": "4"
             })]),
     VegMauiPoly = /* color: #04ff29 */ee.FeatureCollection(
