@@ -1213,7 +1213,7 @@ var classifier = ee.Classifier.smileCart().train({
   classProperty: 'landcover',
   inputProperties: bands
 });
-var classified = image8.select(bands).classify(classifier);
+var classified = image9.select(bands).classify(classifier);
 Map.centerObject(classNames, 11);
 Map.addLayer(classified,
 {min: 0, max: 3, palette: ['blue', 'pink', 'green','yellow', 'brown']},
