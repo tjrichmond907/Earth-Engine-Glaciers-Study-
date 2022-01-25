@@ -1182,3 +1182,39 @@ Map.addLayer(classified,
 
 
 //Lab5 
+
+Map.setCenter(-156.47, 20.89, 9);
+
+var image9 = ee.Image(Lsat  
+  .filterDate('2021-01-01', '2021-12-31')
+  .filterBounds(Maui)
+  .sort('CLOUD_COVER')
+  .first()
+  );
+  
+  var trueColorL8 = {
+        bands: ["SR_B4", "SR_B3", "SR_B2"],
+        min: 0,
+        max: 30000
+        };
+
+Map.addLayer(image9, trueColorL8, 'Maui TC');
+
+var classNames = WaterMauiPoly.merge(UrbanMauiPoly).merge(VegMauiPoly).merge(DescMauiPoly).merge(BareGroundMauiPoly);
+var bands = ['SR_B2', 'SR_B3', 'SR_B4', 'SR_B5', 'SR_B6', 'SR_B7'];
+var training = image9.select(bands).sampleRegions({
+  collection: classNames,
+  properties: ['landcover'],
+  scale: 30
+});
+
+var classifier = ee.Classifier.smileCart().train({
+  features: training,
+  classProperty: 'landcover',
+  inputProperties: bands
+});
+var classified = image8.select(bands).classify(classifier);
+Map.centerObject(classNames, 11);
+Map.addLayer(classified,
+{min: 0, max: 3, palette: ['blue', 'pink', 'green','yellow', 'brown']},
+'classification');
