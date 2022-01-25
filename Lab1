@@ -1842,3 +1842,19 @@ Map.addLayer(classified,
 {min: 0, max: 4, palette: ['blue', 'green', 'red','white', 'yellow']},
 'classification');
 
+var valNames = SalmonArmWaterVal.merge(SalmonArmVegVal).merge(SalmonArmUrbanVal)
+              .merge(SalmonArmSnowVal).merge(SalmonArmDescVal);
+              
+
+var validation = classified.sampleRegions({
+  collection: valNames,
+  properties: ['Landcover'],
+  scale: 30,
+});
+
+//Compare the landcover of your validation data against the classification result
+var testAccuracy = validation.errorMatrix('landcover', 'classification');
+//Print the error matrix to the console
+print('Validation error matrix: ', testAccuracy);
+//Print the overall accuracy to the console
+print('Validation overall accuracy: ', testAccuracy.accuracy());
