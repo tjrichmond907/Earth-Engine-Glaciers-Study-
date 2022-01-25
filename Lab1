@@ -1204,7 +1204,7 @@ Map.addLayer(classified,
 
 
 //Lab5 
-
+/*
 Map.setCenter(-156.47, 20.89, 9);
 
 var image9 = ee.Image(Lsat  
@@ -1240,3 +1240,8 @@ Map.centerObject(classNames, 11);
 Map.addLayer(classified,
 {min: 0, max: 4, palette: ['blue', 'pink', 'green','yellow', 'brown']},
 'classification');
+*/
+
+
+//Lab6
+
