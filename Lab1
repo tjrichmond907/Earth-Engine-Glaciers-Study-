@@ -1365,7 +1365,7 @@ print(Chart1.setOptions(plotOptions));
 
 //Lab7
 
-Map.setCenter(-116.23,51.41);
+Map.setCenter(-116.23,51.41,9);
 var image11 = ee.Image(Lsat  
   .filterDate('2021-01-01', '2021-12-31')
   .filterBounds(LakeLouise)
@@ -1379,5 +1379,5 @@ var image11 = ee.Image(Lsat
         max: 30000
         };
 
-Map.addLayer(image11, trueColorL8, 9)
+Map.addLayer(image11, trueColorL8, 'Lake Louise TC')
 
