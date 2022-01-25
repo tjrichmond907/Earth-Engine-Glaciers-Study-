@@ -1853,7 +1853,7 @@ var validation = classified.sampleRegions({
 });
 
 //Compare the landcover of your validation data against the classification result
-var testAccuracy = validation.errorMatrix('landcover', 'classification');
+var testAccuracy = validation.errorMatrix('Landcover', 'classification');
 //Print the error matrix to the console
 print('Validation error matrix: ', testAccuracy);
 //Print the overall accuracy to the console
