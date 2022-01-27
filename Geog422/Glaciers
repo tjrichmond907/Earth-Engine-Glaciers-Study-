@@ -1,9 +1,20 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.64291102608853]),
-    sent1 = ee.ImageCollection("COPERNICUS/S1_GRD");
+    sent1 = ee.ImageCollection("COPERNICUS/S1_GRD"),
+    sent2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
+/*
 var K_glacier = ee.Image(sent1 
+        .filterDate("2014-06-14", "2021-01-01")
+        .filterBounds(Glacier)
+        .sort("CLOUD_COVERAGE_ASSESSMENT")
+        .first()
+  );
+  
+Map.addLayer(K_glacier);
+*/
+var K_glacier = ee.Image(sent2 
         .filterDate("2014-06-14", "2021-01-01")
         .filterBounds(Glacier)
         .sort("CLOUD_COVERAGE_ASSESSMENT")
