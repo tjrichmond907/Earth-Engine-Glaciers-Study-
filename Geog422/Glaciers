@@ -1,54 +1,19 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Glacier = 
-    /* color: #ff9999 */
+var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.64291102608853]),
+    sent1 = ee.ImageCollection("COPERNICUS/S1_GRD"),
+    sent2 = ee.ImageCollection("COPERNICUS/S2"),
+    Glacier_poly = 
+    /* color: #0fd6c8 */
     /* displayProperties: [
-      {
-        "type": "marker"
-      },
       {
         "type": "rectangle"
       }
     ] */
-    ee.Geometry({
-      "type": "GeometryCollection",
-      "geometries": [
-        {
-          "type": "Point",
-          "coordinates": [
-            -33.00481650636423,
-            68.64291102608853
-          ]
-        },
-        {
-          "type": "Polygon",
-          "coordinates": [
-            [
-              [
-                -33.45318603515625,
-                68.7781248200124
-              ],
-              [
-                -33.45318603515625,
-                68.41529680154949
-              ],
-              [
-                -32.25567626953125,
-                68.41529680154949
-              ],
-              [
-                -32.25567626953125,
-                68.7781248200124
-              ]
-            ]
-          ],
-          "geodesic": false,
-          "evenOdd": true
-        }
-      ],
-      "coordinates": []
-    }),
-    sent1 = ee.ImageCollection("COPERNICUS/S1_GRD"),
-    sent2 = ee.ImageCollection("COPERNICUS/S2");
+    ee.Geometry.Polygon(
+        [[[-33.50262451171875, 68.81140590731658],
+          [-33.50262451171875, 68.3824349257512],
+          [-32.17327880859375, 68.3824349257512],
+          [-32.17327880859375, 68.81140590731658]]], null, false);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
 /*
