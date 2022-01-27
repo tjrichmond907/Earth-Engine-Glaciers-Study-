@@ -1,5 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.64291102608853]);
+var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.64291102608853]),
+    imageCollection = ee.ImageCollection("COPERNICUS/S1_GRD");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
 
