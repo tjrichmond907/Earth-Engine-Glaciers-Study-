@@ -37,6 +37,17 @@ var K_glacier = ee.Image(sent2
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         .first()
   );
+
+var NDVI = K_glacier.expression(
+  '(NIR - RED) / (NIR + RED)',
+  {
+    RED: K_glacier.select('B4'),
+    NIR: K_glacier.select('B8'),
+    BLUE: K_glacier.select('B2')
+  }
+  );  
+  
+Map.addLayer(NDVI);  
   
 Map.addLayer(K_glacier);
 
