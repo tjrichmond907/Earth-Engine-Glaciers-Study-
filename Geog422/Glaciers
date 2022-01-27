@@ -48,7 +48,7 @@ var K_glacier2 = ee.Image(sent2
   .sort('CLOUD_COVERAGE_ASSESSMENT')
   .first());
 
-
+Map.addLayer(K_glacier2);
 
 /*
 var dataset = ee.Image('OSU/GIMP/DEM');
