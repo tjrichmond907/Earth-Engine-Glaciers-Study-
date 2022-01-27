@@ -41,7 +41,7 @@ var K_glacier = ee.Image(sent2
 var falseColor = {
       bands: ['B8', 'B4', 'B3'],
       min:0,
-      max:2000
+      max:5000
 };
   
 Map.addLayer(K_glacier, falseColor, '2018 falsecolor');
