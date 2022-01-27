@@ -47,7 +47,7 @@ var NDVI = K_glacier.expression(
   }
   );  
   
-Map.addLayer(K_glacier, NDVI,'NDVI');  
+Map.addLayer(NDVI,{min:0, max:1}, 'NDVI');  
   
 Map.addLayer(K_glacier);
 
