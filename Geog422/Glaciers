@@ -34,7 +34,7 @@ Map.addLayer(K_glacier);
 var K_glacier = ee.Image(sent2 
         .filterDate("2018-05-14", "2018-07-31")
         .filterBounds(Glacier_poly)
-        .sort("CLOUD_COVERAGE_ASSESSMENT")
+        .sort("CLOUD_COVERAGE")
         .first()
   );
   
