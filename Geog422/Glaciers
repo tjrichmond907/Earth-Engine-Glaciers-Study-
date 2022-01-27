@@ -10,4 +10,4 @@ var K_glacier = ee.Image(sent1
         .first()
   );
   
-map.addLayer(k_glacier);
+Map.addLayer(k_glacier);
