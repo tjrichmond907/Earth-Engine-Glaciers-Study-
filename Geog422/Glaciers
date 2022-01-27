@@ -1,5 +1,52 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.64291102608853]),
+var Glacier = 
+    /* color: #ff9999 */
+    /* displayProperties: [
+      {
+        "type": "marker"
+      },
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry({
+      "type": "GeometryCollection",
+      "geometries": [
+        {
+          "type": "Point",
+          "coordinates": [
+            -33.00481650636423,
+            68.64291102608853
+          ]
+        },
+        {
+          "type": "Polygon",
+          "coordinates": [
+            [
+              [
+                -33.45318603515625,
+                68.7781248200124
+              ],
+              [
+                -33.45318603515625,
+                68.41529680154949
+              ],
+              [
+                -32.25567626953125,
+                68.41529680154949
+              ],
+              [
+                -32.25567626953125,
+                68.7781248200124
+              ]
+            ]
+          ],
+          "geodesic": false,
+          "evenOdd": true
+        }
+      ],
+      "coordinates": []
+    }),
     sent1 = ee.ImageCollection("COPERNICUS/S1_GRD"),
     sent2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
