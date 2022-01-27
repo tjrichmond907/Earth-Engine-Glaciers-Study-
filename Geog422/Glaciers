@@ -9,3 +9,5 @@ var K_glacier = ee.Image(sent1
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         .first()
   );
+  
+map.addLayer(k_glacier);
