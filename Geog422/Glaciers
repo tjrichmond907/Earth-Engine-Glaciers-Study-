@@ -33,7 +33,7 @@ var K_glacier = ee.Image(sent2
         .first()
   );
   
-Map.addLayer(K_glacier, 'Sentinel2 Glacier coverage');
+Map.addLayer(K_glacier);
 
 var dataset = ee.Image('OSU/GIMP/DEM');
 var elevation = dataset.select('elevation');
