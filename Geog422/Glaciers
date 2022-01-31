@@ -158,7 +158,7 @@ var LS_to1 = LS_to0.expression(
 });
 // Visualize
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
-Map.addLayer(LS_to1, {min:-1,max:1, palette:['black', 'white']}, "water");
+Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
 
 //Calculate the water surface area
 var areaImage = LS_to1.multiply(ee.Image.pixelArea());
