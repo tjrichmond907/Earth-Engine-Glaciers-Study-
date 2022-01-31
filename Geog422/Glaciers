@@ -141,6 +141,10 @@ var NDWI = K_glacier.expression(
 
 Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
 
+var h20mask = function(image) {
+  return image.updateMask(image.gt(0.2));
+};
+
 // Convert pixels with water to 1
 var h20 = h20mask(K_glacier);
 Map.addLayer(h20,{},"h20");
