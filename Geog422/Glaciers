@@ -18,10 +18,7 @@ var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.6429
     Glacier_el_change = /* color: #ffffff */ee.Geometry.LineString(
         [[-33.05724458712461, 68.64767555630118],
          [-32.94532136935117, 68.60889063093741]]),
-    Glacier_boundaries = 
-    /* color: #05d1d6 */
-    /* shown: false */
-    ee.Geometry.Polygon(
+    Glacier_boundaries = /* color: #05d1d6 */ee.Geometry.Polygon(
         [[[-32.96883303015629, 68.60240620192356],
           [-32.95578676550785, 68.60891862526032],
           [-32.94068056433598, 68.61367650913809],
@@ -78,7 +75,20 @@ var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.6429
           [-33.07192749268376, 68.62357155805158],
           [-33.053388063972825, 68.61506049242736],
           [-33.03210205323064, 68.61105416756027],
-          [-32.9751104760822, 68.59426991119402]]]);
+          [-32.9751104760822, 68.59426991119402]]]),
+    Gl_b = /* color: #98ff00 */ee.Geometry.Polygon(
+        [[[-32.95021987951273, 68.61397568315442],
+          [-32.86232925451273, 68.6169801026737],
+          [-33.04085708654398, 68.71689749684231],
+          [-33.08754898107523, 68.82232378135643],
+          [-32.83486343420023, 69.00611386039922],
+          [-32.86782241857523, 69.06900059583977],
+          [-33.25783706701273, 69.090576329432],
+          [-33.27156997716898, 69.0041457456146],
+          [-33.77419448888773, 68.939099045497],
+          [-33.35396743810648, 68.64600209074379],
+          [-33.10677505529398, 68.63900022295792],
+          [-32.96944595373148, 68.59594071520773]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
 /*
@@ -97,7 +107,7 @@ var K_glacier = ee.Image(sent2
         .filterBounds(Glacier)
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         .first()
-        .clip(Glacier_boundaries)
+        .clip(Gl_b)
   );
 
 var falseColor = {
@@ -170,7 +180,7 @@ var waterArea = waterMap.multiply(area).rename('waterArea');
 
 var stats = waterArea.reduceRegion({
     reducer: ee.Reducer.sum(), 
-    geometry: Glacier_boundaries, 
+    geometry: Gl_b, 
     scale: 10,
   });
 
