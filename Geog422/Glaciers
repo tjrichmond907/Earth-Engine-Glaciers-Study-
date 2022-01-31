@@ -146,7 +146,7 @@ var h20mask = function(image) {
 };
 
 // Convert pixels with water to 1
-var h20 = h20mask(K_glacier);
+var h20 = h20mask(NDWI);
 Map.addLayer(h20,{},"h20");
 var LS_to0 = h20.expression(
     '0 * LS', {
