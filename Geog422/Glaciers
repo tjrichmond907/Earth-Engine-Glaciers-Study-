@@ -30,7 +30,7 @@ var K_glacier = ee.Image(sent1
   
 Map.addLayer(K_glacier);
 */
-//  NDWI  (blue - red / bleu + red)
+//  NDWI  (blue - red / blue + red)
 var K_glacier = ee.Image(sent2 
         .filterDate("2018-05-14", "2018-07-31")
         .filterBounds(Glacier)
@@ -65,3 +65,15 @@ var elevationVis = {
 Map.setCenter(-41.0, 76.0, 4);
 Map.addLayer(elevation, elevationVis, 'Elevation');
 */
+
+//clasisfier test of surface glacial lakes
+var NDWI = K_glacier.expression(
+        "(BLUE - RED) / (BLUE + RED)",
+        {
+          RED: K_glacier.select("B4"),    //  RED
+          NIR: K_glacier.select("B8"),    // NIR
+          BLUE: K_glacier.select("B2")    // BLUE
+        });
+
+Map.addLayer(NDWI, {min: 0, max: 1}, "NDVI");
+
