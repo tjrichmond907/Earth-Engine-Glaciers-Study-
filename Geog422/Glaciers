@@ -170,7 +170,7 @@ var waterArea = waterMap.multiply(area).rename('waterArea');
 
 var stats = waterArea.reduceRegion({
     reducer: ee.Reducer.sum(), 
-    geometry: geometry, 
+    geometry: Glacier_boundaries, 
     scale: 10,
   });
 
