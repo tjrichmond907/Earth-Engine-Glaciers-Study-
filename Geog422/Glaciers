@@ -141,3 +141,16 @@ var NDWI = K_glacier.expression(
 
 Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
 
+// Convert pixels with water to 1
+var h20 = h20mask(K_glacier);
+Map.addLayer(h20,{},"h20");
+var LS_to0 = h20.expression(
+    '0 * LS', {
+      'LS': h20
+});
+var LS_to1 = LS_to0.expression(
+    '1 + LS', {
+      'LS': LS_to0
+});
+// Visualize
+Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
