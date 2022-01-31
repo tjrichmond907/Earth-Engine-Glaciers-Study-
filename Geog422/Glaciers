@@ -163,7 +163,7 @@ Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
 //Calculate the water surface area
 var water = 1;
 
-var waterMap = water.gt(water);
+var waterMap = LS_to1.gt(LS_to1);
 
 var area = ee.Image.pixelArea();
 var waterArea = waterMap.multiply(area).rename('waterArea');
