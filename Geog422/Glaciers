@@ -168,7 +168,7 @@ var LS_PA = LS_to1.multiply(ee.Image.pixelArea());
 // Print sum
 var stats = LS_PA.reduceRegion({
   reducer: ee.Reducer.sum(),
-  geometry: table,
+  //geometry: table,
   scale: 10,
   maxPixels: 1e13
 });
