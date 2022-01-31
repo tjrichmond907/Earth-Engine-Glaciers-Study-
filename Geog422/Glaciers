@@ -161,16 +161,17 @@ var LS_to1 = LS_to0.expression(
 Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
 
 //Calculate the water surface area
-//var areaImage = LS_to1.multiply(ee.Image.pixelArea());
-//print(areaImage);
-var LS_PA = LS_to1.multiply(ee.Image.pixelArea());
+var water = 1;
 
-// Print sum
-var stats = LS_PA.reduceRegion({
-  reducer: ee.Reducer.sum(),
-  //geometry: table,
-  scale: 10,
-  maxPixels: 1e13
-});
+var waterMap = water.gt(water);
 
-print(stats);
+var area = ee.Image.pixelArea();
+var waterArea = waterMap.multiply(area).rename('waterArea');
+
+var stats = waterArea.reduceRegion({
+    reducer: ee.Reducer.sum(), 
+    geometry: geometry, 
+    scale: 10,
+  });
+
+print(image.set(stats));
