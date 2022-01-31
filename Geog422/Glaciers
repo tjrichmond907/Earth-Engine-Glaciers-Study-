@@ -46,7 +46,8 @@ var falseColor = {
   
 Map.addLayer(K_glacier, falseColor, '2018 falsecolor');
 
-
+//K-glacier 2019
+/*
 var K_glacier2 = ee.Image(sent2
   .filterDate('2019-05-14', '2019-07-31')
   .filterBounds(Glacier)
@@ -54,6 +55,7 @@ var K_glacier2 = ee.Image(sent2
   .first());
 
 Map.addLayer(K_glacier2, falseColor, '2019 falsecolor');
+*/
 
 /*
 var dataset = ee.Image('OSU/GIMP/DEM');
