@@ -289,5 +289,5 @@ var stats_2 = LS_PA_2.reduceRegion({
 
 print(stats_2);
 
-print(('stats + stats_2')/1000000, 'Square Kilometers');
+print(('stats + stats_2')/'1000000', 'Square Kilometers');
 
