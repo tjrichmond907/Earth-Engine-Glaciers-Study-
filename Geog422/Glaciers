@@ -273,14 +273,21 @@ var LS_to3 = LS_to2.expression(
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
 Map.addLayer(LS_to3, {min:0,max:1, palette:['black', 'white']}, "water");
 //Calculate the water surface area
-var water = 1;
-var waterMap = LS_to3.gt(LS_to3);
-var area = ee.Image.pixelArea();
-var waterArea = waterMap.multiply(area).rename('waterArea');
-var stats = waterArea.reduceRegion({
+//var water = 1;
+//var waterMap = LS_to3.gt(LS_to3);
+
+//var area = ee.Image.pixelArea();
+//var waterArea = waterMap.multiply(area).rename('waterArea');
+
+var LS_PA_2 = LS_to3.multiply(ee.Image.pixelArea());
+
+var stats_2 = LS_PA_2.reduceRegion({
     reducer: ee.Reducer.sum(), 
     geometry: Gl_b2, 
     scale: 10,
   });
 
-print(stats);
+print(stats_2);
+
+print((stats + stats_2)/1000000, 'Square Kilometers');
+
