@@ -217,40 +217,56 @@ print(stats);
 
 //TEST FOR BOUNDARY PARTITIONING 
 //clasisfier test of surface glacial lakes Gl_b2 
-var NDWI = K_glacier.expression(
+var K_glacier_gl_b2 = ee.Image(sent2 
+        .filterDate("2018-05-14", "2018-07-31")
+        .filterBounds(Glacier)
+        .sort("CLOUD_COVERAGE_ASSESSMENT")
+        .first()
+        .clip(Gl_b2)
+  );
+
+var falseColor = {
+      bands: ['B8', 'B4', 'B3'],
+      min:0,
+      max: 9000
+};
+  
+Map.addLayer(K_glacier_gl_b2, falseColor, '2018 falsecolor');
+
+var NDWI2 = K_glacier_gl_b2.expression(
         "(BLUE - RED) / (BLUE + RED)",
         {
-          RED: K_glacier.select("B4"),    //  RED
-          NIR: K_glacier.select("B8"),    // NIR
-          BLUE: K_glacier.select("B2")    // BLUE
+          RED: K_glacier_gl_b2.select("B4"),    //  RED
+          NIR: K_glacier_gl_b2.select("B8"),    // NIR
+          BLUE: K_glacier_gl_b2.select("B2")    // BLUE
         });
 
-Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
+Map.addLayer(NDWI2, {min: 0, max: 1}, "NDWI");
 var h20mask = function(image) {
   return image.updateMask(image.gt(0.2));
 };
 // Convert pixels with water to 1
-var h20 = h20mask(NDWI);
-Map.addLayer(h20,{},"h20");
-var LS_to0 = h20.expression(
+var h20_2 = h20mask(NDWI2);
+Map.addLayer(h20_2,{},"h20");
+var LS_to2 = h20_2.expression(
     '0 * LS', {
-      'LS': h20
+      'LS': h20_2
 });
-var LS_to1 = LS_to0.expression(
+var LS_to3 = LS_to2.expression(
     '1 + LS', {
-      'LS': LS_to0
+      'LS': LS_to2
 });
 // Visualize
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
-Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
+Map.addLayer(LS_to3, {min:0,max:1, palette:['black', 'white']}, "water");
 //Calculate the water surface area
 var water = 1;
-var waterMap = LS_to1.gt(LS_to1);
+var waterMap = LS_to3.gt(LS_to3);
 var area = ee.Image.pixelArea();
 var waterArea = waterMap.multiply(area).rename('waterArea');
 var stats = waterArea.reduceRegion({
     reducer: ee.Reducer.sum(), 
-    geometry: Gl_b, 
+    geometry: Gl_b2, 
     scale: 10,
   });
 
