@@ -82,10 +82,7 @@ var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.6429
           [-33.053388063972825, 68.61506049242736],
           [-33.03210205323064, 68.61105416756027],
           [-32.9751104760822, 68.59426991119402]]]),
-    Gl_b = 
-    /* color: #0b4a8b */
-    /* shown: false */
-    ee.Geometry.Polygon(
+    Gl_b = /* color: #0b4a8b */ee.Geometry.Polygon(
         [[[-33.090157011173716, 68.8191964369048],
           [-33.103889921329966, 68.8638083601306],
           [-32.837471464298716, 69.00399655507665],
@@ -94,7 +91,38 @@ var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.6429
           [-33.252205351017466, 68.97445348487469],
           [-33.763069608829966, 68.93993641025737],
           [-33.359322050236216, 68.643850149303],
-          [-33.037971952579966, 68.71176104596145]]]);
+          [-33.037971952579966, 68.71176104596145]]]),
+    Gl_b2 = /* color: #d63000 */ee.Geometry.Polygon(
+        [[[-33.35162575113625, 68.63383175019695],
+          [-33.33548958170265, 68.63283107399235],
+          [-33.29085762369484, 68.63383175019695],
+          [-33.26339180338234, 68.63483238173008],
+          [-33.23146278726906, 68.63308124723154],
+          [-33.20022041666359, 68.63195544566747],
+          [-33.173097919105, 68.64021001094447],
+          [-33.14903309303549, 68.63830004087984],
+          [-33.099251293719085, 68.63117066954689],
+          [-33.0783572984986, 68.62365546864397],
+          [-33.04814489615485, 68.61264057501425],
+          [-33.01552923453376, 68.60575351959075],
+          [-33.00076635611579, 68.60024235344125],
+          [-32.98669012320563, 68.59535632504942],
+          [-32.971927244787665, 68.60512731884171],
+          [-32.92386205924079, 68.6216531629747],
+          [-32.91562231314704, 68.61952551732418],
+          [-32.86893041861579, 68.61051207444966],
+          [-32.82979162467048, 68.60863381805126],
+          [-32.785159666662665, 68.60437585488413],
+          [-32.81056555045173, 68.62428115250636],
+          [-32.851077635412665, 68.63141271484304],
+          [-32.89811285269782, 68.64054280705146],
+          [-32.93138997716483, 68.65506351687624],
+          [-32.990779393439944, 68.68963920212593],
+          [-33.00039243054932, 68.69924444703105],
+          [-33.01206540418213, 68.71719642465246],
+          [-33.08423172599185, 68.70206295302691],
+          [-33.18310867911685, 68.68122819287262],
+          [-33.359233251870755, 68.64375166312377]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
 /*
@@ -124,7 +152,7 @@ var falseColor = {
   
 Map.addLayer(K_glacier, falseColor, '2018 falsecolor');
 
-//K-glacier 2019
+//K-glacier 2019 ** NOT NESSESARY 
 /*
 var K_glacier2 = ee.Image(sent2
   .filterDate('2019-05-14', '2019-07-31')
@@ -146,7 +174,7 @@ Map.setCenter(-41.0, 76.0, 4);
 Map.addLayer(elevation, elevationVis, 'Elevation');
 */
 
-//clasisfier test of surface glacial lakes
+//clasisfier test of surface glacial lakes Gl_b (one)
 var NDWI = K_glacier.expression(
         "(BLUE - RED) / (BLUE + RED)",
         {
@@ -156,11 +184,9 @@ var NDWI = K_glacier.expression(
         });
 
 Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
-
 var h20mask = function(image) {
   return image.updateMask(image.gt(0.2));
 };
-
 // Convert pixels with water to 1
 var h20 = h20mask(NDWI);
 Map.addLayer(h20,{},"h20");
@@ -175,15 +201,53 @@ var LS_to1 = LS_to0.expression(
 // Visualize
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
 Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
-
 //Calculate the water surface area
 var water = 1;
-
 var waterMap = LS_to1.gt(LS_to1);
-
 var area = ee.Image.pixelArea();
 var waterArea = waterMap.multiply(area).rename('waterArea');
+var stats = waterArea.reduceRegion({
+    reducer: ee.Reducer.sum(), 
+    geometry: Gl_b, 
+    scale: 10,
+  });
 
+print(stats);
+
+
+//TEST FOR BOUNDARY PARTITIONING 
+//clasisfier test of surface glacial lakes Gl_b2 
+var NDWI = K_glacier.expression(
+        "(BLUE - RED) / (BLUE + RED)",
+        {
+          RED: K_glacier.select("B4"),    //  RED
+          NIR: K_glacier.select("B8"),    // NIR
+          BLUE: K_glacier.select("B2")    // BLUE
+        });
+
+Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
+var h20mask = function(image) {
+  return image.updateMask(image.gt(0.2));
+};
+// Convert pixels with water to 1
+var h20 = h20mask(NDWI);
+Map.addLayer(h20,{},"h20");
+var LS_to0 = h20.expression(
+    '0 * LS', {
+      'LS': h20
+});
+var LS_to1 = LS_to0.expression(
+    '1 + LS', {
+      'LS': LS_to0
+});
+// Visualize
+//Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
+Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
+//Calculate the water surface area
+var water = 1;
+var waterMap = LS_to1.gt(LS_to1);
+var area = ee.Image.pixelArea();
+var waterArea = waterMap.multiply(area).rename('waterArea');
 var stats = waterArea.reduceRegion({
     reducer: ee.Reducer.sum(), 
     geometry: Gl_b, 
