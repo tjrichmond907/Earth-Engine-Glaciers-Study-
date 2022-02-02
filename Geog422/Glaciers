@@ -315,6 +315,6 @@ print(S_A);
 */
 
 function extract(arr, prop) {
-  let extractedValue = arr.map(item[prop]);
+  var extractedValue = arr.map(item[prop]);
   return extractedValue;
 }
