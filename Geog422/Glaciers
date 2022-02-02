@@ -302,8 +302,10 @@ print(S_A_arr);
 
 function sum_SA(obj) {
   var total = 0;
-  for(var cnst in obj){
+  var i = 0;
+  for(i in obj){
     total += obj[cnst];
+    i++;
   }
   return total;
 }
