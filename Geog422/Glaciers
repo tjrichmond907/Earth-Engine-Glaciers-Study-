@@ -313,5 +313,5 @@ var S_A = sum_SA(S_A_arr);
 print(S_A);
 */
 
-var result = stats.map(obj => parseInt(obj.test), radix);
+var result = stats.map(obj => parseInt(obj.constant));
 print(result);
