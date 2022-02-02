@@ -293,3 +293,4 @@ var km_const = 1000000;
 //print(('stats + stats_2')/'1000000', 'Square Kilometers');
 //print((ee.Number(stats).add(ee.Number(stats_2))).divide(ee.Number(km_const)));
 var result = (parseFloat(ee.Number(stats)) + parseFloat(ee.Number(stats_2)));
+print(result);
