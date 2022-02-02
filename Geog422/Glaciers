@@ -288,7 +288,7 @@ var stats_2 = LS_PA_2.reduceRegion({
   });
 
 print(stats_2);
-var real_value = ee.Number(stats_2.get(constant));
+var real_value = ee.Number(stats_2.get(object));
 print(real_value);
 
 //TRYING TO SUM OUT ALL SURFACE AREAS
