@@ -287,10 +287,26 @@ var stats_2 = LS_PA_2.reduceRegion({
     scale: 10,
   });
 
-print(ee.Number(stats_2));
+print(stats_2);
 
+
+//TRYING TO SUM OUT ALL SURFACE AREAS
 var km_const = 1000000;
 //print(('stats + stats_2')/'1000000', 'Square Kilometers');
 //print((ee.Number(stats).add(ee.Number(stats_2))).divide(ee.Number(km_const)));
-var result = (parseFloat(ee.Number(stats)) + parseFloat(ee.Number(stats_2)));
-print(result);
+//var result = (parseFloat(ee.Number(stats)) + parseFloat(ee.Number(stats_2)));
+//print(result);
+
+var S_A_arr =[];
+S_A_arr.push(stats, stats_2);
+
+function sum_SA(obj) {
+  var total = 0;
+  for(var cnst in obj){
+    total += obj[cnst];
+  }
+  return total;
+}
+
+var S_A = sum_SA(S_A_arr);
+print(S_A);
