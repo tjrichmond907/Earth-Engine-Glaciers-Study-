@@ -298,7 +298,7 @@ var km_const = 1000000;
 //print(result);
 
 var S_A_arr =[];
-S_A_arr.push(stats, stats_2);
+S_A_arr.push(ee.Number(stats), ee.Number(stats_2));
 
 function sum_SA(obj) {
   var total = 0;
