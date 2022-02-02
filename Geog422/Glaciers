@@ -296,19 +296,22 @@ var km_const = 1000000;
 //var result = (parseFloat(ee.Number(stats)) + parseFloat(ee.Number(stats_2)));
 //print(result);
 
+/*
 var S_A_arr =[];
 S_A_arr.push(ee.Number(stats), ee.Number(stats_2));
 print(S_A_arr);
 
 function sum_SA(obj) {
   var total = 0;
-  var i = 0;
-  for(i in obj){
+  for(var i in obj){
     total += obj[i];
-    i++;
   }
   return total;
 }
 
 var S_A = sum_SA(S_A_arr);
 print(S_A);
+*/
+
+var result = stats.map(obj => parseInt(obj.test));
+print(result);
