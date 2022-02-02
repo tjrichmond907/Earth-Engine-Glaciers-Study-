@@ -313,5 +313,7 @@ var S_A = sum_SA(S_A_arr);
 print(S_A);
 */
 
-var result = stats.map(obj => parseInt(obj.constant));
-print(result);
+function extract(arr, prop) {
+  let extractedValue = arr.map(item[prop]);
+  return extractedValue;
+}
