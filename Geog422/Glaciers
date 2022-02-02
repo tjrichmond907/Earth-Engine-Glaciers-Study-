@@ -304,7 +304,7 @@ function sum_SA(obj) {
   var total = 0;
   var i = 0;
   for(i in obj){
-    total += obj[cnst];
+    total += obj[i];
     i++;
   }
   return total;
