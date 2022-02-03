@@ -328,6 +328,7 @@ function sumArea( obj ) {
   for( var el in obj ) {
     if( obj.hasOwnProperty( el ) ) {
       sum += parseFloat( obj[el] );
+      print(sum);
     }
   }
   return sum;
