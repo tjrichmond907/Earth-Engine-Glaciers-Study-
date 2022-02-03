@@ -314,8 +314,7 @@ function sumArea(arr) {
     //sum += ee.Number(item.get('constant'));
     sum += ee.Number(arr[i]);
   }
-  sum.divide(km_const);
-  return sum;
+  return sum/km_const;
 }
 
 var testArea = sumArea(S_A_arr);
