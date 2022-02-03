@@ -314,7 +314,7 @@ var S_A = sum_SA(S_A_arr);
 print(S_A);
 */
 
-var area = ee.Number(stats.get('constant')).add(ee.Number(stats_2.get('constant')));
+var area = (ee.Number(stats.get('constant')).add(ee.Number(stats_2.get('constant')))).divide(km_const);
 print("Area of stats: ",area)
 
 //console.log(typeof stats);
