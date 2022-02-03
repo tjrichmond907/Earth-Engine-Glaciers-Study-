@@ -273,11 +273,6 @@ var LS_to3 = LS_to2.expression(
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
 Map.addLayer(LS_to3, {min:0,max:1, palette:['black', 'white']}, "water");
 //Calculate the water surface area
-//var water = 1;
-//var waterMap = LS_to3.gt(LS_to3);
-
-//var area = ee.Image.pixelArea();
-//var waterArea = waterMap.multiply(area).rename('waterArea');
 
 var LS_PA_2 = LS_to3.multiply(ee.Image.pixelArea());
 
@@ -291,30 +286,16 @@ print(stats_2);
 
 //TRYING TO SUM OUT ALL SURFACE AREAS
 var km_const = 1000000;
-//print(('stats + stats_2')/'1000000', 'Square Kilometers');
-//print((ee.Number(stats).add(ee.Number(stats_2))).divide(ee.Number(km_const)));
-//var result = (parseFloat(ee.Number(stats)) + parseFloat(ee.Number(stats_2)));
-//print(result);
 
-
+//create a list of the boundaries water areas
 var S_A_arr =[];
 S_A_arr.push(ee.Number(stats), ee.Number(stats_2));
 print(S_A_arr);
 
-/*
-function sum_SA(obj) {
-  var total = 0;
-  for(var i in obj){
-    total += obj[i];
-  }
-  return total;
-}
 
-var S_A = sum_SA(S_A_arr);
-print(S_A);
-*/
 
+
+//HERE IS HOW TO GET THE AREA OF EACH POLY AND ADD TO FIND THE SQUARE KM's
 var area = (ee.Number(stats.get('constant')).add(ee.Number(stats_2.get('constant')))).divide(km_const);
 print("Area of stats: ",area)
 
-//console.log(typeof stats);
