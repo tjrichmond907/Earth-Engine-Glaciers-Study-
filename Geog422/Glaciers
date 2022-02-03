@@ -314,5 +314,7 @@ var S_A = sum_SA(S_A_arr);
 print(S_A);
 */
 
-var area = ee.Number(stats.get('property'));
+var area = ee.Number(stats.get('constant'));
 print("Area of stats: ",area)
+
+//console.log(typeof stats);
