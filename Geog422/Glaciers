@@ -310,16 +310,22 @@ print("Area of stats: ",area)
 function sumArea(arr) {
   var sum = 0;
   for(var i = 0; i < arr.length; i++ ){
-    console.log('here', arr[i].get('constant'));
-    //sum += ee.Number(item.get('constant'));
+    //console.log('here', arr[i].get('constant'));
+    sum += ee.Number(i.get('constant'));
 
   }
 
   return sum/km_const;
 }
 
+
 var testArea = sumArea(S_A_arr);
 print('function test: ', testArea);
+
+
+
+
+
 
 
 //PROPOSED FUNCTION******************
