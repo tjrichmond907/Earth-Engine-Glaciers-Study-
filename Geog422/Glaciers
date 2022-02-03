@@ -198,13 +198,13 @@ var h20 = h20mask(NDWI);
 Map.addLayer(h20,{},"h20");
 
 var LS_to0 = h20.expression(
-    '0 * LS', {
-      'LS': h20
+    '0 * S2', {
+      'S2': h20
 });
 
 var LS_to1 = LS_to0.expression(
-    '1 + LS', {
-      'LS': LS_to0
+    '1 + S2', {
+      'S2': LS_to0
 });
 // Visualize
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
@@ -262,12 +262,12 @@ var h20mask = function(image) {
 var h20_2 = h20mask(NDWI2);
 Map.addLayer(h20_2,{},"h20");
 var LS_to2 = h20_2.expression(
-    '0 * LS', {
-      'LS': h20_2
+    '0 * S2', {
+      'S2': h20_2
 });
 var LS_to3 = LS_to2.expression(
-    '1 + LS', {
-      'LS': LS_to2
+    '1 + S2', {
+      'S2': LS_to2
 });
 // Visualize
 //Map.addLayer(LS_to1, {color:'#00FF00', min:-1,max:1}, "water");
