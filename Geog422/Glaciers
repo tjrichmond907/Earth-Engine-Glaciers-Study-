@@ -309,10 +309,10 @@ print("Area of stats: ",area)
 //try a function to sum an array of stats
 function sumArea(arr) {
   var sum = 0;
-  for(var item in arr){
+  for(var i = 0; i < arr.length; i++ ){
     //console.log('here', item['property']);
     //sum += ee.Number(item.get('constant'));
-    sum.add(ee.Number(arr['property']));
+    sum.add(ee.Number(arr[i]));
   }
   sum.divide(km_const);
   return sum;
