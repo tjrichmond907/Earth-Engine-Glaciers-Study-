@@ -313,7 +313,7 @@ function sumArea(arr) {
     console.log(item['property']);
     //sum += ee.Number(item.get('constant'));
   }
-  sum.divide(km_const);
+  //sum.divide(km_const);
   return sum;
 }
 
