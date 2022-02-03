@@ -305,3 +305,18 @@ print(S_A_arr);
 var area = (ee.Number(stats.get('constant')).add(ee.Number(stats_2.get('constant')))).divide(km_const);
 print("Area of stats: ",area)
 
+
+//try a function to sum an array of stats
+function sumArea(arr) {
+  sum = 0;
+  for(var item in arr){
+    sum += ee.Number(item.get('constant'));
+  }
+  sum.divide(km_const);
+  return sum;
+}
+
+var testArea = sumArea(S_A_arr);
+print(testArea);
+
+
