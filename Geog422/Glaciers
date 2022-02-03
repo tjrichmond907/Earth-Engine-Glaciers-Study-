@@ -320,3 +320,21 @@ var testArea = sumArea(S_A_arr);
 print(testArea);
 
 
+//PROPOSED FUNCTION******************
+/*
+input: date ranges, study area
+output: plot of GSL surface area per available image in the date range 
+
+in: date1, date2, boundaries[]
+ 
+  for each date in range between the inputs(inclusive):
+    create water surface area mask for each boundary
+    sum the boundary surface areas
+    add the sum to a list of sums
+    
+  for each item in the list of sums
+    plot each item 
+
+out: plot
+
+*/
