@@ -318,7 +318,7 @@ function sumArea(arr) {
 }
 
 var testArea = sumArea(S_A_arr);
-print(testArea);
+print('function test: ', testArea);
 
 
 //PROPOSED FUNCTION******************
