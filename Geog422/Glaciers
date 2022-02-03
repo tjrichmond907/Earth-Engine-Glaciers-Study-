@@ -296,7 +296,7 @@ var km_const = 1000000;
 //create a list of the boundaries water areas
 var S_A_arr =[];
 S_A_arr.push(ee.Number(stats), ee.Number(stats_2));
-print(S_A_arr);
+print('S_A_arr: ',S_A_arr);
 
 
 
