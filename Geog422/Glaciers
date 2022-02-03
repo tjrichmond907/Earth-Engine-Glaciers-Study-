@@ -307,6 +307,7 @@ print("Area of stats: ",area)
 
 
 //try a function to sum an array of stats
+/*
 function sumArea(arr) {
   var sum;
   for(var i = 0; i < arr.length; i++ ){
@@ -320,7 +321,17 @@ function sumArea(arr) {
 
   return sum/km_const;
 }
+*/
 
+function sumArea( obj ) {
+  var sum = 0;
+  for( var el in obj ) {
+    if( obj.hasOwnProperty( el ) ) {
+      sum += parseFloat( obj[el] );
+    }
+  }
+  return sum;
+}
 
 var testArea = sumArea(S_A_arr);
 print('function test: ', testArea);
