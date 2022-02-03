@@ -228,6 +228,8 @@ var stats = LS_PA.reduceRegion({
 print(stats);
 
 
+
+
 //TEST FOR BOUNDARY PARTITIONING 
 //clasisfier test of surface glacial lakes Gl_b2 
 var K_glacier_gl_b2 = ee.Image(sent2 
@@ -283,6 +285,10 @@ var stats_2 = LS_PA_2.reduceRegion({
   });
 
 print(stats_2);
+
+
+
+
 
 //TRYING TO SUM OUT ALL SURFACE AREAS
 var km_const = 1000000;
