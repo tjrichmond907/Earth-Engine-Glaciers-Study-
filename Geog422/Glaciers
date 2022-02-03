@@ -314,7 +314,7 @@ function sumArea(arr) {
     var temp = ee.Number(arr[i]);
    // sum += ee.Number(arr[i].get('constant'));
 
-    sum.add(temp);
+    console.log(temp);
   }
 
   return sum/km_const;
