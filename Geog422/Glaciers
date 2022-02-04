@@ -326,8 +326,8 @@ function sumArea(arr) {
 
 function sumArea(arr) {
   var sum = 0;
-  for(var key in arr){
-    console.log(key);
+  for(var item in arr){
+    console.log(item);
   }
 }
 
