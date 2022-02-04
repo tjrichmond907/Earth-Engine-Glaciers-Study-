@@ -316,7 +316,7 @@ function sumArea(arr) {
    // sum += ee.Number(arr[i].get('constant'));
 
     console.log(typeof temp);
-    sum.add(temp.get('constant'));
+    sum += (temp.get('constant'));
   }
 
   return sum/km_const;
