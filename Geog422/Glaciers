@@ -327,7 +327,8 @@ function sumArea(arr) {
 function sumArea(arr) {
   var sum = 0;
   for(var item in arr){
-    print(ee.Number(arr[item]));
+    var temp = ee.Number(arr[item]);
+    print(temp);
   }
 }
 
