@@ -216,6 +216,7 @@ Map.addLayer(LS_to1, {min:0,max:1, palette:['black', 'white']}, "water");
 //var area = ee.Image.pixelArea();
 
 var LS_PA = LS_to1.multiply(ee.Image.pixelArea());
+print('LS_NUM: ', LS_PA);
 
 //var waterArea = waterMap.multiply(area).rename('waterArea');
 
