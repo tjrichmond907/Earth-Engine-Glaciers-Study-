@@ -343,7 +343,7 @@ function sumArea(arr) {
     var temp = arr[i];
     print(temp);
     var temp_2 = temp[0];
-    sum += temp2 
+    sum += temp_2 
     print(sum);
     
   }
