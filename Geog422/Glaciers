@@ -340,9 +340,10 @@ function sumArea(arr) {
 function sumArea(arr) {
   var sum = 0;
   for(var i = 0; i < arr.length; i++) {
-    var temp = arr.getArray(i);
+    var temp = arr[i];
     print(temp);
-    sum += temp; 
+    var temp_2 = temp[0];
+    sum += temp2 
     print(sum);
     
   }
