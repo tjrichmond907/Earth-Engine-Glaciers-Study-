@@ -323,7 +323,7 @@ function sumArea(arr) {
 }
 
 */
-
+/*
 function sumArea(arr) {
   var sum = ee.Number(0);
   for(var item in arr){
@@ -332,6 +332,18 @@ function sumArea(arr) {
     sum += ee.Number(temp);
     print(sum)
  
+    
+  }
+}
+*/
+
+function sumArea(arr) {
+  var sum = 0;
+  for(var i = 0; i < arr.length; i++) {
+    var temp = arr.getNumber(i);
+    print(temp);
+    sum += temp; 
+    print(sum);
     
   }
 }
