@@ -329,7 +329,7 @@ function sumArea(arr) {
   for(var item in arr){
     var temp = ee.Number(arr[item]);
     print(temp);
-    sum += ee.Number(temp['constant']);
+    sum += ee.Number(temp.get('constant'));
     print(sum)
  
     
