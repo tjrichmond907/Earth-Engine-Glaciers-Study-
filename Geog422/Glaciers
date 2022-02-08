@@ -338,11 +338,11 @@ function sumArea(arr) {
 */
 
 function sumArea(arr) {
-  var sum = 0;
+  var sum = ee.Number(0);
   for(var i = 0; i < arr.length; i++) {
     var temp = arr[i];
     print(temp);
-    var temp_2 = temp[0];
+    var temp_2 = ee.Number(temp[0]);
     sum += temp_2 
     print(sum);
     
