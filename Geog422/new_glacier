@@ -60,6 +60,6 @@ var NDWI = K_glacier.expression(
 Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
 
 var mask = NDWI.updateMask(NDWI.eq(0));
-var maskedImage = image.updateMask(mask.eq(0));
+var maskedImage = NDWI.updateMask(mask.eq(0));
 
 Map.addLayer(maskedImage, 'water');
