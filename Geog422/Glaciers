@@ -156,7 +156,7 @@ var falseColor = {
       max: 9000
 };
   
-Map.addLayer(K_glacier, falseColor, '2018 falsecolor');
+//Map.addLayer(K_glacier, falseColor, '2018 falsecolor');
 
 //K-glacier 2019 ** NOT NESSESARY 
 /*
@@ -189,7 +189,7 @@ var NDWI = K_glacier.expression(
           BLUE: K_glacier.select("B2")    // BLUE
         });
 
-Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
+//Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
 var h20mask = function(image) {
   return image.updateMask(image.gt(0.2));
 };
@@ -247,7 +247,7 @@ var falseColor = {
       max: 9000
 };
   
-Map.addLayer(K_glacier_gl_b2, falseColor, '2018 falsecolor');
+//Map.addLayer(K_glacier_gl_b2, falseColor, '2018 falsecolor');
 
 var NDWI2 = K_glacier_gl_b2.expression(
         "(BLUE - RED) / (BLUE + RED)",
@@ -257,7 +257,7 @@ var NDWI2 = K_glacier_gl_b2.expression(
           BLUE: K_glacier_gl_b2.select("B2")    // BLUE
         });
 
-Map.addLayer(NDWI2, {min: 0, max: 1}, "NDWI");
+//Map.addLayer(NDWI2, {min: 0, max: 1}, "NDWI");
 var h20mask = function(image) {
   return image.updateMask(image.gt(0.2));
 };
