@@ -25,13 +25,14 @@ var glacier = /* color: #02edff */ee.Geometry.Polygon(
           [-33.01409068774854, 68.71165521815766],
           [-33.06627574634229, 68.77538351296086],
           [-33.45629039477979, 68.66923487534814]]]),
-    Sent_2 = ee.ImageCollection("COPERNICUS/S2_SR");
+    Sent_2 = ee.ImageCollection("COPERNICUS/S2_SR"),
+    target = /* color: #0b4a8b */ee.Geometry.Point([-33.17303466796875, 68.68478526071804]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
 
 var K_glacier = ee.Image(Sent_2 
         .filterDate("2018-05-14", "2018-07-31")
-        .filterBounds(glacier)
+        .filterBounds(target)
         .sort("CLOUD_COVERAGE_ASSESSMENT")   //threshold?
         .first()
         .clip(glacier)
