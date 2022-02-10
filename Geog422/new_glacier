@@ -49,4 +49,12 @@ var K_glacier = ee.Image(Sent_2
 
 Map.addLayer(K_glacier);
 
+var NDWI = K_glacier.expression(
+        "(BLUE - RED) / (BLUE + RED)",
+        {
+          RED: K_glacier.select("B4"),    //  RED
+          NIR: K_glacier.select("B8"),    // NIR
+          BLUE: K_glacier.select("B2")    // BLUE
+        });
 
+Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
