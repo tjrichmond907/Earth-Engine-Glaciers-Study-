@@ -34,5 +34,5 @@ var K_glacier = ee.Image(Sent_2
         .filterBounds(glacier)
         .sort("CLOUD_COVERAGE_ASSESSMENT")   //threshold?
         .first()
-        .clip(Gl_b)
+        .clip(glacier)
   );
