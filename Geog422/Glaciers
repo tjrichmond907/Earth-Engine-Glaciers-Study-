@@ -345,7 +345,7 @@ function sumArea(arr) {
     
     var temp = arr[i];
     print('temp',temp);
-    print('const ', temp['constant']);
+    print('const ', temp['constant:']);
     print(typeof temp);
     
     var temp_2 = arr[i].constant;
