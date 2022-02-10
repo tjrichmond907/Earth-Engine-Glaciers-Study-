@@ -1,5 +1,8 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var glacier = /* color: #02edff */ee.Geometry.Polygon(
+var glacier = 
+    /* color: #02edff */
+    /* shown: false */
+    ee.Geometry.Polygon(
         [[[-33.9341310733289, 68.73493919213335],
           [-33.77757589754765, 68.70403750313929],
           [-33.59080831942265, 68.68307977815691],
@@ -55,3 +58,5 @@ var NDWI = K_glacier.expression(
         });
 
 Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
+
+var mask = NDWI.updateMask(NDWI.eq(0));
