@@ -275,3 +275,25 @@ var after_filtered = after.focal_mean(SMOOTHING_RADIUS, 'circle',
 //Display filtered images
 Map.addLayer(before_filtered, {min:-15,max:0}, 'Before Flood Filtered',0);
 Map.addLayer(after_filtered, {min:-15,max:0}, 'After Flood Filtered',0);
+
+
+//Merge Feature Collections
+var newfc = open_water_permanent.merge(open_water_flooded).merge(flooded_vegetation).merge(urban).merge(flood_channel).merge(low_vegetation);
+//Define the bands to be used to train your data
+var final = ee.Image.cat(before_filtered,after_filtered)
+var bands = ['VV','VH'];
+var training = final.select(bands).sampleRegions({
+collection: newfc,
+properties: ['landcover'],scale: 30})
+//Train the classifier
+var classifier = ee.Classifier.smileCart().train({
+features: training,
+classProperty: 'landcover',
+inputProperties: bands});
+//Run the Classification
+var classified = final.select(bands).classify(classifier);
+//Display the Classification
+Map.addLayer(classified,
+{min: 1, max: 6, palette: ['#0002d6', '#07eeff', '#00ff31', '#e900ff',
+'#f5ff00', '#008614']},
+'classification');
