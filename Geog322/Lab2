@@ -1,9 +1,18 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var roi = /* color: #ff0000 */ee.Geometry.Polygon(
+var roi = 
+    /* color: #ff0000 */
+    /* shown: false */
+    ee.Geometry.Polygon(
         [[[-80.22865523819969, 33.45653732791669],
           [-81.09108199601219, 32.47489689153863],
           [-79.57496871476219, 31.669629663764],
-          [-78.74550094132469, 32.86793860015439]]]);
+          [-78.74550094132469, 32.86793860015439]]]),
+    open_water_permanent = /* color: #0002d6 */ee.FeatureCollection([]),
+    open_water_flooded = /* color: #07eeff */ee.FeatureCollection([]),
+    flooded_vegetation = /* color: #00ff31 */ee.FeatureCollection([]),
+    urban = /* color: #e900ff */ee.FeatureCollection([]),
+    flood_channel = /* color: #f5ff00 */ee.FeatureCollection([]),
+    low_vegetation = /* color: #008614 */ee.FeatureCollection([]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // Load Sentinel-1 C-band SAR Ground Range collection (log scale, VV,ascending)
 var collection = ee.ImageCollection('COPERNICUS/S1_GRD')
@@ -19,3 +28,14 @@ var after = collection.filterDate('2016-10-16', '2016-10-17').mosaic().clip(roi)
 Map.centerObject(roi, 7);
 Map.addLayer(before, {min:-15,max:0}, 'Before flood', 0);
 Map.addLayer(after, {min:-15,max:0}, 'After flood', 0);
+
+
+//Apply filter to reduce speckle
+var SMOOTHING_RADIUS = 25;
+var before_filtered = before.focal_mean(SMOOTHING_RADIUS, 'circle',
+'meters');
+var after_filtered = after.focal_mean(SMOOTHING_RADIUS, 'circle',
+'meters');
+//Display filtered images
+Map.addLayer(before_filtered, {min:-15,max:0}, 'Before Flood Filtered',0);
+Map.addLayer(after_filtered, {min:-15,max:0}, 'After Flood Filtered',0);
