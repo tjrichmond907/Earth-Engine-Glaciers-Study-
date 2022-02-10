@@ -1,5 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var glacier_boundaries = /* color: #02edff */ee.Geometry.Polygon(
+var glacier = /* color: #02edff */ee.Geometry.Polygon(
         [[[-33.9341310733289, 68.73493919213335],
           [-33.77757589754765, 68.70403750313929],
           [-33.59080831942265, 68.68307977815691],
@@ -31,7 +31,7 @@ Map.setCenter(-33.00,68.64,9);
 
 var K_glacier = ee.Image(Sent_2 
         .filterDate("2018-05-14", "2018-07-31")
-        .filterBounds(Glacier)
+        .filterBounds(glacier)
         .sort("CLOUD_COVERAGE_ASSESSMENT")   //threshold?
         .first()
         .clip(Gl_b)
