@@ -1,0 +1,21 @@
+/**** Start of imports. If edited, may not auto-convert in the playground. ****/
+var roi = /* color: #ff0000 */ee.Geometry.Polygon(
+        [[[-80.22865523819969, 33.45653732791669],
+          [-81.09108199601219, 32.47489689153863],
+          [-79.57496871476219, 31.669629663764],
+          [-78.74550094132469, 32.86793860015439]]]);
+/***** End of imports. If edited, may not auto-convert in the playground. *****/
+// Load Sentinel-1 C-band SAR Ground Range collection (log scale, VV,ascending)
+var collection = ee.ImageCollection('COPERNICUS/S1_GRD')
+.filter(ee.Filter.eq('instrumentMode', 'IW'))
+.filter(ee.Filter.eq('orbitProperties_pass', 'ASCENDING'))
+.filterMetadata('resolution_meters', 'equals' , 10)
+.filterBounds(roi)
+.select('VV', 'VH');
+//Filter by date and subset to roi
+var before = collection.filterDate('2016-10-04', '2016-10-05').mosaic().clip(roi);
+var after = collection.filterDate('2016-10-16', '2016-10-17').mosaic().clip(roi);
+// // Display map
+Map.centerObject(roi, 7);
+Map.addLayer(before, {min:-15,max:0}, 'Before flood', 0);
+Map.addLayer(after, {min:-15,max:0}, 'After flood', 0);
