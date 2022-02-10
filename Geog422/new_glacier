@@ -54,4 +54,4 @@ var NDWI = K_glacier.expression(
           BLUE: K_glacier.select("B2")    // BLUE
         });
 
-Map.addLayer(NDWI, {min: '#000000', max: '#ffffff'}, "NDWI");
+Map.addLayer(NDWI, {min: 0, max: 1}, "NDWI");
