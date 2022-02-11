@@ -339,12 +339,29 @@ function sumArea(arr) {
 }
 */
 
+
+function listAllProperties(o) {
+  let objectToInspect = o;
+  let result = [];
+
+  while(objectToInspect !== null) {
+    result = result.concat(Object.getOwnPropertyNames(objectToInspect));
+    objectToInspect = Object.getPrototypeOf(objectToInspect)
+  }
+
+  return result;
+}
+
+
+
+
 function sumArea(arr) {
   var sum = ee.Number(0);
   for(var i = 0; i < arr.length; i++) {
     
     var temp = arr[i];
-    print(Object.getOwnPropertyNames(temp));
+    //print(Object.getOwnPropertyNames(temp));
+    print(listAllProperties(temp));
     //print('temp',temp);
     //print('const ', temp['constant']);
     //print(typeof temp);
@@ -358,7 +375,6 @@ function sumArea(arr) {
     
   }
 }
-
 
 
 
