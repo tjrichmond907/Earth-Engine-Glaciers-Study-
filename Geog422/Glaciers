@@ -374,7 +374,7 @@ function sumArea(arr) {
     print(sum);
     
   }
-  return sum.divide(km_const);
+  return sum/km_const;
 }
 
 
