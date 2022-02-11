@@ -370,7 +370,7 @@ function sumArea(arr) {
     //print('temp2: ', temp_2);
     //print(typeof temp_2);
     
-    sum+= temp; 
+    sum+= temp['constant']; 
     print(sum);
     
   }
