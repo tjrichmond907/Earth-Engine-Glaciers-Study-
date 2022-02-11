@@ -345,16 +345,16 @@ function sumArea(arr) {
     
     var temp = arr[i];
     Object.getOwnPropertyNames(temp);
-    print('temp',temp);
-    print('const ', temp['constant']);
-    print(typeof temp);
+    //print('temp',temp);
+    //print('const ', temp['constant']);
+    //print(typeof temp);
     
     var temp_2 = arr[i].constant;
-    print('temp2: ', temp_2);
-    print(typeof temp_2);
+    //print('temp2: ', temp_2);
+    //print(typeof temp_2);
     
     sum += temp_2 
-    print(sum);
+    //print(sum);
     
   }
 }
