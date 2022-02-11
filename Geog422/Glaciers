@@ -341,8 +341,8 @@ function sumArea(arr) {
 
 
 function listAllProperties(o) {
-  let objectToInspect = o;
-  let result = [];
+  var objectToInspect = o;
+  var result = [];
 
   while(objectToInspect !== null) {
     result = result.concat(Object.getOwnPropertyNames(objectToInspect));
