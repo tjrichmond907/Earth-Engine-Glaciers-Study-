@@ -287,15 +287,13 @@ print(stats_2);
 
 
 //TRYING TO SUM OUT ALL SURFACE AREAS
-var km_const = 1000000;
+var km_const = 1000000; //needs to be in the function 
 
 //create a list of the boundaries water areas
 var S_A_arr =[];
 S_A_arr.push(ee.Number(stats), ee.Number(stats_2));
 print('S_A_arr: ',S_A_arr);
 
-
-print(typeof stats_2);
 
 //HERE IS HOW TO GET THE AREA OF EACH POLY AND ADD TO FIND THE SQUARE KM's
 var area = (ee.Number(stats.get('constant')).add(ee.Number(stats_2.get('constant')))).divide(km_const);
@@ -348,7 +346,7 @@ function listAllProperties(o) {
 
 
 
-
+//GOOD
 function sumArea(arr) {
   var sum = 0;
   for(var i = 0; i < arr.length; i++) {
@@ -357,9 +355,6 @@ function sumArea(arr) {
   }
   return sum/km_const;
 }
-
-
-
 
 var testArea = sumArea(S_A_arr);
 print('function test: ', testArea);
@@ -379,8 +374,8 @@ in: date1, date2, boundaries[]
  
   for each date in range between the inputs(inclusive):
     create water surface area mask for each boundary /done
-    sum the boundary surface area
-    add the sum to a list of sums
+    sum the boundary surface area /done
+    add the sum to a list of sums 
     
   for each item in the list of sums
     plot each item 
