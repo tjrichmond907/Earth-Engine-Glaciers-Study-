@@ -344,7 +344,7 @@ function sumArea(arr) {
   for(var i = 0; i < arr.length; i++) {
     
     var temp = arr[i];
-    Object.getOwnPropertyNames(temp);
+    print(Object.getOwnPropertyNames(temp));
     //print('temp',temp);
     //print('const ', temp['constant']);
     //print(typeof temp);
