@@ -125,6 +125,9 @@ var Glacier = /* color: #ff9999 */ee.Geometry.Point([-33.00481650636423, 68.6429
           [-33.359233251870755, 68.64375166312377]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
+
+
+
 /*
 var K_glacier = ee.Image(sent1 
         .filterDate("2014-06-14", "2021-01-01")
@@ -358,7 +361,6 @@ function sumArea(arr) {
 
 var testArea = sumArea(S_A_arr);
 print('function test: ', testArea);
-
 
 
 
