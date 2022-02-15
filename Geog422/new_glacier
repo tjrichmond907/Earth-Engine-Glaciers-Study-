@@ -56,7 +56,7 @@ function getLakesData(date1, date2, bounds, roi) {
         .filterDate(date1, date2)
         .filterBounds(roi)
         .sort("CLOUD_COVERAGE_ASSESSMENT")
-        .first()
+        //.first()
         .clip(bounds[boundary])
         );
   
