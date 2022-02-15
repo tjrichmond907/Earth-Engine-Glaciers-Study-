@@ -88,6 +88,7 @@ function getLakesData(date1, date2, bounds, roi) {
       scale: 10,
     });
   
+  print(stats);
   boundary_stats.push(stats);
   
   }
