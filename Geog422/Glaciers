@@ -391,7 +391,8 @@ GLACIER FUNCTION-------------
 
 function getLakesData(date1, date2, bounds, roi) {
 
- 
+  //create an array to hold all stats for the images 
+  var boundary_stats = [];
 
   for(var boundary in bounds) {
 
@@ -411,6 +412,36 @@ function getLakesData(date1, date2, bounds, roi) {
           NIR: K_glacier.select("B8"),    // NIR
           BLUE: K_glacier.select("B2")    // BLUE
         });
+  
+  //create a mask function for the NDWI to get all water pixels
+  var h20mask = function(image) {
+      return image.updateMask(image.gt(0.2));
+      };
+      
+  var h20_mask = h20mask(NDWI);
+  
+  //Using expression on the masked image to create binary 1 = water, 0 = not water
+  var LS_to2 = h20_mask.expression(
+    '0 * S2', {  
+    'S2': h20_mask
+      });
+
+  var LS_to3 = LS_to2.expression(
+    '1 + S2', {
+    'S2': LS_to2
+      });
+  
+  //Generate the area and stats for the boundary area in the single image, add to an array of
+  //boundary areas
+  var S1_area = LS_to3.multiply(ee.Image.pixelArea());
+
+  var stats = S1_area.reduceRegion({
+      reducer: ee.Reducer.sum(), 
+      geometry: Gl_b2, 
+      scale: 10,
+    });
+  
+  boundary_stats.push(stats);
   
   }
 
