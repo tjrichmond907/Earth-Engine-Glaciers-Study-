@@ -44,6 +44,7 @@ function getLakesData(date1, date2, bounds, roi) {
       return image.updateMask(image.gt(0.2));
       };
 
+  print(bounds);
   for(var boundary in bounds) {
     print('Boundary: ', boundary);
 
