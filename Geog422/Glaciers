@@ -395,7 +395,7 @@ function getLakesData(date1, date2, bounds, roi) {
 
   for(var boundary in bounds) {
 
-  find all dates which have limited cloud cover in the date range
+  //find all dates which have limited cloud cover in the date range in each boundary area
    var K_glacier = ee.Image(sent2 
         .filterDate(date1, date2)
         .filterBounds(roi)
