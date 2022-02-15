@@ -49,10 +49,10 @@ function getLakesData(date1, date2, bounds, roi) {
   //find all dates which have limited cloud cover in the date range in each boundary area
    var K_glacier = ee.Image(Sent_2 
         .filterDate(date1, date2)
-        .filterBounds(boundary)
+        //.filterBounds(boundary)
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         .first()
-        //.clip(boundary)
+        .clip(boundary)
         );
   
   //create NDWI for each image in that boundary      
