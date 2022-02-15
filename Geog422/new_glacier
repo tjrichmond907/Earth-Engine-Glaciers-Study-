@@ -84,7 +84,7 @@ function getLakesData(date1, date2, bounds, roi) {
 
   var stats = S1_area.reduceRegion({
       reducer: ee.Reducer.sum(), 
-      geometry: Gl_b2, 
+      geometry: boundary, 
       scale: 10,
     });
   
