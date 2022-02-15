@@ -445,6 +445,7 @@ function getLakesData(date1, date2, bounds, roi) {
   
   }
 
+  //Function to determine the total area of lakes from all of the boundaries in the study area
   function sumArea(arr) {
     var km_const = 10000;
     var sum = 0;
@@ -455,7 +456,13 @@ function getLakesData(date1, date2, bounds, roi) {
     return sum/km_const;
   }
 
-  var testArea = sumArea(S_A_arr);
+  var totalArea = sumArea(boundary_stats);
+  
+  
+  //Need an array which has the dates and total area for that date so a plot can be made
+  //total area will need to be attached to an object with the property of date, and area of GSL 
+  //can then be plotted by date
+  
 
 }
 */
