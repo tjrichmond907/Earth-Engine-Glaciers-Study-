@@ -1,8 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var glacier = 
-    /* color: #02edff */
-    /* shown: false */
-    ee.Geometry.Polygon(
+var gl_b = /* color: #02edff */ee.Geometry.Polygon(
         [[[-33.9341310733289, 68.73493919213335],
           [-33.77757589754765, 68.70403750313929],
           [-33.59080831942265, 68.68307977815691],
@@ -15,10 +12,7 @@ var glacier =
           [-33.81623716124713, 69.01291969237744],
           [-34.16779966124713, 68.93803055234508],
           [-34.10188169249713, 68.84703397465749]]]),
-    glacier_2 = 
-    /* color: #98ff00 */
-    /* shown: false */
-    ee.Geometry.Polygon(
+    Gl_b2 = /* color: #98ff00 */ee.Geometry.Polygon(
         [[[-33.37389293384229, 68.6452442664431],
           [-33.31484142017042, 68.63524058986961],
           [-33.25853648852979, 68.63223861592769],
@@ -31,10 +25,7 @@ var glacier =
           [-33.01409068774854, 68.71165521815766],
           [-33.06627574634229, 68.77538351296086],
           [-33.45629039477979, 68.66923487534814]]]),
-    target = 
-    /* color: #0b4a8b */
-    /* shown: false */
-    ee.Geometry.Point([-33.17303466796875, 68.68478526071804]),
+    Glacier = /* color: #0b4a8b */ee.Geometry.Point([-33.17303466796875, 68.68478526071804]),
     Sent_2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
