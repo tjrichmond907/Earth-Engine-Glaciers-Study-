@@ -48,7 +48,6 @@ function getLakesData(date1, date2, bounds, roi) {
 
   
   for(var boundary in bounds) {
-    print(bounds[boundary]);
 
 
   //find all dates which have limited cloud cover in the date range in each boundary area
@@ -93,7 +92,7 @@ function getLakesData(date1, date2, bounds, roi) {
       scale: 10,
     });
   
-  print(stats);
+
   boundary_stats.push(stats);
   
   }
