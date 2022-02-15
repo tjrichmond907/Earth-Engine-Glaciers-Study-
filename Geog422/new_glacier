@@ -118,7 +118,6 @@ function getLakesData(date1, date2, bounds, roi) {
 
 //Function test
 var boundariesArr = [Gl_b, Gl_b2];
-print(boundariesArr)
 
 getLakesData("2018-05-14", "2018-07-31", boundariesArr, Glacier);
 
