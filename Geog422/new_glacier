@@ -1,5 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var gl_b = /* color: #02edff */ee.Geometry.Polygon(
+var Gl_b = /* color: #02edff */ee.Geometry.Polygon(
         [[[-33.9341310733289, 68.73493919213335],
           [-33.77757589754765, 68.70403750313929],
           [-33.59080831942265, 68.68307977815691],
