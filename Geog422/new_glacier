@@ -110,7 +110,7 @@ function getLakesData(date1, date2, bounds, roi) {
   //Need an array which has the dates and total area for that date so a plot can be made
   //total area will need to be attached to an object with the property of date, and area of GSL 
   //can then be plotted by date
-  
+  //ee.Image.date() returns the date of the image.
 
 }
  
