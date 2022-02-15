@@ -386,7 +386,7 @@ out: plot
 
 
 /*
-GLACIER FUNCTION-------------
+//GLACIER FUNCTION-------------
 
 
 function getLakesData(date1, date2, bounds, roi) {
@@ -456,7 +456,7 @@ function getLakesData(date1, date2, bounds, roi) {
     return sum/km_const;
   }
 
-  var totalArea = sumArea(boundary_stats);
+  var totalAreaAtDate = sumArea(boundary_stats);
   
   
   //Need an array which has the dates and total area for that date so a plot can be made
@@ -465,4 +465,9 @@ function getLakesData(date1, date2, bounds, roi) {
   
 
 }
+ 
+boundariesArr = [Gl_b, Gl_b2];
+
+getLakesData("2018-05-14", "2018-07-31", boundariesArr, Glacier);
+
 */
