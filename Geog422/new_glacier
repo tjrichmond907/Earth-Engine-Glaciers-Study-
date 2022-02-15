@@ -47,19 +47,29 @@ function getLakesData(date1, date2, bounds, roi) {
       return image.updateMask(image.gt(0.2));
       };
 
+  var K_glacier = ee.Image(Sent_2 
+        .filterDate(date1, date2)
+        .filterBounds(roi)
+        .sort("CLOUD_COVERAGE_ASSESSMENT")
+        //.first()
+        //.clip(bounds[boundary])
+        );
   
+  for(var image in K_glacier){
   for(var boundary in bounds) {
-
+      image.clip(bounds[Boundary]);
 
   //find all dates which have limited cloud cover in the date range in each boundary area
   //may have to be outside, otherwise, creating an image collection for every boundary (possibly inconsistent)
+  /*
    var K_glacier = ee.Image(Sent_2 
         .filterDate(date1, date2)
         .filterBounds(roi)
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         //.first()
-        .clip(bounds[boundary])
+        //.clip(bounds[boundary])
         );
+  */
   
   //create NDWI for each image in that boundary      
   var NDWI = K_glacier.expression(
@@ -97,6 +107,7 @@ function getLakesData(date1, date2, bounds, roi) {
 
   boundary_stats.push(stats);
   
+    }
   }
 
   //Function to determine the total area of lakes from all of the boundaries in the study area
