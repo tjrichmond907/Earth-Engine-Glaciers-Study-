@@ -47,7 +47,7 @@ function getLakesData(date1, date2, bounds, roi) {
   
   for(var boundary in bounds) {
     print(bounds[boundary]);
-    print('Boundary: ', boundary);
+
 
   //find all dates which have limited cloud cover in the date range in each boundary area
    var K_glacier = ee.Image(Sent_2 
@@ -55,7 +55,7 @@ function getLakesData(date1, date2, bounds, roi) {
         .filterBounds(roi)
         .sort("CLOUD_COVERAGE_ASSESSMENT")
         .first()
-        .clip(boundary)
+        .clip(bounds[boundary])
         );
   
   //create NDWI for each image in that boundary      
@@ -87,7 +87,7 @@ function getLakesData(date1, date2, bounds, roi) {
 
   var stats = S1_area.reduceRegion({
       reducer: ee.Reducer.sum(), 
-      geometry: boundary, 
+      geometry: bounds[boundary], 
       scale: 10,
     });
   
