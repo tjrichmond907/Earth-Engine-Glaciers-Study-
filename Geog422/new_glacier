@@ -77,13 +77,25 @@ function getLakesData(date1, date2, bounds, roi) {
   */
   
   //create NDWI for each image in that boundary      
+  /*
   var NDWI = K_glacier.expression(
         "(BLUE - RED) / (BLUE + RED)",
         {
-          RED: K_glacier.select("B4"),    //  RED
+          RED: K_glacier.select("B4"),    // RED
           NIR: K_glacier.select("B8"),    // NIR
           BLUE: K_glacier.select("B2")    // BLUE
         });
+  */      
+     
+  //for double for loop wherer each image in the collection is looked at    
+   var NDWI = item_clipped.expression(
+        "(BLUE - RED) / (BLUE + RED)",
+        {
+          RED: item_clipped.select("B4"),    // RED
+          NIR: item_clipped.select("B8"),    // NIR
+          BLUE: item_clipped.select("B2")    // BLUE
+        });      
+        
   
   //create a mask function for the NDWI to get all water pixels    
   var h20_mask = h20mask(NDWI);
