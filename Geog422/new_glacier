@@ -57,14 +57,15 @@ function getLakesData(date1, date2, bounds, roi) {
 
 
   for(var item in K_glacier) {
-    print(typeof item, item);
-    console.log(item);
+
   
   for(var boundary in bounds) {
       
+      /* only has a string as an item. 
       var item_clipped = ee.Image(item
           .clip(bounds[boundary])
           );
+      */
 
   //find all dates which have limited cloud cover in the date range in each boundary area
   //may have to be outside, otherwise, creating an image collection for every boundary (possibly inconsistent)
@@ -79,7 +80,6 @@ function getLakesData(date1, date2, bounds, roi) {
   */
   
   //create NDWI for each image in that boundary      
-  /*
   var NDWI = K_glacier.expression(
         "(BLUE - RED) / (BLUE + RED)",
         {
@@ -87,8 +87,9 @@ function getLakesData(date1, date2, bounds, roi) {
           NIR: K_glacier.select("B8"),    // NIR
           BLUE: K_glacier.select("B2")    // BLUE
         });
-  */      
-     
+        
+  
+  /*   
   //for double for loop wherer each image in the collection is looked at    
    var NDWI = item_clipped.expression(
         "(BLUE - RED) / (BLUE + RED)",
@@ -97,7 +98,7 @@ function getLakesData(date1, date2, bounds, roi) {
           NIR: item_clipped.select("B8"),    // NIR
           BLUE: item_clipped.select("B2")    // BLUE
         });      
-        
+  */      
   
   //create a mask function for the NDWI to get all water pixels    
   var h20_mask = h20mask(NDWI);
