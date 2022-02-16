@@ -57,7 +57,7 @@ function getLakesData(date1, date2, bounds, roi) {
 
 
   for(var item in K_glacier) {
-    print(typeof item);
+    print(typeof item, item);
   
   for(var boundary in bounds) {
       
