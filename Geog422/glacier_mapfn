@@ -44,3 +44,5 @@ Map.addLayer(K_glacier);
 var img_list = K_glacier.toList(K_glacier.size());
 
 print(K_glacier.size());
+
+
