@@ -50,9 +50,9 @@ print(imageList);
 
 
 //Function to create a mask function for the NDWI to get all water pixels
-var h20mask = function(image) {
+function h20mask(image) {
    return image.updateMask(image.gt(0.2));
-};
+}
 
 
 //Function to determine the total area of lakes from all of the boundaries in the study area
@@ -80,7 +80,6 @@ for(var i = 0; i < 92; i++) {
       
       for(var j = 0; j < 2; j++) {
           var boundary = ee.Geometry(bounds[j]);
-          print(typeof boundary);
           
           //var imgDt = temp.get('system:time_start');
           
