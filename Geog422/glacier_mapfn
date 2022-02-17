@@ -37,7 +37,7 @@ var K_glacier = ee.ImageCollection(Sent2
       .filterDate(date1, date2)
       .filterBounds(roi)
       .sort("CloudCoverageAssessment")
-      .distinct('GenerationTime')
+      .distinct()
       );
 
 Map.addLayer(K_glacier);
