@@ -39,5 +39,6 @@ var dict = {};
 
 for(var i = 0; i < imageList.length(); i++) {
       var temp = imageList[i];
+      print(typeof temp);
       print(temp.date());
 }
