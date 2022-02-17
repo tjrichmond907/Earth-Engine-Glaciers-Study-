@@ -1,5 +1,28 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var Sent2 = ee.ImageCollection("COPERNICUS/S2");
+var Sent2 = ee.ImageCollection("COPERNICUS/S2"),
+    roi = /* color: #d63000 */ee.Geometry.Point([-32.82696533203125, 68.57688745440542]),
+    gl1 = /* color: #98ff00 */ee.Geometry.Polygon(
+        [[[-33.0054931640625, 68.68796674953718],
+          [-33.11260986328125, 68.63399692505128],
+          [-33.02471923828125, 68.61297349606234],
+          [-32.9285888671875, 68.57989683944567],
+          [-32.84619140625, 68.62699130504768]]]),
+    gl2 = /* color: #0b4a8b */ee.Geometry.Polygon(
+        [[[-33.758056640625, 68.73662470760429],
+          [-33.56854248046875, 68.68177387378243],
+          [-33.35430908203125, 68.63679560296356],
+          [-33.16204833984375, 68.63879655674131],
+          [-33.11260986328125, 68.63379383729442],
+          [-33.010986328125, 68.68676588280834],
+          [-33.1263427734375, 68.9142087845199]]]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+
 Map.setCenter(-33.00,68.64,9);
+
+
+var K_glacier = ee.Image(Sent2
+      .filterDate(date1, date2)
+      .filterBounds(roi)
+      .sort("CloudCoverageAssessment")
+      );
 
