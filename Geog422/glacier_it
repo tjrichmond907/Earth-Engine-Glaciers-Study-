@@ -44,7 +44,7 @@ var K_glacier = ee.ImageCollection(Sent2A
 
 Map.addLayer(K_glacier);
 
-//print(K_glacier.size()); //should have this many entries in the dictionary for testing
+print(K_glacier.size()); //should have this many entries in the dictionary for testing
 
 //create a list of the image collection images
 var imageList = K_glacier.toList(K_glacier.size());
