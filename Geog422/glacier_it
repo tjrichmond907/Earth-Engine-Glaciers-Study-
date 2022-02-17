@@ -54,7 +54,7 @@ function sumArea(arr) {
   var km_const = 1000000;
   var sum = 0;
   for(var i = 0; i < arr.length; i++) {
-    var temp = arr[i].getInfo();
+    var temporary = arr[i].getInfo();
     sum+= temp['constant'];
   }
   return sum/km_const;
