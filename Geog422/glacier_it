@@ -48,6 +48,18 @@ var h20mask = function(image) {
    return image.updateMask(image.gt(0.2));
 };
 
+
+//Function to determine the total area of lakes from all of the boundaries in the study area
+function sumArea(arr) {
+  var km_const = 1000000;
+  var sum = 0;
+  for(var i = 0; i < arr.length; i++) {
+    var temp = arr[i].getInfo();
+    sum+= temp['constant'];
+  }
+  return sum/km_const;
+}
+
 //dictionary to hold the date:surface area k/v pairs
 var valsDict = {};
 
@@ -93,6 +105,20 @@ for(var i = 0; i < 92; i++) {
             'S2': LS_to2
             });
         
+        //Generate the area and stats for the boundary area in the single image, add to an array of
+        //boundary areas
+        var S1_area = LS_to3.multiply(ee.Image.pixelArea());
+  
+        var stats = S1_area.reduceRegion({
+          reducer: ee.Reducer.sum(),
+          geometry: bounds[boundary],
+          scale: 10,
+          });
+      
+      boundary_stats.push(stats);
+      
+      
+      
       }//boundary for loop
       
 
