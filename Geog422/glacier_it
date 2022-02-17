@@ -83,6 +83,7 @@ for(var i = 0; i < num_imgs; i++) {
       
       for(var j = 0; j < num_bounds; j++) {
           var boundary = ee.Geometry(bounds[j]);
+          print('boundary', boundary)
           
           //var imgDt = temp.get('system:time_start');
           
