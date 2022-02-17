@@ -20,7 +20,8 @@ var Sent2 = ee.ImageCollection("COPERNICUS/S2"),
           [-33.16204833984375, 68.63879655674131],
           [-33.11260986328125, 68.63379383729442],
           [-33.010986328125, 68.68676588280834],
-          [-33.1263427734375, 68.9142087845199]]]);
+          [-33.1263427734375, 68.9142087845199]]]),
+    Sent2A = ee.ImageCollection("COPERNICUS/S2_SR");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 
 Map.setCenter(-33.00,68.64,9);
@@ -35,7 +36,7 @@ var bounds = ee.List([gl1, gl2]);
 
 
 //create the image collection for the study area
-var K_glacier = ee.ImageCollection(Sent2
+var K_glacier = ee.ImageCollection(SentA
       .filterDate(date1, date2)
       .filterBounds(roi)
       .sort("CloudCoverageAssessment")
