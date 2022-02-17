@@ -1,5 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var gl_b2 = /* color: #ffc82d */ee.Geometry.Polygon(
+var gl2 = /* color: #ffc82d */ee.Geometry.Polygon(
         [[[-32.77752685546875, 68.60596130592172],
           [-32.8406982421875, 68.63599812870082],
           [-32.90936279296875, 68.64700155538905],
@@ -12,7 +12,7 @@ var gl_b2 = /* color: #ffc82d */ee.Geometry.Polygon(
           [-33.10162353515625, 68.63399692505128],
           [-32.84619140625, 68.55982666070011],
           [-32.76654052734375, 68.58691717126784]]]),
-    glb_1 = /* color: #00ffff */ee.Geometry.Polygon(
+    gl1 = /* color: #00ffff */ee.Geometry.Polygon(
         [[[-33.9063720703125, 68.7348346657116],
           [-33.6646728515625, 68.68597018694666],
           [-33.42572021484375, 68.666993946048],
