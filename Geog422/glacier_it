@@ -29,3 +29,4 @@ var K_glacier = ee.Image(Sent2
       .sort("CloudCoverageAssessment")
       );
 
+Map.addLayer(K_glacier);
