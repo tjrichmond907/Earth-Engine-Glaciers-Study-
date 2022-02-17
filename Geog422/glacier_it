@@ -73,8 +73,8 @@ var valsDict = {};
 //loops to go through image collections, gather water surface area, add to list
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
-      var imgID = temp.id();
-      Map.addLayer(temp);
+      //var imgID = temp.id(); //hope to grab the image date from here
+
       //create an array to hold all stats for the images, will clear before next image
       var boundary_stats = [];
       
