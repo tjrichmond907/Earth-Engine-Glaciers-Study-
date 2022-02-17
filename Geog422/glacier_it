@@ -30,7 +30,7 @@ var date1 = "2018-05-14";
 var date2 = "2018-07-31";
 
 //boundaries of the study area 
-var bounds = [gl1, gl2];
+var bounds = ee.List([gl1, gl2]);
 print(bounds.getInfo());
 
 
