@@ -72,6 +72,7 @@ var valsDict = ee.Dictionary({});
 
 var num_imgs = imageList.size();
 var num_bounds = bounds.size();
+print(num_bounds)
 
 //loops to go through image collections, gather water surface area, add to list
 for(var i = 0; i < num_imgs; i++) {
