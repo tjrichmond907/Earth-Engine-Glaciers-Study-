@@ -22,11 +22,15 @@ Map.setCenter(-33.00,68.64,9);
 var date1 = "2018-05-14";
 var date2 = "2018-07-31";
 
+var bounds = [gl1, gl2];
 
 var K_glacier = ee.ImageCollection(Sent2
       .filterDate(date1, date2)
       .filterBounds(roi)
       .sort("CloudCoverageAssessment")
+      .clip(bounds)
       );
 
 Map.addLayer(K_glacier);
+
+
