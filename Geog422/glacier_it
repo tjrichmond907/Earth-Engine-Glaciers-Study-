@@ -36,6 +36,7 @@ print(K_glacier.size());
 
 for(var item in K_glacier){
   
-  print(typeof item);
+    print(K_glacier.get(item));
+    
   
 }
