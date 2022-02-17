@@ -71,7 +71,7 @@ function sumArea(arr) {
 var valsDict = {};
 
 var num_imgs = imageList.size();
-var num_bounds = bounds.size();
+var num_bounds = bounds.length();
 
 //loops to go through image collections, gather water surface area, add to list
 for(var i = 0; i < num_imgs; i++) {
