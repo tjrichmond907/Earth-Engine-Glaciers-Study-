@@ -72,7 +72,7 @@ for(var i = 0; i < 92; i++) {
       //create an array to hold all stats for the images, will clear before next image
       var boundary_stats = [];
       
-      for(var ee.Geomety.Polygon(boundary) in bounds) {
+      for(var ee.Geometry.Polygon(boundary) in bounds) {
           print(typeof boundary);
           //var imgDt = temp.get('system:time_start');
           
