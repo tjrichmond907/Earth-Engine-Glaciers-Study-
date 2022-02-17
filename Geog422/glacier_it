@@ -40,4 +40,5 @@ print(imageList);
 for(var i = 0; i < imageList.length(); i++) {
       var temp = imageList[i];
       print(temp);
+      print(i);
 }
