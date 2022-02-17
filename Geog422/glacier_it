@@ -71,9 +71,9 @@ function sumArea(arr) {
 var valsDict = {};
 
 var num_imgs = imageList.size();
-print(num_imgs);
+
 //loops to go through image collections, gather water surface area, add to list
-for(var i = 0; i < 92; i++) {
+for(var i = 0; i < num_imgs; i++) {
       var temp = ee.Image(imageList[i]);  
       //var imgID = temp.id(); //hope to grab the image date from here
 
