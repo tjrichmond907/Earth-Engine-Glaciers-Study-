@@ -40,7 +40,7 @@ print(imageList);
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
       var imgID = temp.id();
-      print(imgID);
+      print(typeof temp);
       
       for(var boundary in bounds) {
           //var imgDt = temp.get('system:time_start');
