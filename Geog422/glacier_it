@@ -68,7 +68,7 @@ function sumArea(arr) {
 }
 
 //dictionary to hold the date:surface area k/v pairs
-var valsDict = {};
+var valsDict = ee.Dictionary({});
 
 var num_imgs = imageList.size();
 var num_bounds = bounds.size();
