@@ -1,3 +1,4 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var imageCollection = ee.ImageCollection("COPERNICUS/S2");
+var Sent2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+
