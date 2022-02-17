@@ -131,6 +131,7 @@ for(var i = 0; i < num_imgs; i++) {
      
       //sum the SA for now that all boundaries have been calculated
       var totalArea = sumArea(boundary_stats);
+      print(total_area);
       
       //add the date of the image and the totalArea as a k/v pair to the dictionary
       valsDict[i] = totalArea;
