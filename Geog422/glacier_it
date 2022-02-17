@@ -40,7 +40,7 @@ print(K_glacier.size());
 
 //create a list of the image collection images
 var imageList = K_glacier.toList(K_glacier.size());
-//print(imageList);
+print(imageList);
 
 
 //Function to create a mask function for the NDWI to get all water pixels
