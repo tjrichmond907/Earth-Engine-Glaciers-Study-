@@ -35,4 +35,8 @@ Map.addLayer(K_glacier);
 print(K_glacier.size());
 
 var imageList = K_glacier.toList(K_glacier.size());
+var dict = {};
 
+for(var item in imageList) {
+  print(item.date());
+}
