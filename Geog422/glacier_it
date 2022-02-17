@@ -19,7 +19,10 @@ var Sent2 = ee.ImageCollection("COPERNICUS/S2"),
 
 Map.setCenter(-33.00,68.64,9);
 
-var date1 = ""
+var date1 = "2018-05-14";
+var date2 = "2018-07-31";
+
+
 var K_glacier = ee.Image(Sent2
       .filterDate(date1, date2)
       .filterBounds(roi)
