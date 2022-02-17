@@ -136,6 +136,7 @@ for(var i = 0; i < num_imgs; i++) {
       print('here', total_area);
       
       //add the date of the image and the totalArea as a k/v pair to the dictionary
+      var img_dt = temp.date();
       valsDict[i] = totalArea;
 
 }//image list for-loop
