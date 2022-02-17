@@ -88,9 +88,11 @@ for(var i = 0; i < num_imgs; i++) {
           //var imgDt = temp.get('system:time_start');
           
           //clip the image to one of the boundaries for processing
-          var imgClp = ee.Image(temp
-                        .clip(boundary)
-                        );
+          //var imgClp = ee.Image(temp
+            //            .clip(boundary)
+              //          );
+                        
+          var imgClp = temp.clip(boundary);
                         
         //get the NDWI of the clipped boundary 
         var NDWI = imgClp.expression(
