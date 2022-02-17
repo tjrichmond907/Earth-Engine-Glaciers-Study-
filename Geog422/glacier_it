@@ -73,7 +73,7 @@ for(var i = 0; i < 92; i++) {
       var boundary_stats = [];
       
       //for(var boundary in bounds) {
-      for(var j = 0; j < bounds.length(); j++) {
+      for(var j = 0; j < bounds.size(); j++) {
           boundary = ee.Geometry(bounds[j]);
           print(typeof boundary);//right now the boundary is a string
           //it needs to be cast as a geometry so the rest of the functions that use it 
