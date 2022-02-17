@@ -1,4 +1,5 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var Sent2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
+Map.setCenter(-33.00,68.64,9);
 
