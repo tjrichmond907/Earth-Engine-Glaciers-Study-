@@ -73,7 +73,7 @@ for(var i = 0; i < 92; i++) {
       var boundary_stats = [];
       
       for(var boundary in bounds) {
- 
+          print(typeof boundary);
           //var imgDt = temp.get('system:time_start');
           
 
@@ -90,8 +90,6 @@ for(var i = 0; i < 92; i++) {
           NIR: imgClp.select("B8"),    // NIR
           BLUE: imgClp.select("B2")    // BLUE
           });
-        
-        Map.addLayer(NDWI)
          
         //create a mask function for the NDWI to get all water pixels
         var h20_mask = h20mask(NDWI);
