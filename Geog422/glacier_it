@@ -40,12 +40,15 @@ print(imageList);
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
       
+      
       for(var boundary in bounds) {
+          var imgDt = temp.date();
+        
           var imgClp = ee.Image(temp
                         .clip(boundary)
                         );
                         
-          var imgDt = imgClp.date();
+         
           
           print(imgDt);
       }
