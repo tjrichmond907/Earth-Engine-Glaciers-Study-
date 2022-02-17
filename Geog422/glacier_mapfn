@@ -41,3 +41,5 @@ var K_glacier = ee.ImageCollection(Sent2
       );
 
 Map.addLayer(K_glacier);
+
+print(K_glacier.size());
