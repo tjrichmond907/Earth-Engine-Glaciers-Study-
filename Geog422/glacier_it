@@ -123,6 +123,7 @@ for(var i = 0; i < 92; i++) {
       
       }//boundary for loop
      
+      print(boundary_stats);
       //sum the SA for now that all boundaries have been calculated
       var totalArea = sumArea(boundary_stats);
       
