@@ -34,9 +34,6 @@ Map.addLayer(K_glacier);
 
 print(K_glacier.size());
 
-for(var item in K_glacier){
-  
-    print(typeof K_glacier.get(item));
-    
-  
-}
+print(K_glacier.toList());
+
+
