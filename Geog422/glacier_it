@@ -37,7 +37,7 @@ print(K_glacier.size());
 var imageList = K_glacier.toList(K_glacier.size());
 print(imageList);
 
-for(var i = 0; i < imageList.length(); i++) {
+for(var i = 0; i < 92; i++) {
       //var temp = imageList[i];
       //print(temp);
       print(i);
