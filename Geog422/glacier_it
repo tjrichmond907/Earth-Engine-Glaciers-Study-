@@ -124,7 +124,6 @@ for(var i = 0; i < num_imgs; i++) {
           scale: 10,
           });
       
-        print('here ', stats);
         boundary_stats.push(stats);
       
       }//boundary for-loop
@@ -138,4 +137,4 @@ for(var i = 0; i < num_imgs; i++) {
 
 }//image list for-loop
 
-print(valsDict);
+print('Dictionary', valsDict);
