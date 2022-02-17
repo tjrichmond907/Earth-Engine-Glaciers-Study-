@@ -39,7 +39,12 @@ print(imageList);
 
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
-      print(typeof temp);
+      
+      for(var boundary in bounds) {
+          var imgClp = ee.Image(temp
+                        .clip(boundary)
+                        );
+      }
       
 
 }
