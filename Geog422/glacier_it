@@ -27,7 +27,7 @@ Map.setCenter(-33.00,68.64,9);
 
 //date ranges 
 var date1 = "2016-05-14";
-var date2 = "2016-09-31";
+var date2 = "2016-09-30";
 
 //boundaries of the study area 
 var bounds = ee.List([gl1, gl2]);
