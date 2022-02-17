@@ -104,4 +104,4 @@ function getLakesData(date1, date2, bounds, roi) {
 var all_sums = [];
 result = K_glacier.iterate(getLakesData(date1, date2, bounds, roi), all_sums)
 
-
+print(result);
