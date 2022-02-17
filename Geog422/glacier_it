@@ -53,6 +53,7 @@ var h20mask = function(image) {
 function sumArea(arr) {
   var km_const = 1000000;
   var sum = 0;
+  print(arr);
   for(var i = 0; i < arr.length; i++) {
     var temporary = arr[i].getInfo();
     sum+= temporary['constant'];
