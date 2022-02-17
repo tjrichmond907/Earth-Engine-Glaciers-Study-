@@ -85,7 +85,7 @@ for(var i = 0; i < 92; i++) {
           "(BLUE - RED) / (BLUE + RED)",
           {
           RED: imgClp.select("B4"),    // RED
-          NIR: imgCLp.select("B8"),    // NIR
+          NIR: imgClp.select("B8"),    // NIR
           BLUE: imgClp.select("B2")    // BLUE
           });
          
