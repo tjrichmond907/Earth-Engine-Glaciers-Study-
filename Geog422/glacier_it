@@ -26,8 +26,8 @@ var Sent2 = ee.ImageCollection("COPERNICUS/S2"),
 Map.setCenter(-33.00,68.64,9);
 
 //date ranges 
-var date1 = "2018-05-14";
-var date2 = "2018-07-31";
+var date1 = "2016-05-14";
+var date2 = "2016-09-31";
 
 //boundaries of the study area 
 var bounds = ee.List([gl1, gl2]);
