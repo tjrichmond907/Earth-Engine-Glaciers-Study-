@@ -123,6 +123,8 @@ for(var i = 0; i < 92; i++) {
       var totalArea = sumArea(boundary_stats);
       
       //add the date of the image and the totalArea as a k/v pair to the dictionary
-      
+      valsDict[i] = totalArea;
 
 }//image list for loop
+
+print(valsDict);
