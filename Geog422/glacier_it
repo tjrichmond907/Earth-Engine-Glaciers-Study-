@@ -40,4 +40,8 @@ print(imageList);
 for(var i = 0; i < 92; i++) {
       var temp = imageList[i];
       
+      for(var boundary in bounds){
+          temp = temp.clip(boundary);
+          
+      }
 }
