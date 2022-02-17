@@ -1,0 +1,5 @@
+Map.setCenter(-33.00,68.64,9);
+
+//date ranges 
+var date1 = "2018-05-14";
+var date2 = "2018-07-31";
