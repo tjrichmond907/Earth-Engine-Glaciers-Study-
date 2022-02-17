@@ -71,6 +71,7 @@ function sumArea(arr) {
 var valsDict = ee.Dictionary({});
 
 var num_imgs = imageList.size();
+print(num_imgs);
 var num_bounds = bounds.size();
 
 //loops to go through image collections, gather water surface area, add to list
