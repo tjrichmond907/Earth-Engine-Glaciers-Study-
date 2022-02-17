@@ -71,6 +71,7 @@ function sumArea(arr) {
 var valsDict = {};
 
 var num_imgs = imageList.size();
+var num_bounds = bounds.size();
 
 //loops to go through image collections, gather water surface area, add to list
 for(var i = 0; i < num_imgs; i++) {
@@ -80,7 +81,7 @@ for(var i = 0; i < num_imgs; i++) {
       //create an array to hold all stats for the images, will clear before next image
       var boundary_stats = [];
       
-      for(var j = 0; j < 2; j++) {
+      for(var j = 0; j < num_bounds; j++) {
           var boundary = ee.Geometry(bounds[j]);
           
           //var imgDt = temp.get('system:time_start');
