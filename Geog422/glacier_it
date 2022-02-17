@@ -81,7 +81,7 @@ for(var i = 0; i < 92; i++) {
           var imgClp = ee.Image(temp
                         .clip(boundary)
                         );
-          Map.addLayer(imgClp);
+          Map.addLayer(imgClp, 'boundary');
                         
         //get the NDWI of the clipped boundary 
         var NDWI = imgClp.expression(
