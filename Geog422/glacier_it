@@ -115,11 +115,16 @@ for(var i = 0; i < 92; i++) {
           scale: 10,
           });
       
-      boundary_stats.push(stats);
+        boundary_stats.push(stats);
       
       
       
       }//boundary for loop
+     
+      //sum the SA for now that all boundaries have been calculated
+      var totalArea = sumArea(boundary_stats);
+      
+      //add the date of the image and the totalArea as a k/v pair to the dictionary
       
 
 }//image list for loop
