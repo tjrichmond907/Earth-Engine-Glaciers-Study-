@@ -115,8 +115,6 @@ for(var i = 0; i < 92; i++) {
       
         boundary_stats.push(stats);
       
-      
-      
       }//boundary for loop
      
       //sum the SA for now that all boundaries have been calculated
