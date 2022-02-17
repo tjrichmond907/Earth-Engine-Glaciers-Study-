@@ -67,8 +67,6 @@ var valsDict = {};
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
       var imgID = temp.id();
-      //print(typeof temp);
-      
       
       //create an array to hold all stats for the images, will clear before next image
       var boundary_stats = [];
