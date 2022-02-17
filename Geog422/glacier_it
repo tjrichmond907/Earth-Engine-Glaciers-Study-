@@ -31,7 +31,7 @@ var date2 = "2018-07-31";
 
 //boundaries of the study area 
 var bounds = [gl1, gl2];
-print(typeof bounds);
+print(bounds);
 
 
 //create the image collection for the study area
