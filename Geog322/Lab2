@@ -267,7 +267,7 @@ Map.addLayer(after, {min:-15,max:0}, 'After flood', 0);
 
 
 //Apply filter to reduce speckle
-var SMOOTHING_RADIUS = 25;
+var SMOOTHING_RADIUS = 50;
 var before_filtered = before.focal_mean(SMOOTHING_RADIUS, 'circle',
 'meters');
 var after_filtered = after.focal_mean(SMOOTHING_RADIUS, 'circle',
