@@ -65,12 +65,12 @@ for(var i = 0; i < 92; i++) {
           //var imgDt = temp.get('system:time_start');
           
 
-          
+          //clip the image to one of the boundaries for processing
           var imgClp = ee.Image(temp
                         .clip(boundary)
                         );
                         
-
+        //get the NDWI of the clipped boundary 
         var NDWI = imgClp.expression(
           "(BLUE - RED) / (BLUE + RED)",
           {
@@ -79,9 +79,21 @@ for(var i = 0; i < 92; i++) {
           BLUE: imgClp.select("B2")    // BLUE
           });
          
-          
+        //create a mask function for the NDWI to get all water pixels
+        var h20_mask = h20mask(NDWI);
+  
+        //Using expression on the masked image to create binary 1 = water, 0 = not water
+        var LS_to2 = h20_mask.expression(
+            '0 * S2', {
+            'S2': h20_mask
+            });
+
+        var LS_to3 = LS_to2.expression(
+            '1 + S2', {
+            'S2': LS_to2
+            });
         
-      }
+      }//boundary for loop
       
 
-}
+}//image list for loop
