@@ -19,11 +19,15 @@ var Sent2 = ee.ImageCollection("COPERNICUS/S2"),
 
 Map.setCenter(-33.00,68.64,9);
 
+//date ranges 
 var date1 = "2018-05-14";
 var date2 = "2018-07-31";
 
+//boundaries of the study area 
 var bounds = [gl1, gl2];
 
+
+//create the image collection for the study area
 var K_glacier = ee.ImageCollection(Sent2
       .filterDate(date1, date2)
       .filterBounds(roi)
@@ -34,21 +38,46 @@ Map.addLayer(K_glacier);
 
 print(K_glacier.size());
 
+//create a list of the image collection images
 var imageList = K_glacier.toList(K_glacier.size());
-print(imageList);
+//print(imageList);
 
+
+//Function to create a mask function for the NDWI to get all water pixels
+var h20mask = function(image) {
+   return image.updateMask(image.gt(0.2));
+};
+
+//dictionary to hold the date:surface area k/v pairs
+var valsDict = {};
+
+//loops to go through image collections, gather water surface area, add to list
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
       var imgID = temp.id();
-      print(typeof temp);
+      //print(typeof temp);
+      
+      
+      //create an array to hold all stats for the images, will clear before next image
+      var boundary_stats = [];
       
       for(var boundary in bounds) {
           //var imgDt = temp.get('system:time_start');
-        
+          
+
+          
           var imgClp = ee.Image(temp
                         .clip(boundary)
                         );
                         
+
+        var NDWI = imgClp.expression(
+          "(BLUE - RED) / (BLUE + RED)",
+          {
+          RED: imgClp.select("B4"),    // RED
+          NIR: imgCLp.select("B8"),    // NIR
+          BLUE: imgClp.select("B2")    // BLUE
+          });
          
           
         
