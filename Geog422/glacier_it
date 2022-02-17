@@ -42,7 +42,7 @@ for(var i = 0; i < 92; i++) {
       
       
       for(var boundary in bounds) {
-          var imgDt = ee.date(temp);
+          var imgDt = temp.date(temp);
         
           var imgClp = ee.Image(temp
                         .clip(boundary)
