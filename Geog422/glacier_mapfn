@@ -46,3 +46,4 @@ var img_list = K_glacier.toList(K_glacier.size());
 print(K_glacier.size());
 
 
+var lakeArea = function()
