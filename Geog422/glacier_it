@@ -39,11 +39,11 @@ print(imageList);
 
 for(var i = 0; i < 92; i++) {
       var temp = ee.Image(imageList[i]);  
-      
+      var imgID = temp.id();
+      print(imgID);
       
       for(var boundary in bounds) {
-          var imgDt = temp.get('system:time_start');
-          var imgID = temp.id();
+          //var imgDt = temp.get('system:time_start');
         
           var imgClp = ee.Image(temp
                         .clip(boundary)
@@ -51,7 +51,7 @@ for(var i = 0; i < 92; i++) {
                         
          
           
-          print(imgID);
+        
       }
       
 
