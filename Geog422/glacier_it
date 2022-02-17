@@ -43,7 +43,8 @@ for(var i = 0; i < 92; i++) {
       
       for(var boundary in bounds) {
           var imgDt = temp.get('system:time_start');
-          var imgDt = temp.date();
+          var prop = temp.propertyNames();
+          print(prop);
         
           var imgClp = ee.Image(temp
                         .clip(boundary)
@@ -51,7 +52,7 @@ for(var i = 0; i < 92; i++) {
                         
          
           
-          print(imgDt);
+         // print(imgDt);
       }
       
 
