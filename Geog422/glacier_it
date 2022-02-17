@@ -39,7 +39,5 @@ print(imageList);
 
 for(var i = 0; i < imageList.length(); i++) {
       var temp = imageList[i];
-      print('here');
-      print(typeof temp);
-      print(temp.date());
+      print(temp;
 }
