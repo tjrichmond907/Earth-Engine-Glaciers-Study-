@@ -33,3 +33,9 @@ var K_glacier = ee.ImageCollection(Sent2
 Map.addLayer(K_glacier);
 
 print(K_glacier.size());
+
+for(var item in K_glacier){
+  
+  print(typeof item);
+  
+}
