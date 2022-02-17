@@ -21,7 +21,7 @@ var gl_b2 = /* color: #ffc82d */ee.Geometry.Polygon(
           [-33.010820382169705, 68.71686970001323],
           [-33.096346889586044, 68.92224876701681]]]),
     roi = /* color: #bf04c2 */ee.Geometry.Point([-32.956271205992294, 68.62091979330054]),
-    Sent2 = ee.ImageCollection("COPERNICUS/S2_SR");
+    Sent2 = ee.ImageCollection("COPERNICUS/S2");
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 Map.setCenter(-33.00,68.64,9);
 
@@ -37,7 +37,7 @@ var K_glacier = ee.ImageCollection(Sent2
       .filterDate(date1, date2)
       .filterBounds(roi)
       .sort("CloudCoverageAssessment")
-      .distinct()
+      .distinct('GenerationTime')
       );
 
 Map.addLayer(K_glacier);
