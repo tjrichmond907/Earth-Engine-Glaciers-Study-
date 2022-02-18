@@ -41,8 +41,8 @@ var S2_col = ee.ImageCollection(COPERNICUSS2)
 var siac = require('users/marcyinfeng/utils:SIAC');
 
 // - Apply SIAC and retrieve bottom of atmosphere (BOA) reflectance
-var L7_boa = siac.get_l7_sur(L7_col.first());
-var L8_boa = siac.get_l8_sur(L8_col.first()); 
+//var L7_boa = siac.get_l7_sur(L7_col.first());
+//var L8_boa = siac.get_l8_sur(L8_col.first()); 
 var S2_boa = siac.get_sur(S2_col.first()); 
 
 
