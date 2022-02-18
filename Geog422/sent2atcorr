@@ -1,6 +1,18 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
 var COPERNICUSS2 = ee.ImageCollection("COPERNICUS/S2"),
-    glacier = /* color: #d63000 */ee.Geometry.Point([-32.825782502995814, 68.58491158595396]);
+    glacier = 
+    /* color: #d63000 */
+    /* displayProperties: [
+      {
+        "type": "rectangle"
+      }
+    ] */
+    ee.Geometry.Polygon(
+        [[[-34.09369780505247, 69.09979012479927],
+          [-34.09369780505247, 68.528081470723],
+          [-32.52265288317747, 68.528081470723],
+          [-32.52265288317747, 69.09979012479927]]], null, false),
+    roi = /* color: #98ff00 */ee.Geometry.Point([-32.90589665342209, 68.60943943006181]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // ######################################################################################################
 // ######################################################################################################
@@ -28,7 +40,10 @@ var S2_TOA_Image = s2_collection
                   .filterDate(date1,date2)
                   .sort('CLOUD_COVERAGE_ASSESSMENT')
                   //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',60))
-                  .first();
+                  .first()
+                  .clip(glacier);
+                  
+                  
 Map.addLayer(S2_TOA_Image,{min: 0 , max:65535, gamma:2, bands:['B4','B3','B2']},'S2 L1C Image');
 
 //min: 0 , max:65535, gamma:2,
