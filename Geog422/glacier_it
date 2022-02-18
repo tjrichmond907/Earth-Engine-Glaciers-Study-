@@ -36,11 +36,11 @@ var bounds = ee.List([gl1, gl2]);
 
 
 //create the image collection for the study area
-var K_glacier = ee.ImageCollection(Sent2A
+var K_glacier = ee.ImageCollection(Sent2
       .filterDate(date1, date2)
       .filterBounds(roi)
-      .sort("CLOUD_COVERAGE_ASSESSMENT")
-      //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',50))
+      //.sort("CLOUD_COVERAGE_ASSESSMENT")
+      .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',50))
       );
 
 Map.addLayer(K_glacier);
