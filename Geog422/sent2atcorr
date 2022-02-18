@@ -17,7 +17,7 @@ https://doi.org/10.31223/osf.io/ps957
 //var ground_sensor = ee.Geometry.Point(-33.00,68.64);
 //var polygon = ground_sensor.buffer(1000).bounds();//
 var date1 = '2017-11-15';
-var date2   = '2017-11-30';
+var date2   = '2018-11-30';
 
 //Loading S2 L1C Dataset
 var s2_collection = ee.ImageCollection("COPERNICUS/S2");
