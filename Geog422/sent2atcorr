@@ -20,7 +20,7 @@ var end_date   = '2017-11-30';
 
 var criteria = ee.Filter.and(
     ee.Filter.bounds(ground_sensor), ee.Filter.date(start_date, end_date));
-var cloud_perc = 60;//Max cloud percentile per scene.    
+var cloud_perc = 40;//Max cloud percentile per scene.    
 
 // -- Collections of Landsat 7, 8 and Sentinel 2 TOA data
 /*
