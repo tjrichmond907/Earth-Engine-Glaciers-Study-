@@ -55,7 +55,7 @@ Map.addLayer(S2_BOA_Image,{bands:['B4','B3','B2']},'Sentinel 2 L2A Image');
 
 function siac_collection(img){
   var siac = require('users/marcyinfeng/utils:SIAC');
-  return siac.get_sur(img).copyProperties(img,['system:time_start','system:time_end']);
+  return siac.get_sur(img).copyProperties(img,[date1,date2]);
 }
 
 var correctedCollection = COPERNICUSS2.map(siac_collection);
