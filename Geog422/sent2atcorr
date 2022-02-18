@@ -62,3 +62,4 @@ var correctedCollection = COPERNICUSS2.map(siac_collection);
 
 
 print(correctedCollection.size());
+atcorrList = correctedCollection.toList(correctedCollection.size());
