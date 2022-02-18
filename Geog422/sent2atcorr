@@ -50,5 +50,10 @@ print(S2_BOA_Image)
 Map.addLayer(S2_BOA_Image,{bands:['B4','B3','B2']},'Sentinel 2 L2A Image');
 
 
+function siac_collection(img){
+  var siac = require('users/marcyinfeng/utils:SIAC');
+  return siac.sur(img).copyProperties(img,['system:time_start','system:time_end']);
+}
 
+var correctedCollection = sentinel2Collection.map(siac_collection);
                 
