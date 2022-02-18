@@ -28,7 +28,9 @@ var S2_TOA_Image = s2_collection
                   .filterDate(date1,date2)
                   .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',20))
                   .first();
-Map.addLayer(S2_TOA_Image,{min:1017, max:5783, gamma:1, bands:['B4','B3','B2']},'S2 L1C Image');
+Map.addLayer(S2_TOA_Image,{ bands:['B4','B3','B2']},'S2 L1C Image');
+
+//min:1017, max:5783, gamma:1,
 
 //Importing the SIAC atmospheric correction module
 var siac = require('users/marcyinfeng/utils:SIAC');
