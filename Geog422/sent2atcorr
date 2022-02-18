@@ -23,6 +23,7 @@ var criteria = ee.Filter.and(
 var cloud_perc = 60;//Max cloud percentile per scene.    
 
 // -- Collections of Landsat 7, 8 and Sentinel 2 TOA data
+/*
 var L8_col = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
                 .filter(criteria)
                 .filter(ee.Filter.lt('CLOUD_COVER', cloud_perc));
@@ -30,7 +31,7 @@ var L8_col = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
 var L7_col = ee.ImageCollection('LANDSAT/LE07/C01/T1_TOA')
                 .filter(criteria)
                 .filter(ee.Filter.lt('CLOUD_COVER', cloud_perc));
-
+*/
 var S2_col = ee.ImageCollection(COPERNICUSS2)
                 .filter(criteria)
                 .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', cloud_perc));
