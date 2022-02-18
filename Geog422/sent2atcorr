@@ -55,5 +55,5 @@ function siac_collection(img){
   return siac.sur(img).copyProperties(img,['system:time_start','system:time_end']);
 }
 
-var correctedCollection = sentinel2Collection.map(siac_collection);
+var correctedCollection = COPERNICUSS2.map(siac_collection);
                 
