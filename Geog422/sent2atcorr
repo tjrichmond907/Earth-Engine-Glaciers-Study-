@@ -1,5 +1,6 @@
 /**** Start of imports. If edited, may not auto-convert in the playground. ****/
-var COPERNICUSS2 = ee.ImageCollection("COPERNICUS/S2");
+var COPERNICUSS2 = ee.ImageCollection("COPERNICUS/S2"),
+    glacier = /* color: #d63000 */ee.Geometry.Point([-32.825782502995814, 68.58491158595396]);
 /***** End of imports. If edited, may not auto-convert in the playground. *****/
 // ######################################################################################################
 // ######################################################################################################
@@ -13,48 +14,36 @@ https://doi.org/10.31223/osf.io/ps957
 */
 
 // ---- Area of Interest (AOI) and User parameters
-var ground_sensor = ee.Geometry.Point(-33.00,68.64);
-var polygon = ground_sensor.buffer(1000).bounds();//
-var start_date = '2017-11-15';
-var end_date   = '2017-11-30';
+//var ground_sensor = ee.Geometry.Point(-33.00,68.64);
+//var polygon = ground_sensor.buffer(1000).bounds();//
+var date1 = '2017-11-15';
+var date2   = '2017-11-30';
 
-var criteria = ee.Filter.and(
-    ee.Filter.bounds(ground_sensor), ee.Filter.date(start_date, end_date));
-var cloud_perc = 40;//Max cloud percentile per scene.    
+//Loading S2 L1C Dataset
+var s2_collection = ee.ImageCollection("COPERNICUS/S2");
 
-// -- Collections of Landsat 7, 8 and Sentinel 2 TOA data
-/*
-var L8_col = ee.ImageCollection('LANDSAT/LC08/C01/T1_TOA')
-                .filter(criteria)
-                .filter(ee.Filter.lt('CLOUD_COVER', cloud_perc));
+//Filtering an image
+var S2_TOA_Image = s2_collection
+                  .filterBounds(glacier)
+                  .filterDate(date1,date2)
+                  .first();
+Map.addLayer(S2_TOA_Image,{min:1017, max:5783, gamma:2, bands:['B4','B3','B2']},'S2 L1C Image');
 
-var L7_col = ee.ImageCollection('LANDSAT/LE07/C01/T1_TOA')
-                .filter(criteria)
-                .filter(ee.Filter.lt('CLOUD_COVER', cloud_perc));
-*/
-var S2_col = ee.ImageCollection(COPERNICUSS2)
-                .filter(criteria)
-                .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', cloud_perc));
-                
-                
-// - Import the SIAC atmospheric correction module
+//Importing the SIAC atmospheric correction module
 var siac = require('users/marcyinfeng/utils:SIAC');
+//This module requires an image, not an image collection
 
-// - Apply SIAC and retrieve bottom of atmosphere (BOA) reflectance
-//var L7_boa = siac.get_l7_sur(L7_col.first());
-//var L8_boa = siac.get_l8_sur(L8_col.first()); 
-var S2_boa = siac.get_sur(S2_col.first()); 
+// - SIAC bottom of atmosphere (BOA) reflectance Module for Various Sensors
+//var L7_boa = siac.get_l7_sur(image); // For Landsat 7
+//var L8_boa = siac.get_l8_sur(image); // For Landsat 8
+//var S2_boa = siac.get_sur(image);    // For Sentinel 2
 
 
-// - Check and visualization
-var Color_comp_01 = {bands:"B4,B3,B2", min: 0.0, max: 0.2, gamma: 1};
-var Color_comp =    {bands:"B4,B3,B2", min:200, max:2000, gamma: 1};
-Map.addLayer(S2_col.first(), Color_comp, 'TOA');
-Map.addLayer(S2_boa, Color_comp_01, 'BOA');
-var S2_boa = S2_col.map(function(image){ 
-    return siac.get_sur(image);
-})
-//Map.centerObject(S2_col.first())
+var S2_BOA_Image = siac.get_sur(S2_TOA_Image);
+print(S2_BOA_Image)
+
+
+Map.addLayer(S2_BOA_Image,{bands:['B4','B3','B2']},'Sentinel 2 L2A Image');
 
 
 
