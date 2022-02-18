@@ -26,7 +26,8 @@ var s2_collection = ee.ImageCollection("COPERNICUS/S2");
 var S2_TOA_Image = s2_collection
                   .filterBounds(glacier)
                   .filterDate(date1,date2)
-                  .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',60))
+                  .sort('CLOUD_COVERAGE_ASSESSMENT')
+                  //.filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE',60))
                   .first();
 Map.addLayer(S2_TOA_Image,{min: 0 , max:65535, gamma:2, bands:['B4','B3','B2']},'S2 L1C Image');
 
