@@ -13,7 +13,7 @@ https://doi.org/10.31223/osf.io/ps957
 */
 
 // ---- Area of Interest (AOI) and User parameters
-var ground_sensor = ee.Geometry.Point(-52.905090, -28.228550);
+var ground_sensor = ee.Geometry.Point(-33.00,68.64);
 var polygon = ground_sensor.buffer(1000).bounds();//
 var start_date = '2017-11-15';
 var end_date   = '2017-11-30';
@@ -31,7 +31,7 @@ var L7_col = ee.ImageCollection('LANDSAT/LE07/C01/T1_TOA')
                 .filter(criteria)
                 .filter(ee.Filter.lt('CLOUD_COVER', cloud_perc));
 
-var S2_col = ee.ImageCollection("COPERNICUS/S2")
+var S2_col = ee.ImageCollection("COPERNICUSS2")
                 .filter(criteria)
                 .filter(ee.Filter.lt('CLOUDY_PIXEL_PERCENTAGE', cloud_perc));
                 
